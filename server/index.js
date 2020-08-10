@@ -2,6 +2,8 @@ const express=require('express');
 const app=express();
 const port=8000;
 
+app.use(require('./Routes'));
+
 app.listen(port, (error)=>
 {
     if(error)
