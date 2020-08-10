@@ -1,6 +1,6 @@
 module.exports.home=(req, res)=>
 {
-    return res.json(200, {
+    return res.status(200).json({
         message:'successful'
     })
 }
