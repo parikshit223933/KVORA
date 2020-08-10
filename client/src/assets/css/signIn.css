@@ -1,0 +1,19 @@
+.signIn-component
+{
+    width: 100%;
+    height:100%;
+    background-image: url('../images/signInBackground.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top:10%;
+}
+.website-logo
+{
+    font-family: 'Lemonada', cursive;
+    color:#b92b27;
+}
+.sign-in-left>div>button
+{
+    margin:15px;
+}
