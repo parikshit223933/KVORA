@@ -1,9 +1,10 @@
 const express=require('express');
 const app=express();
 const port=8000;
+const cors=require('cors');
 
 app.use(require('./Routes'));
-
+app.use(cors())
 app.listen(port, (error)=>
 {
     if(error)
