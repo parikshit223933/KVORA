@@ -1,5 +1,7 @@
 import React from "react";
 import "../assets/css/signIn.css";
+import { SocialLogin, SignUp } from "./";
+import { Route} from "react-router-dom";
 
 class SignIn extends React.Component {
 	render() {
@@ -16,38 +18,16 @@ class SignIn extends React.Component {
 						</p>
 						<div className="d-flex flex-row flex-wrap mb-4 pl-3 pr-3 justify-content-around align-items-start">
 							<div className="flex-column justify-content-center align-items-center sign-in-left">
-								<div>
-									<button
-										type="button"
-										className="btn btn-primary"
-									>
-										<i
-											className="fab fa-google mr-3"
-											style={{ fontSize: "20px" }}
-										></i>{" "}
-										Continue with Google
-									</button>
-								</div>
-								<div>
-									<button
-										type="button"
-										className="btn btn-primary"
-									>
-										<i
-											className="fab fa-facebook-square mr-1"
-											style={{ fontSize: "20px" }}
-										></i>{" "}
-										Continue With Facebook
-									</button>
-								</div>
-								<div style={{ width: "238px" }} className="m-0">
-									<p className="text-secondary sign-up-desc">
-										Sign Up With Email. By signing up you
-										indicate that you have read and agree to
-										Quora's Terms of Service and Privacy
-										Policy.
-									</p>
-								</div>
+								<Route
+									exact
+									path={`${this.props.match.path}/sign-in`}
+									component={SocialLogin}
+								/>
+								<Route
+									exact
+									path={`${this.props.match.path}/sign-up`}
+									component={SignUp}
+								/>
 							</div>
 							<div
 								className="horizontal-line"
@@ -88,9 +68,9 @@ class SignIn extends React.Component {
 										/>
 									</div>
 									<div className="d-flex flex-row justify-content-between align-items-start">
-                                        <div className="text-secondary small">
-                                            Forgot Password?
-                                        </div>
+										<div className="text-secondary small">
+											Forgot Password?
+										</div>
 										<div>
 											<button
 												type="submit"
