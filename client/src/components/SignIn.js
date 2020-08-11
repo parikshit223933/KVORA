@@ -7,10 +7,10 @@ class SignIn extends React.Component {
 			<div className="signIn-component">
 				<div className="row w-100 m-0">
 					<div className="col-xl-6 pl-0 pr-0 offset-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1 bg-white pt-4 sign-in-box">
-						<p className="display-3 website-logo text-center m-0">
+						<p className="display-3 website-logo text-center m-0 pl-3 pr-3">
 							Kvora
 						</p>
-						<p className="text-center text-secondary mb-5">
+						<p className="text-center text-secondary mb-5 pl-3 pr-3">
 							A place to share knowledge and better understand the
 							world
 						</p>
@@ -21,7 +21,10 @@ class SignIn extends React.Component {
 										type="button"
 										className="btn btn-primary"
 									>
-										<i className="fab fa-google mr-3"></i>{" "}
+										<i
+											className="fab fa-google mr-3"
+											style={{ fontSize: "20px" }}
+										></i>{" "}
 										Continue with Google
 									</button>
 								</div>
@@ -30,7 +33,10 @@ class SignIn extends React.Component {
 										type="button"
 										className="btn btn-primary"
 									>
-										<i className="fab fa-facebook-square mr-1"></i>{" "}
+										<i
+											className="fab fa-facebook-square mr-1"
+											style={{ fontSize: "20px" }}
+										></i>{" "}
 										Continue With Facebook
 									</button>
 								</div>
@@ -67,7 +73,7 @@ class SignIn extends React.Component {
 									<div className="form-group">
 										<input
 											type="email"
-											className="form-control"
+											className="form-control form-control-sm"
 											aria-describedby="emailHelp"
 											required
 											placeholder="Email"
@@ -77,16 +83,23 @@ class SignIn extends React.Component {
 										<input
 											required
 											type="password"
-											className="form-control"
+											className="form-control form-control-sm"
 											placeholder="Password"
 										/>
 									</div>
-									<button
-										type="submit"
-										className="btn btn-primary"
-									>
-										Submit
-									</button>
+									<div className="d-flex flex-row justify-content-between align-items-start">
+                                        <div className="text-secondary small">
+                                            Forgot Password?
+                                        </div>
+										<div>
+											<button
+												type="submit"
+												className="btn btn-sm btn-primary"
+											>
+												Submit
+											</button>
+										</div>
+									</div>
 								</form>
 							</div>
 						</div>
@@ -107,22 +120,21 @@ class SignIn extends React.Component {
 								</small>
 							</div>
 						</div>
-						<footer className="footer-sign-in-container">
-                            <div className="p-1 w-100 text-secondary w-100 d-flex justify-content-around align-items-center flex-wrap">
-                                <div>About</div>
-							<div>Languages</div>
-							<div>Careers</div>
-							<div>Business</div>
-							<div>Privacy</div>
-							<div>Terms</div>
-							<div>Impressum</div>
-							<div>Contact</div>
-							<div>
-								<i className="far fa-copyright"></i> Kvora Inc.
-								2020
+						<footer className="footer-sign-in-container small">
+							<div className="p-1 w-100 text-secondary w-100 d-flex justify-content-around align-items-center flex-wrap">
+								<div>About</div>
+								<div>Languages</div>
+								<div>Careers</div>
+								<div>Business</div>
+								<div>Privacy</div>
+								<div>Terms</div>
+								<div>Impressum</div>
+								<div>Contact</div>
+								<div>
+									<i className="far fa-copyright"></i> Kvora
+									Inc. 2020
+								</div>
 							</div>
-                            </div>
-							
 						</footer>
 					</div>
 				</div>
