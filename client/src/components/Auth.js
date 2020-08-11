@@ -1,9 +1,9 @@
 import React from "react";
 import "../assets/css/signIn.css";
-import { SocialLogin, SignUp } from "./";
+import { SocialLogin, SignUp } from ".";
 import { Route} from "react-router-dom";
 
-class SignIn extends React.Component {
+class Auth extends React.Component {
 	render() {
 		return (
 			<div className="signIn-component">
@@ -122,4 +122,4 @@ class SignIn extends React.Component {
 		);
 	}
 }
-export default SignIn;
+export default Auth;

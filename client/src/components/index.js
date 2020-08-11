@@ -1,13 +1,13 @@
 import Navbar from './Navbar';
 import Home from './Home';
-import SignIn from './SignIn';
+import Auth from './Auth';
 import SocialLogin from './SocialLogin';
 import SignUp from './SignUp';
 
 export {
     Navbar,
     Home,
-    SignIn,
+    Auth,
     SocialLogin,
     SignUp
 }

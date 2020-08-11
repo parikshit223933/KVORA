@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/css/App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {SignIn, Home} from './';
+import {Auth, Home} from './';
 
 class App extends React.Component
 {
@@ -12,7 +12,7 @@ class App extends React.Component
                 <div className="App">
                     <Switch>
                         <Route path="/" exact component={Home}/>
-                        <Route path="/auth" component={SignIn}/>
+                        <Route path="/auth" component={Auth}/>
                     </Switch>
                 </div>
             </Router>
