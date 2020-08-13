@@ -1,5 +1,14 @@
 .home-component {
-	background-color: #f1f2f2;
-	height: 100vh;
+    margin-top:30px;
 }
-
+.left-space-item
+{
+    min-height:40px;
+}
+.left-space-item-active
+{
+    background-color:#ebdddd;
+    border-radius: 3px;
+    color:#b92b27;
+    font-weight: 500;
+}
