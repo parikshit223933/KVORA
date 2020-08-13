@@ -17,7 +17,7 @@
 }
 .website-logo {
 	font-family: "Lemonada", cursive;
-	color: #b92b27;
+	color: #b92b27 !important;
 }
 .sign-in-left
 {
