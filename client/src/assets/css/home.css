@@ -2,37 +2,4 @@
 	background-color: #f1f2f2;
 	height: 100vh;
 }
-.navbar-container {
-	box-shadow: 0px 0px 5px 1px rgb(209, 209, 209);
-}
-.user-image-round {
-	height: 40px;
-	width: 40px;
-	border-radius: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-.fa-globe {
-	font-size: 35px;
-}
-.add-question-button > button {
-	border-radius: 50px;
-	width: 130px;
-	background-color: #b92b27;
-}
-.add-question-button > button:hover {
-	background-color: #971f1b;
-}
-.nav-link-icon {
-	font-size: 20px;
-}
-@media screen and (max-width: 1200px) {
-	.nav-link-icon {
-		display: none !important;
-	}
-}
-#navbarSupportedContent {
-	overflow-wrap: none;
-	word-wrap: none;
-}
+
