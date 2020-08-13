@@ -1,9 +1,17 @@
 .home-component {
-    margin-top:30px;
+    padding-top:80px;
 }
 .left-space-item
 {
     min-height:40px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    margin-bottom:2px;
+}
+.left-space-item-name
+{
+    font-size:12px;
+    font-weight:500;
 }
 .left-space-item-active
 {
@@ -11,4 +19,8 @@
     border-radius: 3px;
     color:#b92b27;
     font-weight: 500;
+}
+.extra-list>li::before
+{
+    content:'\2022  '
 }
