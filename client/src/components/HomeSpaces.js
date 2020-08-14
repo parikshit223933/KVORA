@@ -132,7 +132,10 @@ class HomeSpaces extends React.Component {
 					</div>
 				</div>
 				<hr className="w-100" />
-				<ul style={{ fontSize: "12px" }} className="py-2 pr-2 text-secondary pl-0 extra-list">
+				<ul
+					style={{ fontSize: "12px" }}
+					className="py-2 pr-2 text-secondary pl-0 extra-list"
+				>
 					<li className="list-inline-item">About</li>
 					<li className="list-inline-item">Careers</li>
 					<li className="list-inline-item">Terms</li>
