@@ -136,7 +136,7 @@ class HomeFeed extends React.Component {
 												</li>
 											</ul>
 										</div>
-										<div className="d-flex flex-row justify-content-start align-items-center mb-3">
+										<div className="d-flex flex-row justify-content-start align-items-center mb-3 flex-wrap">
 											<div className="mr-2">
 												<img
 													src={image}
@@ -154,7 +154,7 @@ class HomeFeed extends React.Component {
 											>
 												Parikshit Singh Asked
 											</div>
-											<div>
+											<div className="my-2">
 												<button
 													type="button"
 													style={{
@@ -198,7 +198,7 @@ class HomeFeed extends React.Component {
 												/>
 											</div>
 										</div>
-                                        <div className="existing-question-suggestions"></div>
+										<div className="existing-question-suggestions"></div>
 									</div>
 									<div
 										className="tab-pane fade"
@@ -206,7 +206,69 @@ class HomeFeed extends React.Component {
 										role="tabpanel"
 										aria-labelledby="nav-profile-tab"
 									>
-										adfsd
+										<div className="d-flex flex-row justify-content-start align-items-center mb-3 flex-wrap">
+											<div className="mr-2">
+												<img
+													src={image}
+													alt="user"
+													style={{
+														width: 20,
+														height: 20,
+														borderRadius: "100%"
+													}}
+												/>
+											</div>
+											<div
+												className="text-secondary mr-2"
+												style={{ fontSize: 13 }}
+											>
+												Parikshit Singh shared
+											</div>
+											<div className="my-2">
+												<button
+													type="button"
+													style={{
+														borderRadius: 50,
+														border:
+															"1px solid #dadada",
+														paddingBottom: 3,
+														paddingTop: 2,
+														fontSize: 15
+													}}
+													className="btn btn-light"
+												>
+													<i
+														className="fas fa-user-friends"
+														style={{ opacity: 0.5 }}
+													></i>{" "}
+													Choose a Space{" "}
+													<i
+														className="fas fa-chevron-down"
+														style={{ opacity: 0.5 }}
+													></i>
+												</button>
+											</div>
+										</div>
+										<div>
+											<input
+												type="text"
+												placeholder="Say something about this..."
+												className="form-control link-provider-input form-control-sm mb-4"
+											/>
+										</div>
+										<div className="linker">
+                                            <div className="linker-link-icon">
+                                            <i className="fas fa-link"></i>
+                                            </div>
+											<div>
+											    <input
+    												type="text"
+    												placeholder="Say something about this..."
+    												className="form-control share-link form-control-sm"
+    											/>
+											</div>
+										</div>
+									<div className="linker-spacing"></div>
 									</div>
 								</div>
 							</div>
