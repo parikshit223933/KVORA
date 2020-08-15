@@ -1,14 +1,14 @@
 import React from "react";
 import image from "../assets/images/signInBackground.png";
-import {HomeModal} from './'
+import { HomeModal, HomeSingleFeed } from "./";
 class HomeFeed extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
 				<div
-					className="bg-white p-3 home-question-asker"
+					className="bg-white p-3 home-question-asker mb-3"
 					data-toggle="modal"
-					data-target="#exampleModalCenter"
+					data-target="#newPost"
 				>
 					<div className="d-flex flex-row justify-content-start align-items-center">
 						<div>
@@ -33,8 +33,18 @@ class HomeFeed extends React.Component {
 						<h5>What is your question or link?</h5>
 					</div>
 				</div>
-				{/* MODAL */}
-				<HomeModal/>
+				{/* MODAL START */}
+				<HomeModal />
+				{/* MODAL END */}
+
+				<div className="news-feeds">
+					<HomeSingleFeed/>
+					<HomeSingleFeed/>
+					<HomeSingleFeed/>
+					<HomeSingleFeed/>
+					<HomeSingleFeed/>
+					<HomeSingleFeed/>
+				</div>
 			</React.Fragment>
 		);
 	}

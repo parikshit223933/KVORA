@@ -9,7 +9,7 @@ class Navbar extends React.Component {
 				<nav className="navbar pt-0 pb-0 navbar-expand-lg navbar-light bg-white container">
 					<a
 						className="navbar-brand website-logo"
-						href="#"
+						href="/"
 						style={{ fontSize: "26px" }}
 					>
 						Kvora
@@ -34,7 +34,7 @@ class Navbar extends React.Component {
 							<li className="nav-item active">
 								<a
 									className="nav-link nav-link-custom-properties text-secondary"
-									href="#"
+									href="/"
 								>
 									<i className="fas nav-link-icon fa-home"></i>{" "}
 									<b>Home</b>{" "}
@@ -44,7 +44,7 @@ class Navbar extends React.Component {
 							<li className="nav-item">
 								<a
 									className="nav-link nav-link-custom-properties text-secondary"
-									href="#"
+									href="/"
 								>
 									<i className="far nav-link-icon fa-edit"></i>{" "}
 									<b>Answer</b>{" "}
@@ -55,7 +55,7 @@ class Navbar extends React.Component {
 								<a
 									className="nav-link nav-link-custom-properties text-secondary"
 									id="navbarDropdown"
-									href="#"
+									href="/"
 									role="button"
 									data-toggle="dropdown"
 									aria-haspopup="true"
@@ -70,19 +70,19 @@ class Navbar extends React.Component {
 									style={{ left: "-60px", fontSize:14, backgroundColor:'#f7f7f8'}}
 									aria-labelledby="navbarDropdown"
 								>
-									<a className="dropdown-item font-weight-bolder text-secondary" href="#">
+									<a className="dropdown-item font-weight-bolder text-secondary" href="/">
 										See All Spaces <i className="fas fa-chevron-right"></i>
 									</a>
-									<a className="dropdown-item text-secondary d-md-none" href="#">
+									<a className="dropdown-item text-secondary d-md-none" href="/">
 										Action
 									</a>
-									<a className="dropdown-item text-secondary d-md-none" href="#">
+									<a className="dropdown-item text-secondary d-md-none" href="/">
 										Action
 									</a>
-									<a className="dropdown-item text-secondary d-md-none" href="#">
+									<a className="dropdown-item text-secondary d-md-none" href="/">
 										Action
 									</a>
-									<a className="dropdown-item text-secondary d-md-none" href="#">
+									<a className="dropdown-item text-secondary d-md-none" href="/">
 										Action
 									</a>
 								</div>
@@ -90,7 +90,7 @@ class Navbar extends React.Component {
 							<li className="nav-item">
 								<a
 									className="nav-link nav-link-custom-properties text-secondary"
-									href="#"
+									href="/"
 								>
 									<i className="far nav-link-icon fa-bell"></i>{" "}
 									<b>Notifications</b>{" "}

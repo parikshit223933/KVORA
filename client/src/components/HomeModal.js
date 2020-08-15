@@ -8,10 +8,10 @@ class HomeModal extends React.Component
         return(
             <div
 					className="modal fade"
-					id="exampleModalCenter"
-					tabindex="-1"
+					id="newPost"
+					tabIndex="-1"
 					role="dialog"
-					aria-labelledby="exampleModalCenterTitle"
+					aria-labelledby="newPostTitle"
 					aria-hidden="true"
 				>
 					<div
@@ -22,7 +22,7 @@ class HomeModal extends React.Component
 							<div className="modal-header new-question-modal-header pb-0">
 								<b
 									className="modal-title text-secondary"
-									id="exampleModalCenterTitle"
+									id="newPostTitle"
 								>
 									<nav>
 										<div
