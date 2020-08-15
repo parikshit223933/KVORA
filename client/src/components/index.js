@@ -5,6 +5,8 @@ import SocialLogin from './SocialLogin';
 import SignUp from './SignUp';
 import HomeSpaces from './HomeSpaces';
 import HomeFeed from './HomeFeed';
+import HomeModal from './HomeModal';
+
 export {
     Navbar,
     Home,
@@ -13,4 +15,5 @@ export {
     SignUp,
     HomeSpaces,
     HomeFeed,
+    HomeModal
 }
