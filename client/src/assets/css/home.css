@@ -113,3 +113,33 @@
 {
     font-size: 16px;
 }
+.improve-your-feed
+{
+    box-shadow: 0px 0px 1px 1px rgb(219, 219, 219);
+}
+.improve-your-feed>header
+{
+    background-color: #f1f2f2;
+}
+.improve-feed-list
+{
+    list-style: none;
+    padding:0px 15px 15px 15px;
+}
+.improve-feed-list>hr
+{
+    margin:0px;
+    border:1px solid rgb(247, 247, 247);
+}
+.improve-feed-list>li
+{
+    padding-top:10px;
+    padding-bottom:10px;
+    text-align: left;
+}
+.improve-feed-list>li::before
+{
+    content:'\25A2';
+    /* 2713 for tickmark */
+    margin-right:5px;
+}

@@ -6,7 +6,9 @@ import SignUp from './SignUp';
 import HomeSpaces from './HomeSpaces';
 import HomeFeed from './HomeFeed';
 import HomeModal from './HomeModal';
-import HomeSingleFeed from './HomeSingleFeed'
+import HomeSingleFeed from './HomeSingleFeed';
+import HomeFeedImprove from './HomeFeedImprove';
+
 export {
     Navbar,
     Home,
@@ -16,5 +18,6 @@ export {
     HomeSpaces,
     HomeFeed,
     HomeModal,
-    HomeSingleFeed
+    HomeSingleFeed,
+    HomeFeedImprove
 }

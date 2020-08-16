@@ -1,6 +1,6 @@
 import React from "react";
 import "../assets/css/home.css";
-import { HomeSpaces, HomeFeed } from "./";
+import { HomeSpaces, HomeFeed, HomeFeedImprove } from "./";
 
 class Home extends React.Component {
 	render() {
@@ -12,9 +12,11 @@ class Home extends React.Component {
 						<HomeSpaces />
 					</div>
 					<div className="col-lg-7 col-md-9 col-sm-12">
-						<HomeFeed/>
+						<HomeFeed />
 					</div>
-					<div className="col-lg-3 d-lg-block d-none">sdf</div>
+					<div className="col-lg-3 d-lg-block d-none">
+						<HomeFeedImprove />
+					</div>
 					{/* hidden below medium screen */}
 				</div>
 			</div>
