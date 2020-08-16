@@ -27,6 +27,24 @@
 .horizontal-line {
 	display: none;
 }
+.search-bar-container
+{
+    position:relative;
+}
+.search-ico
+{
+    position:absolute;
+    left:11px;
+    top:9px;
+}
+.searchBar-nav
+{
+    padding-left:30px;
+}
+.searchBar-nav:focus
+{
+    box-shadow: none;
+}
 @media screen and (max-width: 1200px) {
 	.nav-link-icon {
 		display: none !important;
@@ -67,4 +85,31 @@
 .dropdown-menu>a:hover
 {
     background-color:#e0e0e0;
+}
+/* ACTIVE TAB */
+.active
+{
+    border-bottom: 2px solid rgb(185, 43, 39);
+    height:50px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.active>a>b
+{
+    color:rgb(185, 43, 39) !important;
+}
+.active>a>i
+{
+    color:rgb(185, 43, 39) !important;
+}
+.nav-item:hover
+{
+    background-color:rgb(247, 247, 247);
+    height:50px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

@@ -8,6 +8,7 @@ import HomeFeed from './HomeFeed';
 import HomeModal from './HomeModal';
 import HomeSingleFeed from './HomeSingleFeed';
 import HomeFeedImprove from './HomeFeedImprove';
+import Answer from './Answer';
 
 export {
     Navbar,
@@ -19,5 +20,6 @@ export {
     HomeFeed,
     HomeModal,
     HomeSingleFeed,
-    HomeFeedImprove
+    HomeFeedImprove,
+    Answer
 }

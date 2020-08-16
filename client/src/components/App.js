@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/css/App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {Auth, Home, Navbar} from './';
+import {Auth, Home, Navbar, Answer} from './';
 
 class App extends React.Component
 {
@@ -15,6 +15,7 @@ class App extends React.Component
                     <Switch>
                         <Route path="/" exact component={Home}/>
                         <Route path="/auth" component={Auth}/>
+                        <Route path="/answer" component={Answer}/>
                     </Switch>
                 </div>
             </Router>
