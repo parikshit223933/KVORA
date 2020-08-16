@@ -1,0 +1,18 @@
+.home-component {
+	padding-top: 80px;
+}
+.answer-questions>hr
+{
+    background-color:rgb(247, 247, 247);
+}
+.answer-questions>p
+{
+    font-size:13px;
+    color:grey;
+    padding:5px 5px 5px 15px
+}
+.answer-questions>p:hover
+{
+    background-color:rgb(228, 228, 228);
+    cursor:pointer;
+}

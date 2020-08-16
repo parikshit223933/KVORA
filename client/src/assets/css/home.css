@@ -17,6 +17,14 @@
 	color: #b92b27;
 	font-weight: 500;
 }
+.left-space-item:hover
+{
+    background-color: #cbcee2;
+    border-radius: 3px;
+    color: #3300ff !important;
+    cursor:pointer;
+    font-weight: 500;
+}
 .extra-list > li::before {
 	content: "\2022";
 }

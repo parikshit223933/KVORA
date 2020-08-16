@@ -9,6 +9,9 @@ import HomeModal from './HomeModal';
 import HomeSingleFeed from './HomeSingleFeed';
 import HomeFeedImprove from './HomeFeedImprove';
 import Answer from './Answer';
+import AnswerQuestions from './AnswerQuestions';
+import AnswerMid from './AnswerMid';
+import AnswerAddTopics from './AnswerAddTopics';
 
 export {
     Navbar,
@@ -21,5 +24,8 @@ export {
     HomeModal,
     HomeSingleFeed,
     HomeFeedImprove,
-    Answer
+    Answer,
+    AnswerAddTopics,
+    AnswerMid,
+    AnswerQuestions
 }
