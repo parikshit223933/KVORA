@@ -5,8 +5,8 @@ class AnswerMid extends React.Component
     render()
     {
         return(
-            <div>
-                This is AnswerMid component;
+            <div className="home-mid-item">
+                
             </div>
         )
     }

@@ -1,4 +1,4 @@
-.home-component {
+.answer-component{
 	padding-top: 80px;
 }
 .answer-questions>hr
@@ -15,4 +15,23 @@
 {
     background-color:rgb(228, 228, 228);
     cursor:pointer;
+}
+.add-topics-know-about
+{
+    box-shadow: 0px 0px 1px 1px rgb(228, 226, 226);
+}
+.add-topics-know-about>p{
+    font-size:13px;
+}
+.add-topics-button
+{
+    border-radius: 50px;
+    background-color:#ebf0ff;
+    color:#477bff;
+    font-size: 12px;
+}
+.add-topics-button:hover
+{
+    color:#477bff;
+    background-color: #ced9f8;
 }
