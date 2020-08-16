@@ -12,6 +12,7 @@ import Answer from './Answer';
 import AnswerQuestions from './AnswerQuestions';
 import AnswerMid from './AnswerMid';
 import AnswerAddTopics from './AnswerAddTopics';
+import AnswerSubItem from './AnswerSubItem';
 
 export {
     Navbar,
@@ -27,5 +28,6 @@ export {
     Answer,
     AnswerAddTopics,
     AnswerMid,
-    AnswerQuestions
+    AnswerQuestions,
+    AnswerSubItem
 }

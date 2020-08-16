@@ -35,3 +35,18 @@
     color:#477bff;
     background-color: #ced9f8;
 }
+.more-button
+{
+    border-radius: 50px;
+    font-size:12px;
+}
+.action-left-button
+{
+    margin:10px 5px 0px 0px;
+}
+.action-left-button>button
+{
+    color:grey;
+    font-weight: 500;
+    border-radius: 50px;
+}
