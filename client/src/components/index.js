@@ -13,7 +13,10 @@ import AnswerQuestions from './Answer/AnswerQuestions';
 import AnswerMid from './Answer/AnswerMid';
 import AnswerAddTopics from './Answer/AnswerAddTopics';
 import AnswerSubItem from './Answer/AnswerSubItem';
-
+import Notification from './Notifications/Notifications';
+/*
+  ? Note: These are not the only components in this project. 
+*/
 export {
     Navbar,
     Home,
@@ -29,5 +32,6 @@ export {
     AnswerAddTopics,
     AnswerMid,
     AnswerQuestions,
-    AnswerSubItem
+    AnswerSubItem,
+    Notification
 }

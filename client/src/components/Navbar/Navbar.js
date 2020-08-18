@@ -119,14 +119,14 @@ class Navbar extends React.Component {
 								</div>
 							</li>
 							<li className="nav-item">
-								<a
+								<Link
+									to="/notification"
 									className="nav-link nav-link-custom-properties text-secondary"
-									href="/"
 								>
 									<i className="far nav-link-icon fa-bell"></i>{" "}
 									<b>Notifications</b>{" "}
 									<span className="sr-only">(current)</span>
-								</a>
+								</Link>
 							</li>
 						</ul>
 						<hr className="horizontal-line" />
