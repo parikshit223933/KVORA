@@ -1,5 +1,5 @@
 import React from "react";
-import { AnswerSubItem } from "./";
+import { AnswerSubItem } from "../";
 
 class AnswerMid extends React.Component {
 	render() {

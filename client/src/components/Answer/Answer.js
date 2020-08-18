@@ -1,6 +1,6 @@
 import React from "react";
-import '../assets/css/answer.css';
-import {AnswerAddTopics, AnswerQuestions, AnswerMid} from './';
+import '../../assets/css/answer.css';
+import {AnswerAddTopics, AnswerQuestions, AnswerMid} from '../';
 
 class Answer extends React.Component {
 	render() {

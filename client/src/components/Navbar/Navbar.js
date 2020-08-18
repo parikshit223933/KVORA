@@ -1,6 +1,6 @@
 import React from "react";
-import image from "../assets/images/signInBackground.png";
-import "../assets/css/navbar.css";
+import image from "../../assets/images/signInBackground.png";
+import "../../assets/css/navbar.css";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import * as $ from "jquery";
 

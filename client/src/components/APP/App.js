@@ -1,7 +1,7 @@
 import React from 'react';
-import '../assets/css/App.css';
+import '../../assets/css/App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {Auth, Home, Navbar, Answer} from './';
+import {Auth, Home, Navbar, Answer} from '..';
 
 class App extends React.Component
 {

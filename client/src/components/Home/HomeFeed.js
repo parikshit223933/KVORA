@@ -1,6 +1,6 @@
 import React from "react";
-import image from "../assets/images/signInBackground.png";
-import { HomeModal, HomeSingleFeed } from "./";
+import image from "../../assets/images/signInBackground.png";
+import { HomeModal, HomeSingleFeed } from "../";
 class HomeFeed extends React.Component {
 	render() {
 		return (

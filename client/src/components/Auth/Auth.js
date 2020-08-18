@@ -1,7 +1,7 @@
 import React from "react";
-import "../assets/css/signIn.css";
-import { SocialLogin, SignUp } from ".";
-import { Route} from "react-router-dom";
+import "../../assets/css/signIn.css";
+import { SocialLogin, SignUp } from "..";
+import { Route } from "react-router-dom";
 
 class Auth extends React.Component {
 	render() {

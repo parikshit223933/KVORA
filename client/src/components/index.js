@@ -1,18 +1,18 @@
-import Navbar from './Navbar';
-import Home from './Home';
-import Auth from './Auth';
-import SocialLogin from './SocialLogin';
-import SignUp from './SignUp';
-import HomeSpaces from './HomeSpaces';
-import HomeFeed from './HomeFeed';
-import HomeModal from './HomeModal';
-import HomeSingleFeed from './HomeSingleFeed';
-import HomeFeedImprove from './HomeFeedImprove';
-import Answer from './Answer';
-import AnswerQuestions from './AnswerQuestions';
-import AnswerMid from './AnswerMid';
-import AnswerAddTopics from './AnswerAddTopics';
-import AnswerSubItem from './AnswerSubItem';
+import Navbar from './Navbar/Navbar';
+import Home from './Home/Home';
+import Auth from './Auth/Auth';
+import SocialLogin from './Auth/SocialLogin';
+import SignUp from './Auth/SignUp';
+import HomeSpaces from './Home/HomeSpaces';
+import HomeFeed from './Home/HomeFeed';
+import HomeModal from './Home/HomeModal';
+import HomeSingleFeed from './Home/HomeSingleFeed';
+import HomeFeedImprove from './Home/HomeFeedImprove';
+import Answer from './Answer/Answer';
+import AnswerQuestions from './Answer/AnswerQuestions';
+import AnswerMid from './Answer/AnswerMid';
+import AnswerAddTopics from './Answer/AnswerAddTopics';
+import AnswerSubItem from './Answer/AnswerSubItem';
 
 export {
     Navbar,

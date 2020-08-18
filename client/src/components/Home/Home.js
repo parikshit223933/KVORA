@@ -1,6 +1,6 @@
 import React from "react";
-import "../assets/css/home.css";
-import { HomeSpaces, HomeFeed, HomeFeedImprove } from "./";
+import "../../assets/css/home.css";
+import { HomeSpaces, HomeFeed, HomeFeedImprove } from "..";
 
 class Home extends React.Component {
 	render() {
