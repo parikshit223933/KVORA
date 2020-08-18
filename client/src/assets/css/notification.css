@@ -2,3 +2,16 @@
 {
 	padding-top: 80px;
 }
+.notification-left-flex-item:hover
+{
+    color:#4727b9;
+    background-color:#d8d6f7;
+    cursor:pointer;
+}
+.notification-left-active
+{
+    font-weight: 500;
+    color:#b92b27;
+    background-color:#fde5e5;
+    cursor:pointer;
+}
