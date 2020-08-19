@@ -5,6 +5,7 @@ class Notification extends React.Component
     render()
     {
         return(
+            <div className="bg-white w-100">
             <div className="notification-container container">
 				<div className="row">
 					<div className="col-lg-2 px-0 col-md-3 d-md-block d-none">
@@ -26,6 +27,10 @@ class Notification extends React.Component
                         </div>
 					</div>
 					<div className="col-lg-7 col-md-9 col-sm-12">
+                        <div className="d-flex flex-row justify-content-between align-items-center py-2">
+                            <b>Notifications</b>
+                            <div>Settings</div>
+                        </div>
 					</div>
                     {
                     /* 
@@ -37,6 +42,7 @@ class Notification extends React.Component
 					{/* hidden below medium screen */}
 				</div>
 			</div>
+            </div>
         );
     }
 }

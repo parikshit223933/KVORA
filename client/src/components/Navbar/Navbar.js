@@ -10,8 +10,8 @@ class Navbar extends React.Component {
 	}
 	changeColorEventListener = () => {
 		$(".nav-item").click(function () {
-			$(".nav-item").removeClass("active");
-			$(this).addClass("active");
+			$(".nav-item").removeClass("nav-active");
+			$(this).addClass("nav-active");
 		});
 	};
 	render() {
@@ -42,7 +42,7 @@ class Navbar extends React.Component {
 						id="navbarSupportedContent"
 					>
 						<ul className="navbar-nav mr-auto d-md-flex flex-row justify-content-between align-items-center">
-							<li className="nav-item active">
+							<li className="nav-item nav-active">
 								<Link
 									to="/"
 									className="nav-link nav-link-custom-properties text-secondary"
