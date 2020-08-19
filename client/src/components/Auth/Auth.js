@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/css/signIn.css";
+import "../../assets/css/signIn.scss";
 import { SocialLogin, SignUp } from "..";
 import { Route } from "react-router-dom";
 

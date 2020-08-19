@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../assets/css/App.css';
+import '../../assets/css/App.scss';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {Auth, Home, Navbar, Answer} from '..';
 import {Notification} from '../';
