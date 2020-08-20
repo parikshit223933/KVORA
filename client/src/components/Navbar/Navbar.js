@@ -156,6 +156,8 @@ class Navbar extends React.Component {
 								<button
 									type="button"
 									className="btn btn-danger"
+									data-toggle="modal"
+									data-target="#newPost"
 								>
 									<b>Add Question</b>
 								</button>

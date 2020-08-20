@@ -26,5 +26,11 @@
 }
 .few-notifications-menu
 {
-    width:20px !important;
+    width:max-content !important;
+    cursor:pointer;
+}
+.few-notifications-menu>a
+{
+    text-decoration:none;
+    color:black;
 }

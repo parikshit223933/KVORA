@@ -52,24 +52,22 @@ class Notification extends React.Component {
 									</div>
 
 									<div style={{ fontSize: 20 }}>
-										<div class="btn-group dropleft">
-											<button
-												type="button"
-												className="btn btn-secondary dropdown-toggle"
+										<div className="btn-group dropleft">
+											<div
 												data-toggle="dropdown"
 												aria-haspopup="true"
 												aria-expanded="false"
 											>
 												<i className="fas fa-ellipsis-h"></i>
-											</button>
-											<div className="dropdown-menu few-notifications-menu">
-                                                <a>
-                                                    See fewer notifications like this
-                                                </a>
-                                            </div>
+											</div>
+											<div className="dropdown-menu few-notifications-menu px-2">
+												<a className="p-1">
+													See fewer notifications like
+													this
+												</a>
+											</div>
 										</div>
 									</div>
-                                    
 								</div>
 							</div>
 							<hr className="my-0" />
