@@ -143,14 +143,80 @@ class Navbar extends React.Component {
 						</form>
 						<hr className="horizontal-line" />
 						<div className="d-flex flex-row justify-content-between align-items-center  pb-4 pb-lg-0">
+							<div className="navbar-icon-container d-flex flex-row justify-content-center align-items-center px-1">
+								<div
+									className="user-image-round"
+									style={{
+										backgroundImage: `url("${image}")`
+									}}
+								></div>
+							</div>
 							<div
-								className="user-image-round"
-								style={{
-									backgroundImage: `url("${image}")`
-								}}
-							></div>
-							<div className="ml-2 mr-2">
-								<i className="fas fa-globe"></i>
+								style={{ height: 50 }}
+								className="navbar-icon-container d-flex flex-row position-relative justify-content-center align-items-center px-1"
+							>
+								<div
+									className="ml-2 mr-2"
+									data-toggle="dropdown"
+									aria-haspopup="true"
+									aria-expanded="false"
+								>
+									<i className="fas fa-globe"></i>
+								</div>
+								<div
+									className="dropdown-menu"
+									style={{ width: 230 }}
+									aria-labelledby="dropdownMenuButton"
+								>
+									<div className="pl-3 text-secondary">
+										<b style={{ fontSize: 15 }}>
+											Languages
+										</b>
+									</div>
+									<hr className="my-2" />
+									<a
+										className="py-2 dropdown-item d-flex w-100 flex-row justify-content-between align-items-center px-3"
+										href="/"
+										style={{ width: "max-content" }}
+									>
+										<div className="d-flex flex-row justify-content-between align-items-center">
+											<div className="circular-badge">
+												EN
+											</div>
+											<div className="mr-5 font-weight-bold text-black-50" style={{fontSize:15}}>English</div>
+										</div>
+										<div className="tick-mark">
+											<i className="far fa-check-circle"></i>
+										</div>
+									</a>
+									<a
+										className="py-2 dropdown-item d-flex w-100 flex-row justify-content-between align-items-center px-3"
+										href="/"
+										style={{ width: "max-content" }}
+									>
+										<div className="d-flex flex-row justify-content-between align-items-center">
+											<div
+												className="circular-badge"
+												style={{
+													backgroundColor: "#00a34b"
+												}}
+											>
+												HI
+											</div>
+											<div className="mr-5 font-weight-bold text-black-50" style={{fontSize:15}}>Hindi</div>
+										</div>
+										<div className="tick-mark" style={{color:'#b92b27'}}>
+                                        <i className="fas fa-exclamation-circle"></i>
+										</div>
+									</a>
+                                    <hr className="my-2" />
+                                    <a className="dropdown-item font-weight-bold text-black-50 pl-3" style={{fontSize:12}}>
+                                        Add Language
+                                    </a>
+                                    <a className="dropdown-item font-weight-bold text-black-50 pl-3" style={{fontSize:12}}>
+                                        See all languages
+                                    </a>
+								</div>
 							</div>
 							<div className="add-question-button">
 								<button

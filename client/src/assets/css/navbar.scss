@@ -113,3 +113,31 @@
     justify-content: center;
     align-items: center;
 }
+.navbar-icon-container:hover
+{
+    cursor:pointer;
+    height:50px;
+    background-color:rgb(247, 247, 247);
+}
+.circular-badge
+{
+    height:30px;
+    width:30px;
+    border-radius: 100%;
+    background-color:#2b93ec;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size:11px;
+    font-weight:600;
+    color:rgb(245, 245, 245);
+    margin:0px 5px 0px 0px;
+}
+.tick-mark
+{
+    color:#0663b4;
+    font-size:18px;
+    position:absolute;
+    right:12px;
+}

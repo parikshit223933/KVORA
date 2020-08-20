@@ -61,7 +61,7 @@ class Notification extends React.Component {
 												<i className="fas fa-ellipsis-h"></i>
 											</div>
 											<div className="dropdown-menu few-notifications-menu px-2">
-												<a className="p-1">
+												<a href="/" className="p-1">
 													See fewer notifications like
 													this
 												</a>
