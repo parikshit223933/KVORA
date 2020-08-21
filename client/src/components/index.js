@@ -17,6 +17,7 @@ import Notification from "./Notifications/Notifications";
 import NotificationFilters from "./Notifications/NotificationFilters";
 import GlobeDropDown from './Navbar/GlobeDropDown';
 import ProfilePictureDropDown from './Navbar/ProfilePictureDropDown';
+import Profile from './Profile/Profile';
 
 /*
   ? Note: These are not the only components in this project. 
@@ -41,5 +42,6 @@ export {
 	Notification,
     NotificationFilters,
     GlobeDropDown,
-    ProfilePictureDropDown
+    ProfilePictureDropDown,
+    Profile
 };

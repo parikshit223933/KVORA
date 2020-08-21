@@ -1,8 +1,7 @@
 import React from 'react';
 import '../../assets/css/App.scss';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {Auth, Home, Navbar, Answer} from '..';
-import {Notification} from '../';
+import {Auth, Home, Navbar, Answer, Notification, Profile} from '..';
 
 class App extends React.Component
 {
@@ -14,10 +13,11 @@ class App extends React.Component
                 <div className="App">
 				    {isLoggedIn&&<Navbar />}
                     <Switch>
-                        <Route path="/" exact component={Home}/>
-                        <Route path="/auth" component={Auth}/>
-                        <Route path="/answer" component={Answer}/>
-                        <Route path="/notification" component={Notification}/>
+                        <Route exact path="/" component={Home}/>
+                        <Route exact path="/auth" component={Auth}/>
+                        <Route exact path="/answer" component={Answer}/>
+                        <Route exact path="/notification" component={Notification}/>
+                        <Route exact path="/profile/:userId" component={Profile}/>
                     </Switch>
                 </div>
             </Router>

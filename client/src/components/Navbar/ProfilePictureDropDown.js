@@ -41,37 +41,37 @@ class ProfilePictureDropDown extends React.Component {
 				</div>
 				<hr />
 				<div className="dp-drop-first-list">
-					<a className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
+					<a href="/" className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
 						<div className="mr-2">
 							<i className="far fa-comment-dots"></i>
 						</div>
 						<div>Messages</div>
 					</a>
-					<a className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
+					<a href="/" className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
 						<div className="mr-2">
 							<i className="fas fa-bullhorn"></i>
 						</div>
 						<div>Create Ad</div>
 					</a>
-					<a className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
+					<a href="/" className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
 						<div className="mr-2">
 							<i className="fas fa-chart-bar"></i>
 						</div>
 						<div>Stats</div>
 					</a>
-					<a className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
+					<a href="/" className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
 						<div className="mr-2">
 							<i className="fas fa-copy"></i>
 						</div>
 						<div>Your Content</div>
 					</a>
-					<a className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
+					<a href="/" className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
 						<div className="mr-2">
 							<i className="fas fa-bookmark"></i>
 						</div>
 						<div>Bookmarks</div>
 					</a>
-					<a className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
+					<a href="/" className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
 						<div className="mr-2">
 							<i className="fab fa-firstdraft"></i>
 						</div>
@@ -81,16 +81,16 @@ class ProfilePictureDropDown extends React.Component {
 				<hr className="mb-1" />
 
 				<div className="dp-drop-second-list" style={{ fontSize: 13 }}>
-					<a className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center">
+					<a href="/" className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center">
 						Settings
 					</a>
-					<a className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center">
+					<a href="/" className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center">
 						Languages
 					</a>
-					<a className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center">
+					<a href="/" className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center">
 						Help
 					</a>
-					<a className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center">
+					<a href="/" className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center">
 						Logout
 					</a>
 				</div>

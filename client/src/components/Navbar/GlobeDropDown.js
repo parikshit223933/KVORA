@@ -5,7 +5,7 @@ class GlobeDropDown extends React.Component {
 		return (
 			<div
 				className="dropdown-menu position-absolute"
-				style={{ width: 230, left:-100 }}
+				style={{ width: 230, left: -100 }}
 				aria-labelledby="dropdownMenuButton"
 			>
 				<div className="pl-3 text-secondary">
@@ -57,12 +57,14 @@ class GlobeDropDown extends React.Component {
 				</a>
 				<hr className="my-2" />
 				<a
+					href="/"
 					className="dropdown-item font-weight-bold text-black-50 pl-3"
 					style={{ fontSize: 12 }}
 				>
 					Add Language
 				</a>
 				<a
+					href="/"
 					className="dropdown-item font-weight-bold text-black-50 pl-3"
 					style={{ fontSize: 12 }}
 				>
