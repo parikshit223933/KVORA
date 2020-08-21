@@ -15,8 +15,8 @@
 .add-question-button > button {
 	border-radius: 50px;
 	width: 130px;
-    background-color: #b92b27;
-    font-size:12px;
+	background-color: #b92b27;
+	font-size: 12px;
 }
 .add-question-button > button:hover {
 	background-color: #971f1b;
@@ -27,23 +27,19 @@
 .horizontal-line {
 	display: none;
 }
-.search-bar-container
-{
-    position:relative;
+.search-bar-container {
+	position: relative;
 }
-.search-ico
-{
-    position:absolute;
-    left:11px;
-    top:9px;
+.search-ico {
+	position: absolute;
+	left: 11px;
+	top: 9px;
 }
-.searchBar-nav
-{
-    padding-left:30px;
+.searchBar-nav {
+	padding-left: 30px;
 }
-.searchBar-nav:focus
-{
-    box-shadow: none;
+.searchBar-nav:focus {
+	box-shadow: none;
 }
 @media screen and (max-width: 1200px) {
 	.nav-link-icon {
@@ -62,18 +58,15 @@
 	}
 	.horizontal-line {
 		display: block;
-    }
-    .navbar-search-input
-    {
-        width:75% !important;
-    }
+	}
+	.navbar-search-input {
+		width: 75% !important;
+	}
 }
-@media screen and (max-width:576px)
-{
-    .navbar-search-input
-    {
-        width:100% !important;
-    }
+@media screen and (max-width: 576px) {
+	.navbar-search-input {
+		width: 100% !important;
+	}
 }
 #navbarSupportedContent {
 	overflow-wrap: none;
@@ -82,62 +75,57 @@
 .fa-globe {
 	color: rgb(46, 46, 46);
 }
-.dropdown-menu>a:hover
-{
-    background-color:#e0e0e0;
+.dropdown-menu > a:hover {
+	background-color: #e0e0e0;
 }
 /* ACTIVE TAB */
-.nav-active
-{
-    border-bottom: 2px solid rgb(185, 43, 39);
-    height:50px;
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.nav-active {
+	border-bottom: 2px solid rgb(185, 43, 39);
+	height: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
-.nav-active>a>b
-{
-    color:rgb(185, 43, 39) !important;
+.nav-active > a > b {
+	color: rgb(185, 43, 39) !important;
 }
-.nav-active>a>i
-{
-    color:rgb(185, 43, 39) !important;
+.nav-active > a > i {
+	color: rgb(185, 43, 39) !important;
 }
-.nav-item:hover
-{
-    background-color:rgb(247, 247, 247);
-    height:50px;
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.nav-item:hover {
+	background-color: rgb(247, 247, 247);
+	height: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
-.navbar-icon-container:hover
-{
-    cursor:pointer;
-    height:50px;
-    background-color:rgb(247, 247, 247);
+.navbar-icon-container:hover {
+	cursor: pointer;
+	height: 50px;
+	background-color: rgb(247, 247, 247);
 }
-.circular-badge
-{
-    height:30px;
-    width:30px;
-    border-radius: 100%;
-    background-color:#2b93ec;
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size:11px;
-    font-weight:600;
-    color:rgb(245, 245, 245);
-    margin:0px 5px 0px 0px;
+.circular-badge {
+	height: 30px;
+	width: 30px;
+	border-radius: 100%;
+	background-color: #2b93ec;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	font-size: 11px;
+	font-weight: 600;
+	color: rgb(245, 245, 245);
+	margin: 0px 5px 0px 0px;
 }
-.tick-mark
-{
-    color:#0663b4;
-    font-size:18px;
-    position:absolute;
-    right:12px;
+.tick-mark {
+	color: #0663b4;
+	font-size: 18px;
+	position: absolute;
+	right: 12px;
+}
+.dropdown-menu {
+	box-shadow: 0px 0px 5px 1px rgb(231, 231, 231);
 }

@@ -15,6 +15,8 @@ import AnswerAddTopics from "./Answer/AnswerAddTopics";
 import AnswerSubItem from "./Answer/AnswerSubItem";
 import Notification from "./Notifications/Notifications";
 import NotificationFilters from "./Notifications/NotificationFilters";
+import GlobeDropDown from './Navbar/GlobeDropDown';
+import ProfilePictureDropDown from './Navbar/ProfilePictureDropDown';
 
 /*
   ? Note: These are not the only components in this project. 
@@ -37,5 +39,7 @@ export {
 	AnswerQuestions,
 	AnswerSubItem,
 	Notification,
-	NotificationFilters
+    NotificationFilters,
+    GlobeDropDown,
+    ProfilePictureDropDown
 };
