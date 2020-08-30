@@ -33,6 +33,7 @@ import Navigator from "./Profile/Navigator/Navigator";
 import QuestionReusable from './Profile/Navigator/Reusables/QuestionReusable';
 import ShareReusable from './Profile/Navigator/Reusables/ShareReusable';
 import PostsReusable from './Profile/Navigator/Reusables/PostsReusable';
+import FollowReusable from './Profile/Navigator/Reusables/FollowReusable';
 
 /*
   ? Note: These are not the only components in this project. 
@@ -73,5 +74,6 @@ export {
     Navigator,
     QuestionReusable,
     ShareReusable,
-    PostsReusable
+    PostsReusable,
+    FollowReusable
 };
