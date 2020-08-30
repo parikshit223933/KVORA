@@ -1,10 +1,12 @@
 import React from "react";
 import "../../assets/css/profile.scss";
 import image from "../../assets/images/signInBackground.png";
-import { NavProfile } from "../";
+import { Link } from "react-router-dom";
+import { Navigator } from "../";
 
 class Profile extends React.Component {
 	render() {
+		console.log(`${this.props.match.url}answers`);
 		return (
 			<div className="container profile-component bg-white">
 				<div className="row">
@@ -48,14 +50,49 @@ class Profile extends React.Component {
 						</header>
 						<hr className="mb-0" />
 						<div className="d-flex flex-row text-black-50 profile-nav font-weight-bolder font-13 px-2 justify-content-start align-items-center flex-wrap">
-							<div className="py-3 px-2">Profile</div>
-							<div className="py-3 px-2">5 Answers</div>
-							<div className="py-3 px-2">0 Questions</div>
-							<div className="py-3 px-2">0 Shares</div>
-							<div className="py-3 px-2">0 Posts</div>
-							<div className="py-3 px-2">4 Followers</div>
-							<div className="py-3 px-2">7 Following</div>
-							<div className="py-3 px-2 dropdown">
+							<Link
+								to={`${this.props.match.url}`}
+								className="py-3 px-2 ghost-link"
+							>
+								Profile
+							</Link>
+							<Link
+								to={`${this.props.match.url}/answers`}
+								className="py-3 px-2 ghost-link"
+							>
+								5 Answers
+							</Link>
+							<Link
+								to={`${this.props.match.url}/questions`}
+								className="py-3 px-2 ghost-link"
+							>
+								0 Questions
+							</Link>
+							<Link
+								to={`${this.props.match.url}/shares`}
+								className="py-3 px-2 ghost-link"
+							>
+								0 Shares
+							</Link>
+							<Link
+								to={`${this.props.match.url}/posts`}
+								className="py-3 px-2 ghost-link"
+							>
+								0 Posts
+							</Link>
+							<Link
+								to={`${this.props.match.url}/followers`}
+								className="py-3 px-2 ghost-link"
+							>
+								4 Followers
+							</Link>
+							<Link
+								to={`${this.props.match.url}/following`}
+								className="py-3 px-2 ghost-link"
+							>
+								7 Following
+							</Link>
+							<div className="py-3 px-2 ghost-link dropdown">
 								<div
 									id="dropdown-more"
 									data-toggle="dropdown"
@@ -68,12 +105,18 @@ class Profile extends React.Component {
 									className="dropdown-menu text-black-50"
 									aria-labelledby="dropdown-more"
 								>
-									<a className="dropdown-item" href="/">
+									<Link
+										to={`${this.props.match.url}/edits`}
+										className="dropdown-item"
+									>
 										Edits
-									</a>
-									<a className="dropdown-item" href="/">
+									</Link>
+									<Link
+										to={`${this.props.match.url}/activity`}
+										className="dropdown-item"
+									>
 										Activity
-									</a>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -104,7 +147,7 @@ class Profile extends React.Component {
 						</div>
 						<hr className="mt-0" />
 						<div>
-							<NavProfile/>
+							<Navigator match={this.props.match} />
 						</div>
 					</div>
 					<div className="col-md-4 d-none d-md-block bg-primary"></div>

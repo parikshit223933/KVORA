@@ -14,10 +14,10 @@ class App extends React.Component
 				    {isLoggedIn&&<Navbar />}
                     <Switch>
                         <Route exact path="/" component={Home}/>
-                        <Route exact path="/auth" component={Auth}/>
+                        <Route path="/auth" component={Auth}/>
                         <Route exact path="/answer" component={Answer}/>
                         <Route exact path="/notification" component={Notification}/>
-                        <Route exact path="/profile/:userId" component={Profile}/>
+                        <Route path="/profile/:userId" component={Profile}/>
                     </Switch>
                 </div>
             </Router>
