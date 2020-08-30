@@ -1,11 +1,14 @@
 import React from 'react';
+import {ProfileReusable} from '../../';
+
 class NavAnswers extends React.Component
 {
     render()
     {
         return(
             <div>
-                This is NavAnswers Component.
+                <ProfileReusable/>
+                <ProfileReusable/>
             </div>
         )
     }

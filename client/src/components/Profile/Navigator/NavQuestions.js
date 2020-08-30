@@ -1,11 +1,16 @@
 import React from 'react';
+import {QuestionReusable} from '../../';
+
 class NavQuestions extends React.Component
 {
     render()
     {
         return(
             <div>
-                This is NavQuestions Component.
+                <QuestionReusable/>
+                <QuestionReusable/>
+                <QuestionReusable/>
+                <QuestionReusable/>
             </div>
         )
     }

@@ -6,7 +6,6 @@ import { Navigator } from "../";
 
 class Profile extends React.Component {
 	render() {
-		console.log(`${this.props.match.url}answers`);
 		return (
 			<div className="container profile-component bg-white">
 				<div className="row">
@@ -122,8 +121,8 @@ class Profile extends React.Component {
 						</div>
 						<hr className="mt-0 mb-0" />
 						<div className="d-flex flex-row justify-content-between align-items-center">
-							<div className="px-2 py-3 text-dark font-weight-bolder">
-								Profile
+							<div className="px-2 py-3 text-dark font-weight-bolder text-capitalize">
+								{this.props.location.pathname.split('/')[3] || 'profile'}
 							</div>
 							<div className="px-2 dropleft py-3 text-secondary font-weight-bolder ">
 								<div

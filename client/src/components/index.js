@@ -30,7 +30,7 @@ import NavEdits from "./Profile/Navigator/NavEdits";
 import NavActivity from "./Profile/Navigator/NavActivity";
 import ProfileReusable from "./Profile/Navigator/Reusables/ProfileReusable";
 import Navigator from "./Profile/Navigator/Navigator";
-
+import QuestionReusable from './Profile/Navigator/Reusables/QuestionReusable'
 /*
   ? Note: These are not the only components in this project. 
 */
@@ -67,5 +67,6 @@ export {
 	NavQuestions,
 	NavShares,
 	ProfileReusable,
-	Navigator
+    Navigator,
+    QuestionReusable
 };
