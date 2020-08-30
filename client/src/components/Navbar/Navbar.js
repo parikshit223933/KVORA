@@ -144,13 +144,14 @@ class Navbar extends React.Component {
 						</form>
 						<hr className="horizontal-line" />
 						<div className="d-flex flex-row justify-content-between align-items-center  pb-4 pb-lg-0">
-							<div
-                                className="position-relative"
-								data-toggle="dropdown"
-								aria-haspopup="true"
-								aria-expanded="false"
-							>
-								<div style={{ height: 50 }} className="navbar-icon-container d-flex flex-row justify-content-center align-items-center px-1">
+							<div className="position-relative">
+								<div
+									style={{ height: 50 }}
+									className="navbar-icon-container d-flex flex-row justify-content-center align-items-center px-1"
+									data-toggle="dropdown"
+									aria-haspopup="true"
+									aria-expanded="false"
+								>
 									<div
 										className="user-image-round"
 										style={{
@@ -158,7 +159,7 @@ class Navbar extends React.Component {
 										}}
 									></div>
 								</div>
-                                <ProfilePictureDropDown/>
+								<ProfilePictureDropDown />
 							</div>
 							<div
 								style={{ height: 50 }}
