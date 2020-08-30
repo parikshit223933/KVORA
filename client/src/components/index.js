@@ -18,6 +18,16 @@ import NotificationFilters from "./Notifications/NotificationFilters";
 import GlobeDropDown from './Navbar/GlobeDropDown';
 import ProfilePictureDropDown from './Navbar/ProfilePictureDropDown';
 import Profile from './Profile/Profile';
+import FeedActions from './Home/FeedActions';
+import NavProfile from './Profile/Navigator/NavProfile'
+import NavAnswers from './Profile/Navigator/NavAnswers'
+import NavQuestions from './Profile/Navigator/NavQuestions'
+import NavShares from './Profile/Navigator/NavShares'
+import NavPosts from './Profile/Navigator/NavPosts'
+import NavFollowers from './Profile/Navigator/NavFollowers'
+import NavEdits from './Profile/Navigator/NavEdits'
+import NavActivity from './Profile/Navigator/NavActivity';
+import ProfileReusable from './Profile/Navigator/Reusables/ProfileReusable';
 
 /*
   ? Note: These are not the only components in this project. 
@@ -43,5 +53,15 @@ export {
     NotificationFilters,
     GlobeDropDown,
     ProfilePictureDropDown,
-    Profile
+    Profile,
+    FeedActions,
+    NavActivity,
+    NavAnswers,
+    NavEdits,
+    NavFollowers,
+    NavPosts,
+    NavProfile,
+    NavQuestions,
+    NavShares,
+    ProfileReusable
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import image from "../../assets/images/signInBackground.png";
+import {Link} from 'react-router-dom';
 
 class ProfilePictureDropDown extends React.Component {
 	render() {
@@ -10,7 +11,7 @@ class ProfilePictureDropDown extends React.Component {
 				aria-labelledby="dropdownMenuButton"
 			>
 				<div className="px-3 pt-2">
-					<div className="mb-2">
+					<Link  to="/profile/123" className="mb-2">
 						<img
 							src={image}
 							alt="user"
@@ -20,16 +21,16 @@ class ProfilePictureDropDown extends React.Component {
 								borderRadius: "100%"
 							}}
 						/>
-					</div>
+					</Link>
 					<div>
-						<div className="d-flex flex-row justify-content-between align-items-center">
+						<Link  to="/profile/123"  className="text-dark d-flex flex-row justify-content-between align-items-center">
 							<h6 className="m-0">
 								<b>Parikshit Singh</b>
 							</h6>
 							<div>
 								<i className="fas fa-chevron-right"></i>
 							</div>
-						</div>
+						</Link>
 						<div
 							className="text-secondary w-75"
 							style={{ fontSize: 13 }}
