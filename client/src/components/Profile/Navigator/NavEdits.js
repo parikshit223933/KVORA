@@ -1,11 +1,17 @@
 import React from 'react';
+import {EditReusable} from '../../';
+
 class NavEdits extends React.Component
 {
     render()
     {
         return(
             <div>
-                This is NavEdits Component.
+                <EditReusable/>
+                <EditReusable/>
+                <EditReusable/>
+                <EditReusable/>
+                <EditReusable/>
             </div>
         )
     }
