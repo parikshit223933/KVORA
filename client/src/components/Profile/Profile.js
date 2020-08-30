@@ -2,7 +2,12 @@ import React from "react";
 import "../../assets/css/profile.scss";
 import image from "../../assets/images/signInBackground.png";
 import { Link } from "react-router-dom";
-import { Navigator } from "../";
+import {
+	Navigator,
+	CredentialsAndHighlights,
+	ProfileSpaces,
+	KnowsAbout
+} from "../";
 
 class Profile extends React.Component {
 	render() {
@@ -122,7 +127,8 @@ class Profile extends React.Component {
 						<hr className="mt-0 mb-0" />
 						<div className="d-flex flex-row justify-content-between align-items-center">
 							<div className="px-2 py-3 text-dark font-weight-bolder text-capitalize">
-								{this.props.location.pathname.split('/')[3] || 'profile'}
+								{this.props.location.pathname.split("/")[3] ||
+									"profile"}
 							</div>
 							<div className="px-2 dropleft py-3 text-secondary font-weight-bolder ">
 								<div
@@ -149,7 +155,11 @@ class Profile extends React.Component {
 							<Navigator match={this.props.match} />
 						</div>
 					</div>
-					<div className="col-md-4 d-none d-md-block bg-primary"></div>
+					<div className="col-md-4 d-none d-md-block">
+						<CredentialsAndHighlights />
+						<ProfileSpaces />
+						<KnowsAbout />
+					</div>
 				</div>
 			</div>
 		);
