@@ -35,6 +35,7 @@ import ShareReusable from './Profile/Navigator/Reusables/ShareReusable';
 import PostsReusable from './Profile/Navigator/Reusables/PostsReusable';
 import FollowReusable from './Profile/Navigator/Reusables/FollowReusable';
 import EditReusable from './Profile/Navigator/Reusables/EditReusable';
+import ActivityReusable from './Profile/Navigator/Reusables/ActivityReusable';
 
 /*
   ? Note: These are not the only components in this project. 
@@ -77,5 +78,6 @@ export {
     ShareReusable,
     PostsReusable,
     FollowReusable,
-    EditReusable
+    EditReusable,
+    ActivityReusable
 };
