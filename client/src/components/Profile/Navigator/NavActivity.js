@@ -1,5 +1,4 @@
 import React from "react";
-import image from "../../../assets/images/signInBackground.png";
 import { ActivityReusable} from '../../';
 
 class NavActivity extends React.Component {
