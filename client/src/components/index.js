@@ -43,6 +43,7 @@ import SpacesReusable from "./Profile/RightSection/Reusables/SpacesReusable";
 import CAndHReusable from "./Profile/RightSection/Reusables/CAndHReusable";
 import KnowsAboutReusable from "./Profile/RightSection/Reusables/KnowsAboutReusable";
 import ViewMoreButton from './Profile/RightSection/Reusables/ViewMoreButton';
+import AllSpaces from './Spaces/AllSpaces';
 
 /*
   ? Note: These are not the only components in this project. 
@@ -93,5 +94,6 @@ export {
 	SpacesReusable,
 	CAndHReusable,
     KnowsAboutReusable,
-    ViewMoreButton
+    ViewMoreButton,
+    AllSpaces
 };

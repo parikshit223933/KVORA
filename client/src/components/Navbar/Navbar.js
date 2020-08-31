@@ -86,13 +86,13 @@ class Navbar extends React.Component {
 									}}
 									aria-labelledby="navbarDropdown"
 								>
-									<a
+									<Link
+                                        to="/all-spaces"
 										className="dropdown-item font-weight-bolder text-secondary"
-										href="/"
 									>
 										See All Spaces{" "}
 										<i className="fas fa-chevron-right"></i>
-									</a>
+									</Link>
 									<a
 										className="dropdown-item text-secondary d-md-none"
 										href="/"
