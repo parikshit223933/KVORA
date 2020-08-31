@@ -4,7 +4,7 @@ import image from "../../../../assets/images/signInBackground.png";
 class SpacesReusable extends React.Component {
 	render() {
 		return (
-			<div className="d-flex flex-row justify-content-center align-items-center">
+			<div className="d-flex flex-row justify-content-center align-items-center mb-2">
 				<div>
 					<div className="ml-0 mr-2">
 						<img
