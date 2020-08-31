@@ -6,7 +6,7 @@ class KnowsAbout extends React.Component
     {
         return (
             <div>
-                Hola
+                
             </div>
         )
     }

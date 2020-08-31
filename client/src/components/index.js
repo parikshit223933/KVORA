@@ -39,7 +39,9 @@ import ActivityReusable from './Profile/Navigator/Reusables/ActivityReusable';
 import CredentialsAndHighlights from './Profile/RightSection/CredentialsAndHighlights';
 import ProfileSpaces from './Profile/RightSection/ProfileSpaces';
 import KnowsAbout from './Profile/RightSection/KnowsAbout';
-
+import SpacesReusable from './Profile/RightSection/Reusables/SpacesReusable';
+import CAndHReusable from './Profile/RightSection/Reusables/CAndHReusable';
+import KnowsAboutReusable from './Profile/RightSection/Reusables/KnowsAboutReusable';
 /*
   ? Note: These are not the only components in this project. 
 */
@@ -85,5 +87,8 @@ export {
     ActivityReusable,
     CredentialsAndHighlights,
     ProfileSpaces,
-    KnowsAbout
+    KnowsAbout,
+    SpacesReusable,
+    CAndHReusable,
+    KnowsAboutReusable
 };
