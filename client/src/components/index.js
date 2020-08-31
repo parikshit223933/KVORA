@@ -30,18 +30,20 @@ import NavEdits from "./Profile/Navigator/NavEdits";
 import NavActivity from "./Profile/Navigator/NavActivity";
 import ProfileReusable from "./Profile/Navigator/Reusables/ProfileReusable";
 import Navigator from "./Profile/Navigator/Navigator";
-import QuestionReusable from './Profile/Navigator/Reusables/QuestionReusable';
-import ShareReusable from './Profile/Navigator/Reusables/ShareReusable';
-import PostsReusable from './Profile/Navigator/Reusables/PostsReusable';
-import FollowReusable from './Profile/Navigator/Reusables/FollowReusable';
-import EditReusable from './Profile/Navigator/Reusables/EditReusable';
-import ActivityReusable from './Profile/Navigator/Reusables/ActivityReusable';
-import CredentialsAndHighlights from './Profile/RightSection/CredentialsAndHighlights';
-import ProfileSpaces from './Profile/RightSection/ProfileSpaces';
-import KnowsAbout from './Profile/RightSection/KnowsAbout';
-import SpacesReusable from './Profile/RightSection/Reusables/SpacesReusable';
-import CAndHReusable from './Profile/RightSection/Reusables/CAndHReusable';
-import KnowsAboutReusable from './Profile/RightSection/Reusables/KnowsAboutReusable';
+import QuestionReusable from "./Profile/Navigator/Reusables/QuestionReusable";
+import ShareReusable from "./Profile/Navigator/Reusables/ShareReusable";
+import PostsReusable from "./Profile/Navigator/Reusables/PostsReusable";
+import FollowReusable from "./Profile/Navigator/Reusables/FollowReusable";
+import EditReusable from "./Profile/Navigator/Reusables/EditReusable";
+import ActivityReusable from "./Profile/Navigator/Reusables/ActivityReusable";
+import CredentialsAndHighlights from "./Profile/RightSection/CredentialsAndHighlights";
+import ProfileSpaces from "./Profile/RightSection/ProfileSpaces";
+import KnowsAbout from "./Profile/RightSection/KnowsAbout";
+import SpacesReusable from "./Profile/RightSection/Reusables/SpacesReusable";
+import CAndHReusable from "./Profile/RightSection/Reusables/CAndHReusable";
+import KnowsAboutReusable from "./Profile/RightSection/Reusables/KnowsAboutReusable";
+import ViewMoreButton from './Profile/RightSection/Reusables/ViewMoreButton';
+
 /*
   ? Note: These are not the only components in this project. 
 */
@@ -78,17 +80,18 @@ export {
 	NavQuestions,
 	NavShares,
 	ProfileReusable,
-    Navigator,
-    QuestionReusable,
-    ShareReusable,
-    PostsReusable,
-    FollowReusable,
-    EditReusable,
-    ActivityReusable,
-    CredentialsAndHighlights,
-    ProfileSpaces,
-    KnowsAbout,
-    SpacesReusable,
-    CAndHReusable,
-    KnowsAboutReusable
+	Navigator,
+	QuestionReusable,
+	ShareReusable,
+	PostsReusable,
+	FollowReusable,
+	EditReusable,
+	ActivityReusable,
+	CredentialsAndHighlights,
+	ProfileSpaces,
+	KnowsAbout,
+	SpacesReusable,
+	CAndHReusable,
+    KnowsAboutReusable,
+    ViewMoreButton
 };

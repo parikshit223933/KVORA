@@ -1,5 +1,6 @@
 import React from "react";
-import { KnowsAboutReusable } from "../../";
+import { KnowsAboutReusable, ViewMoreButton } from "../../";
+
 class KnowsAbout extends React.Component {
 	render() {
 		return (
@@ -15,6 +16,7 @@ class KnowsAbout extends React.Component {
 					<KnowsAboutReusable />
 					<KnowsAboutReusable />
 				</div>
+                <ViewMoreButton/>
 			</div>
 		);
 	}

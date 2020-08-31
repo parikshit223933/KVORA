@@ -1,5 +1,5 @@
 import React from "react";
-import {SpacesReusable} from "./../../";
+import { SpacesReusable, ViewMoreButton } from "./../../";
 
 class ProfileSpaces extends React.Component {
 	render() {
@@ -17,6 +17,7 @@ class ProfileSpaces extends React.Component {
 					<SpacesReusable />
 					<SpacesReusable />
 				</div>
+				<ViewMoreButton/>
 			</div>
 		);
 	}
