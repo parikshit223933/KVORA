@@ -4,7 +4,7 @@ import { ReusableYourSpaces } from "../";
 class YourSpaces extends React.Component {
 	render() {
 		return (
-			<div className="your-spaces bg-white pt-3">
+			<div className="your-spaces bg-white pt-3 mb-4">
 				<div className="d-flex flex-row align-items-center justify-content-between flex-wrap px-3">
 					<div>
 						<h5 className="font-weight-bolder font-19">

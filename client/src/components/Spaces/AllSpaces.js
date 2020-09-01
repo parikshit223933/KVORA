@@ -1,6 +1,6 @@
 import React from "react";
 import "../../assets/css/allSpaces.css";
-import {YourSpaces} from './../';
+import { YourSpaces, DiscoverSpaces } from "./../";
 
 class AllSpaces extends React.Component {
 	render() {
@@ -8,7 +8,21 @@ class AllSpaces extends React.Component {
 			<div className="container all-spaces-component">
 				<div className="row">
 					<div className="col-md-9">
-						<YourSpaces/>
+						<YourSpaces />
+						<div>
+							<h5 className="font-weight-bolder font-19 mb-3">
+								Discover Spaces
+							</h5>
+						</div>
+						<DiscoverSpaces/>
+						<DiscoverSpaces/>
+						<DiscoverSpaces/>
+						<DiscoverSpaces/>
+						<DiscoverSpaces/>
+						<DiscoverSpaces/>
+						<DiscoverSpaces/>
+						<DiscoverSpaces/>
+						<DiscoverSpaces/>
 					</div>
 				</div>
 			</div>

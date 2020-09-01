@@ -46,6 +46,8 @@ import ViewMoreButton from './Profile/RightSection/Reusables/ViewMoreButton';
 import AllSpaces from './Spaces/AllSpaces';
 import YourSpaces from './Spaces/YourSpaces';
 import ReusableYourSpaces from './Spaces/Reusables/ReusableYourSpaces';
+import DiscoverSpaces from './Spaces/DiscoverSpaces';
+import ReusableCard from './Spaces/Reusables/ReusableCard';
 
 /*
   ? Note: These are not the only components in this project. 
@@ -99,5 +101,7 @@ export {
     ViewMoreButton,
     AllSpaces,
     YourSpaces,
-    ReusableYourSpaces
+    ReusableYourSpaces,
+    DiscoverSpaces,
+    ReusableCard
 };
