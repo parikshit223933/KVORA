@@ -31,7 +31,7 @@ class FollowReusable extends React.Component {
 					<div>
 						<button
 							type="button"
-							className="btn btn-sm curved-button btn-light d-flex flex-row follow-button"
+							className="btn btn-sm curved-button btn-light d-flex flex-row blue-tint"
 						>
 							<div>
 								<i className="fas fa-user-plus"></i>

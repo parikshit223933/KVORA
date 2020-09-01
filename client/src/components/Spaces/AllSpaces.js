@@ -1,11 +1,16 @@
 import React from "react";
-import '../../assets/css/allSpaces.css';
+import "../../assets/css/allSpaces.css";
+import {YourSpaces} from './../';
 
 class AllSpaces extends React.Component {
 	render() {
 		return (
-			<div className="all-spaces-component">
-				<h1>This is all spaces component</h1>
+			<div className="container all-spaces-component">
+				<div className="row">
+					<div className="col-md-9">
+						<YourSpaces/>
+					</div>
+				</div>
 			</div>
 		);
 	}
