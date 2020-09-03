@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../assets/css/App.scss';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {Auth, Home, Navbar, Answer, Notification, Profile, AllSpaces} from '..';
+import {Auth, Home, Navbar, Answer, Notification, Profile, AllSpaces, SingleSpace} from '..';
 
 class App extends React.Component
 {
@@ -19,6 +19,7 @@ class App extends React.Component
                         <Route exact path="/notification" component={Notification}/>
                         <Route path="/profile/:userId" component={Profile}/>
                         <Route exact path="/all-spaces" component={AllSpaces}/>
+                        <Route exact path="/spaces/spaceId" component={SingleSpace}/>
                     </Switch>
                 </div>
             </Router>

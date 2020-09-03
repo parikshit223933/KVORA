@@ -48,9 +48,11 @@ import YourSpaces from './Spaces/YourSpaces';
 import ReusableYourSpaces from './Spaces/Reusables/ReusableYourSpaces';
 import DiscoverSpaces from './Spaces/DiscoverSpaces';
 import ReusableCard from './Spaces/Reusables/ReusableCard';
+import SingleSpace from './Spaces/SingleSpace/SingleSpace';
+import HomeSpace from './Home/Reusables/HomeSpace';
 
 /*
-  ? Note: These are not the only components in this project. 
+  ? Note: These are not the only components in this project. These are just used by the root components
 */
 
 export {
@@ -103,5 +105,7 @@ export {
     YourSpaces,
     ReusableYourSpaces,
     DiscoverSpaces,
-    ReusableCard
+    ReusableCard,
+    SingleSpace,
+    HomeSpace
 };
