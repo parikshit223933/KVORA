@@ -52,6 +52,9 @@ import SingleSpace from './Spaces/SingleSpace/SingleSpace';
 import HomeSpace from './Home/Reusables/HomeSpace';
 import SpaceLeft from './Spaces/SingleSpace/SpaceLeft';
 import SpaceRight from './Spaces/SingleSpace/SpaceRight';
+import SpacePosts from './Spaces/SingleSpace/SpacePosts';
+import SpaceHeader from './Spaces/SingleSpace/SpaceHeader';
+import SpaceSubHeader from './Spaces/SingleSpace/SpaceSubHeader';
 
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
@@ -111,5 +114,8 @@ export {
     SingleSpace,
     HomeSpace,
     SpaceLeft,
-    SpaceRight
+    SpaceRight,
+    SpacePosts,
+    SpaceHeader,
+    SpaceSubHeader
 };
