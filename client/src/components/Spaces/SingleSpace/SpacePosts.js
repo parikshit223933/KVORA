@@ -6,7 +6,7 @@ class SpacePosts extends React.Component
     render()
     {
         return(
-            <div className="bg-white p-3 my-3">
+            <div className="bg-white p-3 my-3 space-intro">
 						<div className="d-flex text-black-50 flex-row justify-content-start align-items-center">
 							<div className="mr-2">
 								<i className="fas fa-thumbtack"></i>
