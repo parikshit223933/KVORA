@@ -19,7 +19,7 @@ class App extends React.Component
                         <Route exact path="/notification" component={Notification}/>
                         <Route path="/profile/:userId" component={Profile}/>
                         <Route exact path="/all-spaces" component={AllSpaces}/>
-                        <Route exact path="/spaces/spaceId" component={SingleSpace}/>
+                        <Route exact path="/spaces/:spaceId" component={SingleSpace}/>
                     </Switch>
                 </div>
             </Router>

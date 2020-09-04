@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/css/allSpaces.css";
+import "../../assets/css/allSpaces.scss";
 import { YourSpaces, DiscoverSpaces } from "./../";
 
 class AllSpaces extends React.Component {

@@ -50,6 +50,8 @@ import DiscoverSpaces from './Spaces/DiscoverSpaces';
 import ReusableCard from './Spaces/Reusables/ReusableCard';
 import SingleSpace from './Spaces/SingleSpace/SingleSpace';
 import HomeSpace from './Home/Reusables/HomeSpace';
+import SpaceLeft from './Spaces/SingleSpace/SpaceLeft';
+import SpaceRight from './Spaces/SingleSpace/SpaceRight';
 
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
@@ -107,5 +109,7 @@ export {
     DiscoverSpaces,
     ReusableCard,
     SingleSpace,
-    HomeSpace
+    HomeSpace,
+    SpaceLeft,
+    SpaceRight
 };
