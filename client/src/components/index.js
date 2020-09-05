@@ -57,6 +57,8 @@ import SpaceHeader from './Spaces/SingleSpace/SpaceHeader';
 import SpaceSubHeader from './Spaces/SingleSpace/SpaceSubHeader';
 import SpaceDetails from './Spaces/SingleSpace/SpaceDetails';
 import SpacePeople from './Spaces/SingleSpace/SpacePeople';
+import NewComment from './Comment/NewComment';
+import Comments from './Comment/Comments';
 
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
@@ -121,5 +123,7 @@ export {
     SpaceHeader,
     SpaceSubHeader,
     SpaceDetails,
-    SpacePeople
+    SpacePeople,
+    NewComment,
+    Comments
 };
