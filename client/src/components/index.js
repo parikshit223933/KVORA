@@ -55,6 +55,8 @@ import SpaceRight from './Spaces/SingleSpace/SpaceRight';
 import SpacePosts from './Spaces/SingleSpace/SpacePosts';
 import SpaceHeader from './Spaces/SingleSpace/SpaceHeader';
 import SpaceSubHeader from './Spaces/SingleSpace/SpaceSubHeader';
+import SpaceDetails from './Spaces/SingleSpace/SpaceDetails';
+import SpacePeople from './Spaces/SingleSpace/SpacePeople';
 
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
@@ -117,5 +119,7 @@ export {
     SpaceRight,
     SpacePosts,
     SpaceHeader,
-    SpaceSubHeader
+    SpaceSubHeader,
+    SpaceDetails,
+    SpacePeople
 };
