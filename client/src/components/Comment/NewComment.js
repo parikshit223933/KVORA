@@ -10,7 +10,7 @@ class NewComment extends React.Component {
 					borderTop: "1px solid rgb(219, 219, 219)",
 					borderBottom: "1px solid rgb(219, 219, 219)"
 				}}
-				className="px-3 py-2 d-flex flex-row justify-content-start align-items-center"
+				className="px-3 py-2 d-flex flex-row justify-content-start align-items-center mb-3"
 			>
 				<div style={{ flexGrow: 1 }}>
 					<div>

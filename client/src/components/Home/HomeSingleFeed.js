@@ -6,7 +6,7 @@ class HomeSingleFeed extends React.Component {
 	render() {
 		return (
 			<div className="mb-3 feed-item">
-				<div style={{padding:15}}>
+				<div style={{ padding: 15 }}>
 					<div className="feed-item-header mb-1">
 						Answer &#8226; Recomended for you
 					</div>
@@ -88,8 +88,8 @@ class HomeSingleFeed extends React.Component {
 					<FeedActions />
 				</div>
 				<div>
-				    <NewComment />
-    				<Comments />
+					<NewComment />
+					<Comments />
 				</div>
 			</div>
 		);

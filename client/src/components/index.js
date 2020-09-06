@@ -61,7 +61,12 @@ import NewComment from './Comment/NewComment';
 import Comments from './Comment/Comments';
 import Comment from './Comment/Comment';
 import ActionBar from './Comment/Reusables/ActionBar';
-
+import Level1 from './Comment/Nested/Level1';
+import Level2 from './Comment/Nested/Level2';
+import Level3 from './Comment/Nested/Level3';
+import Level4 from './Comment/Nested/Level4';
+import Level5 from './Comment/Nested/Level5';
+import Level6 from './Comment/Nested/Level6';
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
 */
@@ -129,5 +134,11 @@ export {
     NewComment,
     Comments,
     Comment,
-    ActionBar
+    ActionBar,
+    Level1,
+    Level2,
+    Level3,
+    Level4,
+    Level5,
+    Level6
 };

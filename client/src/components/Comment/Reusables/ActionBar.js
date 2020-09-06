@@ -3,7 +3,7 @@ import React from "react";
 class ActionBar extends React.Component {
 	render() {
 		return (
-			<div className="d-flex flex-row justify-content-between align-items-center">
+			<div className="d-flex flex-row justify-content-between align-items-center mb-2">
 				<div className="d-flex flex-row">
 					<div>
 						<button
