@@ -5,7 +5,11 @@ class NewComment extends React.Component {
 	render() {
 		return (
 			<div
-				style={{ backgroundColor: "#f7f7f8" }}
+				style={{
+					backgroundColor: "#f7f7f8",
+					borderTop: "1px solid rgb(219, 219, 219)",
+					borderBottom: "1px solid rgb(219, 219, 219)"
+				}}
 				className="px-3 py-2 d-flex flex-row justify-content-start align-items-center"
 			>
 				<div style={{ flexGrow: 1 }}>

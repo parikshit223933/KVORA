@@ -59,6 +59,8 @@ import SpaceDetails from './Spaces/SingleSpace/SpaceDetails';
 import SpacePeople from './Spaces/SingleSpace/SpacePeople';
 import NewComment from './Comment/NewComment';
 import Comments from './Comment/Comments';
+import Comment from './Comment/Comment';
+import ActionBar from './Comment/Reusables/ActionBar';
 
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
@@ -125,5 +127,7 @@ export {
     SpaceDetails,
     SpacePeople,
     NewComment,
-    Comments
+    Comments,
+    Comment,
+    ActionBar
 };
