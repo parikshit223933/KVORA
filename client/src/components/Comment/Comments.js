@@ -8,10 +8,6 @@ class Comments extends React.Component {
 				<div>
 					<Comment />
 					<Comment />
-					<Comment />
-					<Comment />
-					<Comment />
-					<Comment />
 				</div>
 				<hr />
 			</React.Fragment>

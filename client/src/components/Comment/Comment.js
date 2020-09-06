@@ -41,7 +41,7 @@ class Comment extends React.Component {
 						</div>
 						<div>
 							<ActionBar />
-                            <Level1/>
+							<Level1 />
 						</div>
 					</div>
 				</div>
