@@ -67,11 +67,19 @@ import Level3 from './Comment/Nested/Level3';
 import Level4 from './Comment/Nested/Level4';
 import Level5 from './Comment/Nested/Level5';
 import Level6 from './Comment/Nested/Level6';
+import About from './Extras/About';
+import Careers from './Extras/Careers';
+import Terms from './Extras/Terms';
+import Privacy from './Extras/Privacy';
+import AcceptableUse from './Extras/AcceptableUse';
+import Business from './Extras/Business';
+import YourAdChoices from './Extras/YourAdChoices';
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
 */
 
-export {
+export
+{
 	Navbar,
 	Home,
 	Auth,
@@ -115,30 +123,37 @@ export {
 	KnowsAbout,
 	SpacesReusable,
 	CAndHReusable,
-    KnowsAboutReusable,
-    ViewMoreButton,
-    AllSpaces,
-    YourSpaces,
-    ReusableYourSpaces,
-    DiscoverSpaces,
-    ReusableCard,
-    SingleSpace,
-    HomeSpace,
-    SpaceLeft,
-    SpaceRight,
-    SpacePosts,
-    SpaceHeader,
-    SpaceSubHeader,
-    SpaceDetails,
-    SpacePeople,
-    NewComment,
-    Comments,
-    Comment,
-    ActionBar,
-    Level1,
-    Level2,
-    Level3,
-    Level4,
-    Level5,
-    Level6
+	KnowsAboutReusable,
+	ViewMoreButton,
+	AllSpaces,
+	YourSpaces,
+	ReusableYourSpaces,
+	DiscoverSpaces,
+	ReusableCard,
+	SingleSpace,
+	HomeSpace,
+	SpaceLeft,
+	SpaceRight,
+	SpacePosts,
+	SpaceHeader,
+	SpaceSubHeader,
+	SpaceDetails,
+	SpacePeople,
+	NewComment,
+	Comments,
+	Comment,
+	ActionBar,
+	Level1,
+	Level2,
+	Level3,
+	Level4,
+	Level5,
+	Level6,
+	About,
+	Careers,
+	Terms,
+	Privacy,
+	AcceptableUse,
+	Business,
+	YourAdChoices
 };

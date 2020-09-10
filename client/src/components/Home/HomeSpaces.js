@@ -1,5 +1,6 @@
 import React from "react";
 import { HomeSpace } from "../";
+import { Link } from "react-router-dom";
 
 class HomeSpaces extends React.Component {
 	render() {
@@ -31,13 +32,41 @@ class HomeSpaces extends React.Component {
 					style={{ fontSize: "12px" }}
 					className="py-2 pr-2 text-secondary pl-0 extra-list"
 				>
-					<li className="list-inline-item">About</li>
-					<li className="list-inline-item">Careers</li>
-					<li className="list-inline-item">Terms</li>
-					<li className="list-inline-item">Privacy</li>
-					<li className="list-inline-item">Acceptable Use</li>
-					<li className="list-inline-item">Businesses</li>
-					<li className="list-inline-item">Your Ad Choices</li>
+					<li className="list-inline-item">
+						<Link className="ghost-link" to="/about">
+							About
+						</Link>
+					</li>
+					<li className="list-inline-item">
+						<Link className="ghost-link" to="/careers">
+							Careers
+						</Link>
+					</li>
+					<li className="list-inline-item">
+						<Link className="ghost-link" to="/terms">
+							Terms
+						</Link>
+					</li>
+					<li className="list-inline-item">
+						<Link className="ghost-link" to="/privacy">
+							Privacy
+						</Link>
+					</li>
+					<li className="list-inline-item">
+						<Link className="ghost-link" to="/acceptable-use">
+							Acceptable Use
+						</Link>
+					</li>
+					<li className="list-inline-item">
+						<Link className="ghost-link" to="/business">
+							Businesses
+						</Link>
+					</li>
+					<li className="list-inline-item">
+						<Link className="ghost-link" to="/your-ad-choices">
+							Your Ad Choices
+						</Link>
+					</li>
 				</ul>
 			</div>
 		);

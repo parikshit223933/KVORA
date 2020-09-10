@@ -1,6 +1,6 @@
 import React from "react";
 import image from "../../assets/images/signInBackground.png";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 class ProfilePictureDropDown extends React.Component {
 	render() {
@@ -11,7 +11,7 @@ class ProfilePictureDropDown extends React.Component {
 				aria-labelledby="dropdownMenuButton"
 			>
 				<div className="px-3 pt-2">
-					<Link  to="/profile/123" className="mb-2">
+					<Link to="/profile/123" className="mb-2">
 						<img
 							src={image}
 							alt="user"
@@ -23,7 +23,10 @@ class ProfilePictureDropDown extends React.Component {
 						/>
 					</Link>
 					<div>
-						<Link  to="/profile/123"  className="text-dark d-flex flex-row justify-content-between align-items-center">
+						<Link
+							to="/profile/123"
+							className="text-dark d-flex flex-row justify-content-between align-items-center"
+						>
 							<h6 className="m-0">
 								<b>Parikshit Singh</b>
 							</h6>
@@ -42,37 +45,55 @@ class ProfilePictureDropDown extends React.Component {
 				</div>
 				<hr />
 				<div className="dp-drop-first-list">
-					<a href="/" className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
+					<a
+						href="/"
+						className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center"
+					>
 						<div className="mr-2">
 							<i className="far fa-comment-dots"></i>
 						</div>
 						<div>Messages</div>
 					</a>
-					<a href="/" className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
+					<a
+						href="/"
+						className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center"
+					>
 						<div className="mr-2">
 							<i className="fas fa-bullhorn"></i>
 						</div>
 						<div>Create Ad</div>
 					</a>
-					<a href="/" className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
+					<a
+						href="/"
+						className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center"
+					>
 						<div className="mr-2">
 							<i className="fas fa-chart-bar"></i>
 						</div>
 						<div>Stats</div>
 					</a>
-					<a href="/" className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
+					<a
+						href="/"
+						className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center"
+					>
 						<div className="mr-2">
 							<i className="fas fa-copy"></i>
 						</div>
 						<div>Your Content</div>
 					</a>
-					<a href="/" className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
+					<a
+						href="/"
+						className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center"
+					>
 						<div className="mr-2">
 							<i className="fas fa-bookmark"></i>
 						</div>
 						<div>Bookmarks</div>
 					</a>
-					<a href="/" className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
+					<a
+						href="/"
+						className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center"
+					>
 						<div className="mr-2">
 							<i className="fab fa-firstdraft"></i>
 						</div>
@@ -82,16 +103,28 @@ class ProfilePictureDropDown extends React.Component {
 				<hr className="mb-1" />
 
 				<div className="dp-drop-second-list" style={{ fontSize: 13 }}>
-					<a href="/" className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center">
+					<a
+						href="/"
+						className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center"
+					>
 						Settings
 					</a>
-					<a href="/" className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center">
+					<a
+						href="/"
+						className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center"
+					>
 						Languages
 					</a>
-					<a href="/" className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center">
+					<a
+						href="/"
+						className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center"
+					>
 						Help
 					</a>
-					<a href="/" className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center">
+					<a
+						href="/"
+						className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center"
+					>
 						Logout
 					</a>
 				</div>
@@ -103,13 +136,41 @@ class ProfilePictureDropDown extends React.Component {
 						style={{ fontSize: "12px" }}
 						className="py-2 pr-2 text-black-50 pl-0 extra-list mb-0"
 					>
-						<li className="list-inline-item">About</li>
-						<li className="list-inline-item">Careers</li>
-						<li className="list-inline-item">Terms</li>
-						<li className="list-inline-item">Privacy</li>
-						<li className="list-inline-item">Acceptable Use</li>
-						<li className="list-inline-item">Businesses</li>
-						<li className="list-inline-item">Your Ad Choices</li>
+						<li className="list-inline-item">
+							<Link className="ghost-link" to="/about">
+								About
+							</Link>
+						</li>
+						<li className="list-inline-item">
+							<Link className="ghost-link" to="/careers">
+								Careers
+							</Link>
+						</li>
+						<li className="list-inline-item">
+							<Link className="ghost-link" to="/terms">
+								Terms
+							</Link>
+						</li>
+						<li className="list-inline-item">
+							<Link className="ghost-link" to="/privacy">
+								Privacy
+							</Link>
+						</li>
+						<li className="list-inline-item">
+							<Link className="ghost-link" to="/acceptable-use">
+								Acceptable Use
+							</Link>
+						</li>
+						<li className="list-inline-item">
+							<Link className="ghost-link" to="/business">
+								Businesses
+							</Link>
+						</li>
+						<li className="list-inline-item">
+							<Link className="ghost-link" to="/your-ad-choices">
+								Your Ad Choices
+							</Link>
+						</li>
 					</ul>
 				</div>
 			</div>
