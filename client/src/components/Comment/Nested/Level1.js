@@ -38,7 +38,6 @@ class Level1 extends React.Component {
 				</div>
 				<div>
 					<Level2 />
-					<Level2 />
 				</div>
 			</div>
 		);
