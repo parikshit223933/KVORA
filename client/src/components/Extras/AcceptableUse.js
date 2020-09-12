@@ -6,7 +6,7 @@ class AcceptableUse extends React.Component {
 			<div className="default-padding-top container bg-white">
 				<div className="row">
 					<div className="col-md-10 offset-md-1 font-16">
-                        <h2 className="text-center">Acceptable Use Policy</h2>
+                        <h2 className="text-center my-4">Acceptable Use Policy</h2>
 						<p>Last updated: December 18, 2017</p>
 						<p>
 							Quora is a place that empowers people to share and
