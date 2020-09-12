@@ -116,7 +116,7 @@ class ProfilePictureDropDown extends React.Component {
 						Languages
 					</Link>
 					<Link
-						to="/"
+						to="/help"
 						className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center"
 					>
 						Help

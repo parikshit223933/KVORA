@@ -18,6 +18,7 @@ import {
 	Business,
 	YourAdChoices,
 	Settings,
+	Help
 } from "..";
 
 class App extends React.Component {
@@ -59,6 +60,7 @@ class App extends React.Component {
 							component={YourAdChoices}
 						/>
 						<Route path="/settings" component={Settings} />
+						<Route path="/help" component={Help} />
 					</Switch>
 				</div>
 			</Router>
