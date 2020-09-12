@@ -6,7 +6,13 @@ class Account extends React.Component
     {
         return(
             <div>
-                This is Account Component;
+                <div>
+                    <b>Account Settings</b>
+                </div>
+                <hr/>
+                <div>
+                    
+                </div>
             </div>
         );
     }
