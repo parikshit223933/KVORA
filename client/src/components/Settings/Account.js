@@ -3,8 +3,8 @@ import React from "react";
 class Account extends React.Component {
 	render() {
 		return (
-			<div>
-				<div>
+			<div className="px-3">
+				<div className="mb-4">
 					<div>
 						<b>Account Settings</b>
 					</div>
@@ -18,6 +18,7 @@ class Account extends React.Component {
 							<div>Add Another Email Address</div>
 						</div>
 					</div>
+					<hr className="my-0" />
 					<div className="py-3 d-flex flex-row align-items-start justify-content-start">
 						<div className="w-25" style={{ minWidth: 150 }}>
 							Password
@@ -26,6 +27,7 @@ class Account extends React.Component {
 							<div>Change Password</div>
 						</div>
 					</div>
+                    <hr className="my-0" />
 					<div className="py-3 d-flex flex-row align-items-start justify-content-start">
 						<div className="w-25" style={{ minWidth: 150 }}>
 							Logout
@@ -34,7 +36,45 @@ class Account extends React.Component {
 							<div>Logout of all other browsers</div>
 						</div>
 					</div>
+				</div>
+                <div className="mb-4">
+					<div>
+						<div className="d-flex flex-row justify-content-between align-items-center">
+                            <div>
+                                <b>Connected Accounts</b>
+                            </div>
+                            <div className="text-secondary">
+                                Learn More
+                            </div>
+                        </div>
+					</div>
 					<hr className="my-2" />
+					<div className="py-3 d-flex flex-row align-items-start justify-content-start">
+						<div className="w-25" style={{ minWidth: 150 }}>
+							Google
+						</div>
+						<div>
+							<div><span>pk223933@gmail.com</span> <span>&bull;</span> <span className="text-secondary">Disconnect</span></div>
+						</div>
+					</div>
+					<hr className="my-0" />
+					<div className="py-3 d-flex flex-row align-items-start justify-content-start">
+						<div className="w-25" style={{ minWidth: 150 }}>
+							Twitter
+						</div>
+						<div>
+							<div>Connect Twitter Account</div>
+						</div>
+					</div>
+                    <hr className="my-0" />
+					<div className="py-3 d-flex flex-row align-items-start justify-content-start">
+						<div className="w-25" style={{ minWidth: 150 }}>
+							Facebook
+						</div>
+						<div>
+							<div>Connect Facebook Account</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		);
