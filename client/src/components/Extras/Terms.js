@@ -11,7 +11,7 @@ class Terms extends React.Component {
 							<b>An Introduction to Quora’s Terms of Service</b>
 						</p>
 						<p>
-							Welcome to Quora! Here is a quick summary of the
+							Welcome to Kvora! Here is a quick summary of the
 							highlights of our Terms of Service:
 						</p>
 						<p>
@@ -21,7 +21,7 @@ class Terms extends React.Component {
 										Our mission is to share and grow the
 										world’s knowledge
 									</b>{" "}
-									The Quora platform offers a place to ask
+									The Kvora platform offers a place to ask
 									questions and connect with people who
 									contribute unique insights and quality
 									answers. This empowers people to learn from
@@ -31,7 +31,7 @@ class Terms extends React.Component {
 								<li>
 									<b>You own the content that you post</b>;
 									you also grant us and other users of the
-									Quora platform certain rights and license to
+									Kvora platform certain rights and license to
 									use it. The details of these licenses are
 									described in section 3(c) below.
 								</li>
@@ -48,11 +48,11 @@ class Terms extends React.Component {
 								</li>
 								<li>
 									<b>
-										You can repost content from Quora
+										You can repost content from Kvora
 										elsewhere
 									</b>
 									, provided that you attribute the content
-									back to the Quora platform and respect the
+									back to the Kvora platform and respect the
 									rights of the original poster, including any
 									“not for reproduction” designation, and do
 									not use automated tools.
@@ -65,7 +65,7 @@ class Terms extends React.Component {
 									Our content and materials are provided to
 									you “as is,” without any guarantees. You are
 									solely responsible for your own use of the
-									Quora platform. Posts from lawyers, doctors,
+									Kvora platform. Posts from lawyers, doctors,
 									and other professionals should not be
 									treated as a substitute for professional
 									advice for your specific situation.
@@ -75,7 +75,7 @@ class Terms extends React.Component {
 										You agree to follow the rules of our
 										platform.
 									</b>{" "}
-									When you use the Quora platform, you also
+									When you use the Kvora platform, you also
 									agree to our Terms of Service, accept our
 									Privacy Policy, and agree to follow our
 									Acceptable Use Policy, Copyright Policy, and
@@ -88,49 +88,49 @@ class Terms extends React.Component {
 									</b>{" "}
 									If you think someone has violated your
 									intellectual property rights, other laws, or
-									Quora's policies, you can initiate a report
+									Kvora's policies, you can initiate a report
 									at the contact us portal or by using our
 									in-product reporting tool.
 								</li>
 							</ul>
 						</p>
 						<p>
-							We are pleased that you want to join the Quora
+							We are pleased that you want to join the Kvora
 							platform and encourage you to read the full Terms of
 							Service.
 						</p>
 						<p>
-							<b>Quora Terms of Service</b>
+							<b>Kvora Terms of Service</b>
 						</p>
 						<p>Last Updated: December 20, 2019</p>
 						<p>
-							Welcome to Quora! Quora is a platform to gain and
+							Welcome to Kvora! Kvora is a platform to gain and
 							share knowledge, empowering people to learn from
 							others and better understand the world.
 						</p>
 						<p>
 							These terms of service (“Terms of Service”) set
 							forth the agreement (“Agreement”) between you and
-							Quora, Inc. (“Quora” “we” or “us”). It governs your
+							Kvora, Inc. (“Quora” “we” or “us”). It governs your
 							use of the products and services we offer through
 							our websites and applications (collectively the
 							“Quora Platform”).
 						</p>
 						<p>
 							Please make sure to read it, because, by using the
-							Quora Platform, you consent to these terms.
+							Kvora Platform, you consent to these terms.
 						</p>
 						<ol>
 							<li>
 								<p>
-									<b>The Mission of the Quora Platform</b>
+									<b>The Mission of the Kvora Platform</b>
 								</p>
 								<p>
 									<b>
-										Quora's mission is to share and grow the
+										Kvora's mission is to share and grow the
 										world’s knowledge.{" "}
 									</b>
-									The Quora Platform is a place to ask
+									The Kvora Platform is a place to ask
 									questions and connect with people who
 									contribute unique insights and quality
 									answers. This empowers people to learn from
@@ -140,13 +140,13 @@ class Terms extends React.Component {
 							</li>
 							<li>
 								<p>
-									<b>Using the Quora Platform</b>
+									<b>Using the Kvora Platform</b>
 								</p>
 								<p>
 									<ul>
 										<li>
 											<b>Who Can Use It. </b>Use of the
-											Quora Platform by anyone under 13
+											Kvora Platform by anyone under 13
 											years of age is prohibited. You
 											represent that you are at least the
 											age of majority in the jurisdiction
@@ -164,14 +164,14 @@ class Terms extends React.Component {
 										</li>
 										<li>
 											<b>Registration. </b>When you set up
-											a profile on the Quora Platform, you
+											a profile on the Kvora Platform, you
 											will be asked to provide certain
 											information about yourself. You
 											agree to provide us accurate
 											information, including your real
 											name or real name of the entity you
 											represent, when you create your
-											account on the Quora Platform. We
+											account on the Kvora Platform. We
 											will treat information you provide
 											as part of registration in
 											accordance with our Privacy Policy.
@@ -182,7 +182,7 @@ class Terms extends React.Component {
 										<li>
 											<b>Privacy Policy. </b> Our privacy
 											practices are set forth in our
-											Privacy Policy. By use of the Quora
+											Privacy Policy. By use of the Kvora
 											Platform, you agree to accept our
 											Privacy Policy, regardless of
 											whether you are a registered user.
@@ -190,7 +190,7 @@ class Terms extends React.Component {
 										<li>
 											<b>Acceptable Use Policy. </b>In
 											your interaction with others on the
-											Quora Platform, you agree to follow
+											Kvora Platform, you agree to follow
 											the Acceptable Use Policy at all
 											times.
 										</li>
@@ -199,25 +199,25 @@ class Terms extends React.Component {
 											your account at any time by going to
 											account settings and disabling your
 											account. We may terminate or suspend
-											your Quora account if you violate
-											any Quora policy or for any other
+											your Kvora account if you violate
+											any Kvora policy or for any other
 											reason.
 										</li>
 										<li>
 											<b>
-												Changes to the Quora Platform.{" "}
+												Changes to the Kvora Platform.{" "}
 											</b>{" "}
 											We are always trying to improve your
-											experience on the Quora Platform. We
+											experience on the Kvora Platform. We
 											may need to add or change features
 											and may do so without notice to you.
 										</li>
 										<li>
 											<b>Feedback. </b>We welcome your
 											feedback and suggestions about how
-											to improve the Quora Platform. Feel
+											to improve the Kvora Platform. Feel
 											free to submit feedback at
-											quora.com/contact. By submitting
+											Kvora.com/contact. By submitting
 											feedback, you agree to grant us the
 											right, at our discretion, to use,
 											disclose and otherwise exploit the
@@ -235,16 +235,16 @@ class Terms extends React.Component {
 									<ul>
 										<li>
 											<b>Definition of Your Content. </b>
-											The Quora Platform enables you to
+											The Kvora Platform enables you to
 											add posts, texts, photos, videos,
 											links, and other files and
 											information about yourself to share
 											with others. All material that you
 											upload, publish or display to others
-											via the Quora Platform will be
+											via the Kvora Platform will be
 											referred to collectively as “Your
 											Content.” You acknowledge and agree
-											that, as part of using the Quora
+											that, as part of using the Kvora
 											Platform, Your Content may be viewed
 											by the general public.
 										</li>
@@ -269,9 +269,9 @@ class Terms extends React.Component {
 													<li>
 														By submitting, posting,
 														or displaying Your
-														Content on the Quora
+														Content on the Kvora
 														Platform, you grant
-														Quora and its affiliated
+														Kvora and its affiliated
 														companies a
 														nonexclusive, worldwide,
 														royalty free, fully paid
@@ -289,11 +289,11 @@ class Terms extends React.Component {
 														and otherwise use Your
 														Content in connection
 														with the operation or
-														use of the Quora
+														use of the Kvora
 														Platform or the
 														promotion, advertising
 														or marketing of the
-														Quora Platform or our
+														Kvora Platform or our
 														business partners, in
 														any and all media or
 														distribution methods
@@ -306,26 +306,26 @@ class Terms extends React.Component {
 														(also known as an
 														“API”). You agree that
 														this license includes
-														the right for Quora to
+														the right for Kvora to
 														make Your Content
 														available to other
 														companies,
 														organizations, business
 														partners, or individuals
 														who collaborate with
-														Quora for the
+														Kvora for the
 														syndication, broadcast,
 														communication and making
 														available to the public,
 														distribution or
 														publication of Your
-														Content on the Quora
+														Content on the Kvora
 														Platform or through
 														other media or
 														distribution methods.
 														This license also
 														includes the right for
-														other users of the Quora
+														other users of the Kvora
 														Platform to use, copy,
 														reproduce, adapt,
 														modify, create
@@ -364,7 +364,7 @@ class Terms extends React.Component {
 														edit or delete your
 														answer at any time from
 														public display on
-														https://www.quora.com,
+														https://www.Kvora.com,
 														except in the case of
 														anonymously posted
 														answers. However, we may
@@ -375,18 +375,18 @@ class Terms extends React.Component {
 														other previously
 														distributed methods
 														outside of
-														https://www.quora.com.
-														Quora may remove
+														https://www.Kvora.com.
+														Kvora may remove
 														suspected spam from your
 														answers. Once you post a
 														question, it may be
 														edited or deleted by
-														other users or by Quora
+														other users or by Kvora
 														at any time. Any edits
 														and changes made by you
 														may be visible to other
 														users. The right for
-														Quora to copy, display,
+														Kvora to copy, display,
 														transmit, publish,
 														perform, distribute,
 														store, modify, and
@@ -402,7 +402,7 @@ class Terms extends React.Component {
 													</li>
 													<li>
 														You acknowledge and
-														agree that Quora may
+														agree that Kvora may
 														preserve Your Content
 														and may also disclose
 														Your Content and related
@@ -426,7 +426,7 @@ class Terms extends React.Component {
 														or technical issues; or
 														(e) protect the rights,
 														property, or personal
-														safety of Quora, its
+														safety of Kvora, its
 														users, or the public.
 													</li>
 													<li>
@@ -454,7 +454,7 @@ class Terms extends React.Component {
 														against any unauthorized
 														use by third parties of
 														any of Your Content
-														outside of the Quora
+														outside of the Kvora
 														Platform or in violation
 														of our Terms of Service.
 													</li>
@@ -466,7 +466,7 @@ class Terms extends React.Component {
 												Your Responsibilities for Your
 												Content.{" "}
 											</b>
-											By posting Your Content on the Quora
+											By posting Your Content on the Kvora
 											Platform, you represent and warrant
 											to us that: i) you have the
 											ownership rights, or you have
@@ -491,7 +491,7 @@ class Terms extends React.Component {
 											Content does not violate Quora’s
 											Acceptable Use Policy, Copyright
 											Policy, Trademark Policy, other
-											published Quora policy, or any
+											published Kvora policy, or any
 											applicable law or regulation. You
 											agree to pay all royalties, fees,
 											and any other monies owed to any
@@ -514,23 +514,23 @@ class Terms extends React.Component {
 													and Materials.
 												</b>{" "}
 												All intellectual property in or
-												related to the Quora Platform
+												related to the Kvora Platform
 												(specifically including, but not
 												limited to our software, the
-												Quora marks, the Quora logo, but
+												Kvora marks, the Kvora logo, but
 												excluding Your Content) is the
-												property of Quora, Inc., or its
+												property of Kvora, Inc., or its
 												subsidiaries and affiliates, or
-												content posted by other Quora
+												content posted by other Kvora
 												users licensed to us
 												(collectively “Our Content and
 												Materials”).
 											</li>
 											<li>
-												<b>Data. </b>All data Quora
+												<b>Data. </b>All data Kvora
 												collects (“Data”) about use of
-												the Quora Platform by you or
-												others is the property of Quora,
+												the Kvora Platform by you or
+												others is the property of Kvora,
 												Inc., its subsidiaries, and
 												affiliates. For clarity, Data
 												does not include Your Content
@@ -550,16 +550,16 @@ class Terms extends React.Component {
 															and Materials and
 															Data as made
 															available to you on
-															the Quora Platform
+															the Kvora Platform
 															in connection with
 															your use of the
-															Quora Platform,
+															Kvora Platform,
 															subject to the terms
 															and conditions of
 															this Agreement.
 														</li>
 														<li>
-															Quora gives you a
+															Kvora gives you a
 															worldwide,
 															royalty-free,
 															revocable, personal,
@@ -574,7 +574,7 @@ class Terms extends React.Component {
 															provided that: (a)
 															the content in
 															question was added
-															to the Quora
+															to the Kvora
 															Platform after April
 															22, 2010; (b) the
 															user who created the
@@ -582,11 +582,11 @@ class Terms extends React.Component {
 															explicitly marked
 															the content as not
 															for reproduction on
-															the Quora Platform;
+															the Kvora Platform;
 															(c) you do not
 															modify the content;
 															(d) you attribute
-															Quora by name in
+															Kvora by name in
 															readable text and
 															with a human and
 															machine-followable
@@ -596,12 +596,12 @@ class Terms extends React.Component {
 															page displaying the
 															original source of
 															the content on
-															https://quora.com on
+															https://Kvora.com on
 															every page that
 															contains Our Content
 															and Materials; (e)
 															upon request, either
-															by Quora or a user,
+															by Kvora or a user,
 															you remove the
 															user's name from
 															content which the
@@ -609,7 +609,7 @@ class Terms extends React.Component {
 															subsequently made
 															anonymous; (f) upon
 															request, either by
-															Quora or by a user
+															Kvora or by a user
 															who contributed to
 															the content, you
 															make a reasonable
@@ -617,10 +617,10 @@ class Terms extends React.Component {
 															particular piece of
 															content to the
 															latest version on
-															the Quora Platform;
+															the Kvora Platform;
 															and (g) upon
 															request, either by
-															Quora or by a user
+															Kvora or by a user
 															who contributed to
 															the content, you
 															make a reasonable
@@ -629,7 +629,7 @@ class Terms extends React.Component {
 															been deleted or
 															marked as not for
 															reproduction on the
-															Quora Platform; (h)
+															Kvora Platform; (h)
 															you don’t republish
 															more than a small
 															portion of Our
@@ -646,7 +646,7 @@ class Terms extends React.Component {
 															any connection with,
 															sponsorship or
 															endorsement by
-															Quora, or any Quora
+															Kvora, or any Kvora
 															user, without
 															separate, express
 															prior written
@@ -660,7 +660,7 @@ class Terms extends React.Component {
 															right but not the
 															obligation to refuse
 															to distribute any
-															content on the Quora
+															content on the Kvora
 															Platform or to
 															remove content.
 															Except for the
@@ -684,14 +684,14 @@ class Terms extends React.Component {
 												downloading tool, wget utility,
 												or similar data gathering or
 												extraction tool, you may access
-												the Quora Platform, subject to
+												the Kvora Platform, subject to
 												the following additional rules:
 												i) you must use a descriptive
 												user agent header; ii) you must
 												follow robots.txt at all times;
 												iii) your access must not
 												adversely affect any aspect of
-												the Quora Platform’s
+												the Kvora Platform’s
 												functioning; and iv) you must
 												make it clear how to contact
 												you, either in your user agent
@@ -703,41 +703,41 @@ class Terms extends React.Component {
 												machine learning i) to create
 												derivative works of Our Content
 												and Materials; ii) to create any
-												service competitive to the Quora
+												service competitive to the Kvora
 												Platform; or iii) for other
 												commercial purposes except as
 												expressly permitted by these
 												Terms of Service or the written
-												consent of Quora.
+												consent of Kvora.
 											</li>
 											<li>
 												<b>
 													No Endorsement or
 													Verification.{" "}
 												</b>
-												Please note that the Quora
+												Please note that the Kvora
 												Platform contains access to
 												third-party content, products
 												and services, and it offers
 												interactions with third parties.
 												Participation or availability on
-												the Quora Platform does not
+												the Kvora Platform does not
 												amount to endorsement or
 												verification by us. We make no
 												warranties or representations
 												about the accuracy,
 												completeness, or timeliness of
-												any content posted on the Quora
+												any content posted on the Kvora
 												Platform by anyone.
 											</li>
 											<li>
 												<b>Ownership. </b>You
 												acknowledge and agree that Our
 												Content and Materials remain the
-												property of Quora's users or
-												Quora. The content, information
+												property of Kvora's users or
+												Kvora. The content, information
 												and services made available on
-												the Quora Platform are protected
+												the Kvora Platform are protected
 												by U.S. and international
 												copyright, trademark, and other
 												laws, and you acknowledge that
@@ -755,14 +755,14 @@ class Terms extends React.Component {
 								You may enable another online service provider,
 								such as a social networking service (“Integrated
 								Service Provider”), to be directly integrated
-								into your account on the Quora Platform. By
+								into your account on the Kvora Platform. By
 								enabling an integrated service, you are allowing
 								us to pass to, and receive from, the Integrated
 								Service Provider your log-in information and
 								other user data. For more information about
 								Quora’s use, storage, and disclosure of
 								information related to you and your use of
-								integrated services within Quora, please see our
+								integrated services within Kvora, please see our
 								Privacy Policy. Note that your use of any
 								Integrated Service Provider and its own handling
 								of your data and information is governed solely
@@ -773,13 +773,13 @@ class Terms extends React.Component {
 								<p>
 									<b>
 										More About Certain Offerings on the
-										Quora Platform
+										Kvora Platform
 									</b>
 									<p>
 										<ul>
 											<li>
 												<b>Digests. </b>When you sign up
-												for the Quora Platform, the
+												for the Kvora Platform, the
 												service includes receipt of a
 												digest of questions and answers
 												that may be of interest to you.
@@ -793,28 +793,28 @@ class Terms extends React.Component {
 											</li>
 											<li>
 												<b>Advertisements. </b> The
-												Quora Platform may include
+												Kvora Platform may include
 												advertisements, which may be
 												targeted to content or
-												information on the Quora
+												information on the Kvora
 												Platform, queries made through
-												the Quora Platform, or other
+												the Kvora Platform, or other
 												information, in an effort to
 												make them relevant to you. The
 												types and extent of advertising
-												by Quora are subject to change.
-												In consideration for Quora
+												by Kvora are subject to change.
+												In consideration for Kvora
 												granting you access to and use
-												of the Quora Platform, you agree
-												that Quora and its third-party
+												of the Kvora Platform, you agree
+												that Kvora and its third-party
 												providers and partners may place
-												such advertising on the Quora
+												such advertising on the Kvora
 												Platform. If you wish to become
 												an advertiser, you will be
 												required to enter into separate
 												and supplemental terms with us
 												about providing advertising
-												services on the Quora Platform.
+												services on the Kvora Platform.
 											</li>
 											<li>
 												<b>
@@ -831,7 +831,7 @@ class Terms extends React.Component {
 												substitute for advice from a
 												professional that is appropriate
 												for your specific situation.
-												Quora has provided certain
+												Kvora has provided certain
 												disclaimer template language
 												that Professional Contributors
 												may edit and incorporate in
@@ -849,20 +849,20 @@ class Terms extends React.Component {
 													Buttons, Links and Widgets.{" "}
 												</b>{" "}
 												You have permission to use
-												Quora's buttons, links, and
+												Kvora's buttons, links, and
 												widgets, subject to these Terms
 												of Service (including the
 												disclaimers and limitations of
 												liability) and provided that:
 												(a) your use of such buttons,
 												links and widgets link only to
-												the Quora Platform; (b) you will
+												the Kvora Platform; (b) you will
 												not modify such buttons, links,
 												or widgets or associated code in
 												any manner; (c) you will not use
 												any such buttons, links, or
 												widgets in any manner which
-												implies or suggests that Quora
+												implies or suggests that Kvora
 												endorses, sponsors, or
 												recommends the website on which
 												such buttons, links and widgets
@@ -878,7 +878,7 @@ class Terms extends React.Component {
 													Web resources and
 													third-party services.{" "}
 												</b>{" "}
-												The Quora Platform may also
+												The Kvora Platform may also
 												offer you the opportunity to
 												visit links to other websites or
 												to engage with third-party
@@ -905,12 +905,12 @@ class Terms extends React.Component {
 								<p>
 									<b>
 										Reporting Violations of Your
-										Intellectual Property Rights, Quora
+										Intellectual Property Rights, Kvora
 										Policies, or Applicable Laws.{" "}
 									</b>
 									We have a special process for reporting
 									violations of your intellectual property
-									rights or other violations of Quora policies
+									rights or other violations of Kvora policies
 									or applicable laws.
 								</p>
 								<p>
@@ -925,7 +925,7 @@ class Terms extends React.Component {
 											Policy. For more information,
 											including detailed information about
 											how to submit a request for takedown
-											if you believe content on the Quora
+											if you believe content on the Kvora
 											Platform infringes your intellectual
 											property rights, please read our
 											Copyright Policy and Trademark
@@ -940,12 +940,12 @@ class Terms extends React.Component {
 											<b>Reports of Other Violations. </b>
 											<p>
 												If you believe content on the
-												Quora Platform violates Quora’s
+												Kvora Platform violates Quora’s
 												Acceptable Use Policy or
 												otherwise violates applicable
 												law (apart from copyright or
 												trademark violations) or other
-												Quora policies, you may submit
+												Kvora policies, you may submit
 												the following Other Infringement
 												Claim Form.
 											</p>
@@ -971,11 +971,11 @@ class Terms extends React.Component {
 								<p>
 									<b>
 										PLEASE READ THIS SECTION CAREFULLY SINCE
-										IT LIMITS THE LIABILITY OF QUORA
+										IT LIMITS THE LIABILITY OF Kvora
 										ENTITIES TO YOU.
 									</b>
 									<p>
-										“QUORA ENTITIES” MEANS QUORA, INC., AND
+										“QUORA ENTITIES” MEANS Kvora, INC., AND
 										ANY SUBSIDIARIES, AFFILIATES, RELATED
 										COMPANIES, SUPPLIERS, LICENSORS AND
 										PARTNERS, AND THE OFFICERS, DIRECTORS,
@@ -987,7 +987,7 @@ class Terms extends React.Component {
 									<p>
 										<ol type="a">
 											<li>
-												WE ARE PROVIDING YOU THE QUORA
+												WE ARE PROVIDING YOU THE Kvora
 												PLATFORM, ALONG WITH OUR CONTENT
 												AND MATERIALS AND THE
 												OPPORTUNITY TO CONNECT WITH
@@ -995,7 +995,7 @@ class Terms extends React.Component {
 												AVAILABLE” BASIS, WITHOUT
 												WARRANTY OF ANY KIND, EXPRESS OR
 												IMPLIED. WITHOUT LIMITING THE
-												FOREGOING, QUORA ENTITIES
+												FOREGOING, Kvora ENTITIES
 												EXPRESSLY DISCLAIM ANY AND ALL
 												WARRANTIES AND CONDITIONS OF
 												MERCHANTABILITY, TITLE, ACCURACY
@@ -1008,7 +1008,7 @@ class Terms extends React.Component {
 												USAGE.
 											</li>
 											<li>
-												QUORA MAKES NO PROMISES WITH
+												Kvora MAKES NO PROMISES WITH
 												RESPECT TO, AND EXPRESSLY
 												DISCLAIMS ALL LIABILITY FOR: (i)
 												CONTENT POSTED BY ANY USER OR
@@ -1016,41 +1016,41 @@ class Terms extends React.Component {
 												THIRD-PARTY WEBSITE, THIRD-PARTY
 												PRODUCT, OR THIRD-PARTY SERVICE
 												LISTED ON OR ACCESSIBLE TO YOU
-												THROUGH THE QUORA PLATFORM,
+												THROUGH THE Kvora PLATFORM,
 												INCLUDING AN INTEGRATED SERVICE
 												PROVIDER OR PROFESSIONAL
 												CONTRIBUTOR; (iii) THE QUALITY
 												OR CONDUCT OF ANY THIRD PARTY
 												YOU ENCOUNTER IN CONNECTION WITH
-												YOUR USE OF THE QUORA PLATFORM;
+												YOUR USE OF THE Kvora PLATFORM;
 												OR (iv) UNAUTHORIZED ACCESS, USE
 												OR ALTERATION OF YOUR CONTENT.
-												QUORA MAKES NO WARRANTY THAT:
-												(a) THE QUORA PLATFORM WILL MEET
-												YOUR REQUIREMENTS; (b) THE QUORA
+												Kvora MAKES NO WARRANTY THAT:
+												(a) THE Kvora PLATFORM WILL MEET
+												YOUR REQUIREMENTS; (b) THE Kvora
 												PLATFORM WILL BE UNINTERRUPTED,
 												TIMELY, SECURE, OR ERROR-FREE;
 												(c) THE RESULTS OR INFORMATION
 												THAT YOU MAY OBTAIN FROM THE USE
-												OF THE QUORA PLATFORM, A
+												OF THE Kvora PLATFORM, A
 												PROFESSIONAL CONTRIBUTOR, OR ANY
 												OTHER USER WILL BE ACCURATE OR
 												RELIABLE; OR (d) THE QUALITY OF
 												ANY PRODUCTS, SERVICES,
 												INFORMATION, OR OTHER MATERIAL
 												OBTAINED OR PURCHASED BY YOU
-												THROUGH THE QUORA PLATFORM WILL
+												THROUGH THE Kvora PLATFORM WILL
 												BE SATISFACTORY.
 											</li>
 											<li>
 												YOU AGREE THAT TO THE MAXIMUM
-												EXTENT PERMITTED BY LAW, QUORA
+												EXTENT PERMITTED BY LAW, Kvora
 												ENTITIES WILL NOT BE LIABLE TO
 												YOU UNDER ANY THEORY OF
 												LIABILITY. WITHOUT LIMITING THE
 												FOREGOING, YOU AGREE THAT, TO
 												THE MAXIMUM EXTENT PERMITTED BY
-												LAW, QUORA ENTITIES SPECIFICALLY
+												LAW, Kvora ENTITIES SPECIFICALLY
 												WILL NOT BE LIABLE FOR ANY
 												INDIRECT, INCIDENTAL,
 												CONSEQUENTIAL, SPECIAL, OR
@@ -1063,24 +1063,24 @@ class Terms extends React.Component {
 												FORESEEABLE) ARISING OUT OF OR
 												IN ANY WAY CONNECTED WITH YOUR
 												USE OF, OR INABILITY TO USE, THE
-												QUORA PLATFORM.
+												Kvora PLATFORM.
 											</li>
 											<li>
 												YOUR SOLE REMEDY FOR
-												DISSATISFACTION WITH THE QUORA
+												DISSATISFACTION WITH THE Kvora
 												PLATFORM IS TO STOP USING THE
-												QUORA PLATFORM.
+												Kvora PLATFORM.
 											</li>
 											<li>
 												WITHOUT LIMITING THE FOREGOING,
 												QUORA’S MAXIMUM AGGREGATE
 												LIABILITY TO YOU FOR LOSSES OR
 												DAMAGES THAT YOU SUFFER IN
-												CONNECTION WITH THE QUORA
+												CONNECTION WITH THE Kvora
 												PLATFORM OR THIS AGREEMENT IS
 												LIMITED TO THE AMOUNT PAID TO
-												QUORA IN CONNECTION WITH THE
-												QUORA PLATFORM IN THE TWELVE
+												Kvora IN CONNECTION WITH THE
+												Kvora PLATFORM IN THE TWELVE
 												(12) MONTHS PRIOR TO THE ACTION
 												GIVING RISE TO LIABILITY.
 											</li>
@@ -1111,12 +1111,12 @@ class Terms extends React.Component {
 								</p>
 								<p>
 									You agree to release, indemnify, and defend
-									Quora Entities from all third-party claims
+									Kvora Entities from all third-party claims
 									and costs (including reasonable attorneys’
 									fees) arising out of or related to: i) your
-									use of the Quora Platform, ii) Your Content,
+									use of the Kvora Platform, ii) Your Content,
 									iii) your conduct or interactions with other
-									users of the Quora Platform, or iv) your
+									users of the Kvora Platform, or iv) your
 									breach of any part of this Agreement. We
 									will promptly notify you of any such claim
 									and will provide you (at your expense) with
@@ -1138,7 +1138,7 @@ class Terms extends React.Component {
 								<p>
 									<p>
 										This Agreement and any action arising
-										out of your use of the Quora Platform
+										out of your use of the Kvora Platform
 										will be governed by the laws of the
 										State of California without regard to or
 										application of its conflict of law
@@ -1147,7 +1147,7 @@ class Terms extends React.Component {
 										arbitration as set forth in the
 										following paragraph, all claims, legal
 										proceedings or litigation arising in
-										connection with your use of the Quora
+										connection with your use of the Kvora
 										Platform will be brought solely in Santa
 										Clara County, California, and you
 										consent to the jurisdiction of and venue
@@ -1209,11 +1209,11 @@ class Terms extends React.Component {
 											discretion, and the manner of
 											notification could include, for
 											example, via email, posted notice on
-											the Quora Platform, or other manner.
+											the Kvora Platform, or other manner.
 											You can view the Agreement and our
 											main policies at any time here. Your
 											failure to cancel your account, or
-											cease use of the Quora Platform,
+											cease use of the Kvora Platform,
 											after receiving notification of the
 											amendment, will constitute your
 											acceptance of the amended terms. If
@@ -1221,13 +1221,13 @@ class Terms extends React.Component {
 											or to any of the terms in this
 											Agreement, your only remedy is to
 											cancel your account or to cease use
-											of the Quora Platform.
+											of the Kvora Platform.
 										</li>
 										<li>
 											<b>
 												Governing Law and Jurisdiction.{" "}
 											</b>{" "}
-											You agree that Quora is operated in
+											You agree that Kvora is operated in
 											the United States and will be deemed
 											to be solely based in California and
 											a passive service for purposes of
@@ -1246,27 +1246,27 @@ class Terms extends React.Component {
 												Use Outside of the United
 												States.{" "}
 											</b>
-											Quora expressly disclaims any
+											Kvora expressly disclaims any
 											representation or warranty that the
-											Quora Platform complies with all
+											Kvora Platform complies with all
 											applicable laws and regulations
 											outside of the United States. If you
-											use the Quora Platform outside of
+											use the Kvora Platform outside of
 											the United States, you expressly
 											understand and agree that you are
 											responsible for determining
 											compliance with different laws,
 											regulations, or customs that may
 											apply in connection with your use of
-											the Quora Platform.
+											the Kvora Platform.
 										</li>
 										<li>
-											<b>Export. </b> The Quora Platform
+											<b>Export. </b> The Kvora Platform
 											is controlled and operated from our
 											United States offices in California.
-											Quora software is subject to United
+											Kvora software is subject to United
 											States export controls. No software
-											for Quora may be downloaded or
+											for Kvora may be downloaded or
 											otherwise exported or re-exported in
 											violation of any applicable laws or
 											regulations. You represent that you
@@ -1293,16 +1293,16 @@ class Terms extends React.Component {
 										</li>
 										<li>
 											<b>Survival. </b> If you access the
-											Quora Platform through a Quora
+											Kvora Platform through a Kvora
 											application, you acknowledge that
 											this Agreement is between you and
-											Quora only, and not with another
+											Kvora only, and not with another
 											application service provider or
 											application platform provider (such
 											as Apple Inc. or Google Inc.), which
 											may provide you the application
 											subject to its own terms. To the
-											extent you access the Quora Platform
+											extent you access the Kvora Platform
 											through a mobile device, your
 											wireless carrier’s standard charges,
 											data rates, and other fees may
@@ -1327,13 +1327,13 @@ class Terms extends React.Component {
 											California Civil Code Section
 											1789.3, California web users are
 											entitled to the following specific
-											consumer rights notice: The Quora
-											Platform is provided by Quora, Inc.,
+											consumer rights notice: The Kvora
+											Platform is provided by Kvora, Inc.,
 											located in Mountain View,
 											California. If you have a question
-											or complaint regarding the Quora
-											Platform, please contact Quora at
-											support@quora.com. California
+											or complaint regarding the Kvora
+											Platform, please contact Kvora at
+											support@Kvora.com. California
 											residents may reach the Department
 											of Consumer Affairs Consumer
 											Information Division at 1625 N.
@@ -1345,7 +1345,7 @@ class Terms extends React.Component {
 											322-1700.
 										</li>
 										<li>
-											<b>Assignment. </b> Any Quora
+											<b>Assignment. </b> Any Kvora
 											software and related documentation
 											are “Commercial Items,” as that term
 											is deﬁned at 48 C.F.R. §2.101,
@@ -1401,10 +1401,10 @@ class Terms extends React.Component {
 											<b>Interpretation. </b>This
 											Agreement supersedes all prior
 											terms, agreements, discussions and
-											writings regarding the Quora
+											writings regarding the Kvora
 											Platform and constitutes the entire
 											agreement between you and us
-											regarding the Quora Platform (except
+											regarding the Kvora Platform (except
 											as to services that require separate
 											written agreement with us, in
 											addition to this Agreement). If any
@@ -1436,7 +1436,7 @@ class Terms extends React.Component {
 											to be valid: (i) if to you, by us
 											via email to the address associated
 											with your account, and (ii) if to
-											us, by you via legal@quora.com.
+											us, by you via legal@Kvora.com.
 											Notices will be deemed given (a) if
 											to you, when emailed, and (b) if to
 											us, on receipt by us.
@@ -1465,9 +1465,9 @@ class Terms extends React.Component {
 										</li>
 										<li>
 											<b>Contact. </b>Feel free to contact
-											us through quora.com/contact with
+											us through Kvora.com/contact with
 											any questions about these terms.
-											Quora is a Delaware corporation,
+											Kvora is a Delaware corporation,
 											located at 605 Castro Street,
 											Mountain View, CA 94041.
 										</li>
