@@ -6,7 +6,7 @@ class Privacy extends React.Component {
 			<div className="default-padding-top container bg-white">
 				<div className="row">
 					<div className="col-md-10 offset-md-1 font-16">
-						<h2>Privacy Policy</h2>
+						<h2 className="texr-center">Privacy Policy</h2>
 						<p>Last updated: December 20, 2019</p>
 						<p>
 							Kvora recognizes that your privacy is very
