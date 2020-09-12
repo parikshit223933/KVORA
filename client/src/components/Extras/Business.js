@@ -5,8 +5,10 @@ class Business extends React.Component
     render()
     {
         return(
-            <div>
-                This is Business Component.
+            <div className="container default-padding-top">
+                <h1 className="text-center">
+                    This page is under construction
+                </h1>
             </div>
         )
     }
