@@ -79,6 +79,9 @@ import PrivacySettings from "./Settings/PrivacySettings";
 import Languages from "./Settings/Languages";
 import EmailAndNotifications from "./Settings/EmailAndNotifications";
 import Account from "./Settings/Account";
+import SettingsRouter from './Settings/SettingsRouter';
+import SingleLanguage from './Settings/Reusables/SingleLanguage';
+
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
 */
@@ -165,4 +168,6 @@ export {
 	Languages,
 	EmailAndNotifications,
 	Account,
+	SettingsRouter,
+	SingleLanguage
 };
