@@ -103,30 +103,30 @@ class ProfilePictureDropDown extends React.Component {
 				<hr className="mb-1" />
 
 				<div className="dp-drop-second-list" style={{ fontSize: 13 }}>
-					<a
-						href="/"
+					<Link
+						to="/settings"
 						className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center"
 					>
 						Settings
-					</a>
-					<a
-						href="/"
+					</Link>
+					<Link
+						to="settings/languages"
 						className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center"
 					>
 						Languages
-					</a>
-					<a
-						href="/"
+					</Link>
+					<Link
+						to="/"
 						className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center"
 					>
 						Help
-					</a>
-					<a
-						href="/"
+					</Link>
+					<Link
+						to="/"
 						className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center"
 					>
 						Logout
-					</a>
+					</Link>
 				</div>
 
 				<hr className="mt-1 mb-0" />

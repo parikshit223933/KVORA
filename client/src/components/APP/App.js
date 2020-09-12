@@ -16,7 +16,8 @@ import {
 	Privacy,
 	AcceptableUse,
 	Business,
-	YourAdChoices
+	YourAdChoices,
+	Settings,
 } from "..";
 
 class App extends React.Component {
@@ -57,6 +58,7 @@ class App extends React.Component {
 							path="/your-ad-choices"
 							component={YourAdChoices}
 						/>
+						<Route path="/settings" component={Settings} />
 					</Switch>
 				</div>
 			</Router>

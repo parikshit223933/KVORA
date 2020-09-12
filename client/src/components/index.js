@@ -42,44 +42,48 @@ import KnowsAbout from "./Profile/RightSection/KnowsAbout";
 import SpacesReusable from "./Profile/RightSection/Reusables/SpacesReusable";
 import CAndHReusable from "./Profile/RightSection/Reusables/CAndHReusable";
 import KnowsAboutReusable from "./Profile/RightSection/Reusables/KnowsAboutReusable";
-import ViewMoreButton from './Profile/RightSection/Reusables/ViewMoreButton';
-import AllSpaces from './Spaces/AllSpaces';
-import YourSpaces from './Spaces/YourSpaces';
-import ReusableYourSpaces from './Spaces/Reusables/ReusableYourSpaces';
-import DiscoverSpaces from './Spaces/DiscoverSpaces';
-import ReusableCard from './Spaces/Reusables/ReusableCard';
-import SingleSpace from './Spaces/SingleSpace/SingleSpace';
-import HomeSpace from './Home/Reusables/HomeSpace';
-import SpaceLeft from './Spaces/SingleSpace/SpaceLeft';
-import SpaceRight from './Spaces/SingleSpace/SpaceRight';
-import SpacePosts from './Spaces/SingleSpace/SpacePosts';
-import SpaceHeader from './Spaces/SingleSpace/SpaceHeader';
-import SpaceSubHeader from './Spaces/SingleSpace/SpaceSubHeader';
-import SpaceDetails from './Spaces/SingleSpace/SpaceDetails';
-import SpacePeople from './Spaces/SingleSpace/SpacePeople';
-import NewComment from './Comment/NewComment';
-import Comments from './Comment/Comments';
-import Comment from './Comment/Comment';
-import ActionBar from './Comment/Reusables/ActionBar';
-import Level1 from './Comment/Nested/Level1';
-import Level2 from './Comment/Nested/Level2';
-import Level3 from './Comment/Nested/Level3';
-import Level4 from './Comment/Nested/Level4';
-import Level5 from './Comment/Nested/Level5';
-import Level6 from './Comment/Nested/Level6';
-import About from './Extras/About';
-import Careers from './Extras/Careers';
-import Terms from './Extras/Terms';
-import Privacy from './Extras/Privacy';
-import AcceptableUse from './Extras/AcceptableUse';
-import Business from './Extras/Business';
-import YourAdChoices from './Extras/YourAdChoices';
+import ViewMoreButton from "./Profile/RightSection/Reusables/ViewMoreButton";
+import AllSpaces from "./Spaces/AllSpaces";
+import YourSpaces from "./Spaces/YourSpaces";
+import ReusableYourSpaces from "./Spaces/Reusables/ReusableYourSpaces";
+import DiscoverSpaces from "./Spaces/DiscoverSpaces";
+import ReusableCard from "./Spaces/Reusables/ReusableCard";
+import SingleSpace from "./Spaces/SingleSpace/SingleSpace";
+import HomeSpace from "./Home/Reusables/HomeSpace";
+import SpaceLeft from "./Spaces/SingleSpace/SpaceLeft";
+import SpaceRight from "./Spaces/SingleSpace/SpaceRight";
+import SpacePosts from "./Spaces/SingleSpace/SpacePosts";
+import SpaceHeader from "./Spaces/SingleSpace/SpaceHeader";
+import SpaceSubHeader from "./Spaces/SingleSpace/SpaceSubHeader";
+import SpaceDetails from "./Spaces/SingleSpace/SpaceDetails";
+import SpacePeople from "./Spaces/SingleSpace/SpacePeople";
+import NewComment from "./Comment/NewComment";
+import Comments from "./Comment/Comments";
+import Comment from "./Comment/Comment";
+import ActionBar from "./Comment/Reusables/ActionBar";
+import Level1 from "./Comment/Nested/Level1";
+import Level2 from "./Comment/Nested/Level2";
+import Level3 from "./Comment/Nested/Level3";
+import Level4 from "./Comment/Nested/Level4";
+import Level5 from "./Comment/Nested/Level5";
+import Level6 from "./Comment/Nested/Level6";
+import About from "./Extras/About";
+import Careers from "./Extras/Careers";
+import Terms from "./Extras/Terms";
+import Privacy from "./Extras/Privacy";
+import AcceptableUse from "./Extras/AcceptableUse";
+import Business from "./Extras/Business";
+import YourAdChoices from "./Extras/YourAdChoices";
+import Settings from "./Settings/Settings";
+import PrivacySettings from "./Settings/PrivacySettings";
+import Languages from "./Settings/Languages";
+import EmailAndNotifications from "./Settings/EmailAndNotifications";
+import Account from "./Settings/Account";
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
 */
 
-export
-{
+export {
 	Navbar,
 	Home,
 	Auth,
@@ -155,5 +159,10 @@ export
 	Privacy,
 	AcceptableUse,
 	Business,
-	YourAdChoices
+	YourAdChoices,
+	Settings,
+	PrivacySettings,
+	Languages,
+	EmailAndNotifications,
+	Account,
 };
