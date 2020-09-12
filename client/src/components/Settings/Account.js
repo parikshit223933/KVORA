@@ -51,7 +51,7 @@ class Account extends React.Component {
 					<hr className="my-2" />
 					<div className="py-3 d-flex flex-row align-items-start justify-content-start">
 						<div className="w-25" style={{ minWidth: 150 }}>
-							Google
+							<i className="fa fa-google"> </i>Google
 						</div>
 						<div>
 							<div><span>pk223933@gmail.com</span> <span>&bull;</span> <span className="text-secondary">Disconnect</span></div>
@@ -60,7 +60,7 @@ class Account extends React.Component {
 					<hr className="my-0" />
 					<div className="py-3 d-flex flex-row align-items-start justify-content-start">
 						<div className="w-25" style={{ minWidth: 150 }}>
-							Twitter
+						<i className="fa fa-twitter"></i> Twitter
 						</div>
 						<div>
 							<div>Connect Twitter Account</div>
@@ -69,7 +69,7 @@ class Account extends React.Component {
                     <hr className="my-0" />
 					<div className="py-3 d-flex flex-row align-items-start justify-content-start">
 						<div className="w-25" style={{ minWidth: 150 }}>
-							Facebook
+						<i className="fa fa-facebook"></i> Facebook
 						</div>
 						<div>
 							<div>Connect Facebook Account</div>
