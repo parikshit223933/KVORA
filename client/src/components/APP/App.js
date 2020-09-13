@@ -18,7 +18,8 @@ import {
 	Business,
 	YourAdChoices,
 	Settings,
-	Help
+	Help,
+	MessagesPopUp
 } from "..";
 
 class App extends React.Component {
@@ -28,6 +29,8 @@ class App extends React.Component {
 			<Router>
 				<div className="App">
 					{isLoggedIn && <Navbar />}
+					<MessagesPopUp/>
+					{/* This pop up is invoke by messages/messagespopup */}
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route path="/auth" component={Auth} />

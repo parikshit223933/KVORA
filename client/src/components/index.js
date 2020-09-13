@@ -79,9 +79,19 @@ import PrivacySettings from "./Settings/PrivacySettings";
 import Languages from "./Settings/Languages";
 import EmailAndNotifications from "./Settings/EmailAndNotifications";
 import Account from "./Settings/Account";
-import SettingsRouter from './Settings/SettingsRouter';
-import SingleLanguage from './Settings/Reusables/SingleLanguage';
-import Help from './Help/Help';
+import SettingsRouter from "./Settings/SettingsRouter";
+import SingleLanguage from "./Settings/Reusables/SingleLanguage";
+import Help from "./Help/Help";
+import MessagesPopUp from "./Messages/MessagesPopUp";
+import BodyDefault from "./Messages/BodyDefault";
+import BodyNew from "./Messages/BodyNew";
+import MessagePopUpBody from "./Messages/MessagePopUpBody";
+import MessageActions from "./Messages/MessageActions";
+import ActionsNew from "./Messages/ActionsNew";
+import ActionsDefault from "./Messages/ActionsDefault";
+import TitleDefault from "./Messages/TitleNew";
+import TitleNew from "./Messages/TitleDefault";
+import MessageTitle from './Messages/MessageTitle';
 
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
@@ -171,5 +181,15 @@ export {
 	Account,
 	SettingsRouter,
 	SingleLanguage,
-	Help
+	Help,
+	MessagesPopUp,
+	BodyDefault,
+	BodyNew,
+	MessagePopUpBody,
+	MessageActions,
+	ActionsNew,
+	ActionsDefault,
+	TitleDefault,
+	TitleNew,
+	MessageTitle
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import image from "../../assets/images/signInBackground.png";
 import { Link } from "react-router-dom";
+import { MessagesPopUp } from "../";
 
 class ProfilePictureDropDown extends React.Component {
 	render() {
@@ -18,7 +19,7 @@ class ProfilePictureDropDown extends React.Component {
 							style={{
 								width: 40,
 								height: 40,
-								borderRadius: "100%"
+								borderRadius: "100%",
 							}}
 						/>
 					</Link>
@@ -45,15 +46,17 @@ class ProfilePictureDropDown extends React.Component {
 				</div>
 				<hr />
 				<div className="dp-drop-first-list">
-					<a
-						href="/"
-						className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center"
-					>
+					<div className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center">
 						<div className="mr-2">
 							<i className="far fa-comment-dots"></i>
 						</div>
-						<div>Messages</div>
-					</a>
+						<div data-toggle="modal" data-target="#messages-modal">
+							Messages
+						</div>
+						{/**
+						 * @Dropdown_is_there_in_App_component
+						 */}
+					</div>
 					<a
 						href="/"
 						className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center"
