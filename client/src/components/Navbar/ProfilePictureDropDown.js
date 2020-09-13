@@ -1,7 +1,6 @@
 import React from "react";
 import image from "../../assets/images/signInBackground.png";
 import { Link } from "react-router-dom";
-import { MessagesPopUp } from "../";
 
 class ProfilePictureDropDown extends React.Component {
 	render() {
