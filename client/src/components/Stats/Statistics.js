@@ -1,5 +1,6 @@
 import React from "react";
 import "../../assets/css/stats.scss";
+import { StatQuestions } from "../";
 
 class Statistics extends React.Component {
 	render() {
@@ -84,10 +85,29 @@ class Statistics extends React.Component {
 				</div>
 				<div className="row custom-reverse-flex">
 					<div
-						className="col-md-4 h-75"
-						style={{ backgroundColor: "#fafafa" }}
+						className="col-md-4 px-0"
+						style={{
+							backgroundColor: "#fafafa",
+							borderTop: "1px solid #e1e1e1",
+						}}
 					>
-						sdvdfvdffg
+						<div className="p-2 w-100 bg-white">
+							<b style={{ color: "#2b6dad" }}>All Answers</b>
+						</div>
+						<hr className="my-0" />
+						<div className="d-flex flex-column justify-content-start align-items-start">
+							<StatQuestions />
+							<StatQuestions />
+							<StatQuestions />
+							<StatQuestions />
+							<StatQuestions />
+							<StatQuestions />
+							<StatQuestions />
+							<StatQuestions />
+							<StatQuestions />
+							<StatQuestions />
+							<StatQuestions />
+						</div>
 					</div>
 					<div className="col-md-8">sfg</div>
 				</div>
