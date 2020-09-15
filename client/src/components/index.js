@@ -91,9 +91,15 @@ import ActionsNew from "./Messages/ActionsNew";
 import ActionsDefault from "./Messages/ActionsDefault";
 import TitleDefault from "./Messages/TitleNew";
 import TitleNew from "./Messages/TitleDefault";
-import MessageTitle from './Messages/MessageTitle';
-import Statistics from './Stats/Statistics';
-import StatQuestions from './Stats/Reusables/StatQuestions';
+import MessageTitle from "./Messages/MessageTitle";
+import Statistics from "./Stats/Statistics";
+import StatQuestions from "./Stats/Reusables/StatQuestions";
+import StatHeader from "./Stats/StatHeader";
+import StatQuestionsList from "./Stats/StatQuestionsList";
+import StatRight from "./Stats/StatRight";
+import StatShares from "./Stats/Graph/StatShares";
+import StatUpvotes from "./Stats/Graph/StatUpvotes";
+import StatViews from "./Stats/Graph/StatViews";
 
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
@@ -195,5 +201,11 @@ export {
 	TitleNew,
 	MessageTitle,
 	Statistics,
-	StatQuestions
+	StatQuestions,
+	StatHeader,
+	StatQuestionsList,
+	StatRight,
+	StatShares,
+	StatUpvotes,
+	StatViews,
 };
