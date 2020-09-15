@@ -6,15 +6,6 @@ import * as $ from "jquery";
 import { GlobeDropDown, ProfilePictureDropDown } from "..";
 
 class Navbar extends React.Component {
-	componentDidMount() {
-		this.changeColorEventListener();
-	}
-	changeColorEventListener = () => {
-		$(".nav-item").click(function () {
-			$(".nav-item").removeClass("nav-active");
-			$(this).addClass("nav-active");
-		});
-	};
 	render() {
 		return (
 			<div className="navbar-container fixed-top bg-white">
@@ -43,7 +34,7 @@ class Navbar extends React.Component {
 						id="navbarSupportedContent"
 					>
 						<ul className="navbar-nav mr-auto d-md-flex flex-row justify-content-between align-items-center">
-							<li className="nav-item nav-active">
+							<li className="nav-item-hover nav-active">
 								<Link
 									to="/"
 									className="nav-link nav-link-custom-properties text-secondary"
@@ -53,7 +44,7 @@ class Navbar extends React.Component {
 									<span className="sr-only">(current)</span>
 								</Link>
 							</li>
-							<li className="nav-item">
+							<li className="nav-item-hover">
 								<Link
 									to="/answer"
 									className="nav-link nav-link-custom-properties text-secondary"
@@ -63,7 +54,7 @@ class Navbar extends React.Component {
 									<span className="sr-only">(current)</span>
 								</Link>
 							</li>
-							<li className="nav-item dropdown">
+							<li className="nav-item-hover dropdown">
 								<a
 									className="nav-link nav-link-custom-properties text-secondary"
 									id="navbarDropdown"
@@ -119,7 +110,7 @@ class Navbar extends React.Component {
 									</a>
 								</div>
 							</li>
-							<li className="nav-item">
+							<li className="nav-item-hover">
 								<Link
 									to="/notification"
 									className="nav-link nav-link-custom-properties text-secondary"

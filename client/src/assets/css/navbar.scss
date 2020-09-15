@@ -93,7 +93,7 @@
 .nav-active > a > i {
 	color: rgb(185, 43, 39) !important;
 }
-.nav-item:hover {
+.nav-item-hover:hover {
 	background-color: rgb(247, 247, 247);
 	height: 50px;
 	display: flex;
@@ -129,7 +129,6 @@
 .dropdown-menu {
 	box-shadow: 0px 0px 5px 1px rgb(231, 231, 231);
 }
-.no-text-decoration:hover
-{
-    text-decoration:none;
+.no-text-decoration:hover {
+	text-decoration: none;
 }
