@@ -65,15 +65,15 @@ class ProfilePictureDropDown extends React.Component {
 						</div>
 						<div>Create Ad</div>
 					</a>
-					<a
-						href="/"
+					<Link
+						to="/stats"
 						className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center"
 					>
 						<div className="mr-2">
 							<i className="fas fa-chart-bar"></i>
 						</div>
 						<div>Stats</div>
-					</a>
+					</Link>
 					<a
 						href="/"
 						className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center"

@@ -19,7 +19,8 @@ import {
 	YourAdChoices,
 	Settings,
 	Help,
-	MessagesPopUp
+	MessagesPopUp,
+	Statistics
 } from "..";
 
 class App extends React.Component {
@@ -64,6 +65,7 @@ class App extends React.Component {
 						/>
 						<Route path="/settings" component={Settings} />
 						<Route path="/help" component={Help} />
+						<Route path="/stats" component={Statistics}/>
 					</Switch>
 				</div>
 			</Router>

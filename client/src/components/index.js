@@ -92,6 +92,7 @@ import ActionsDefault from "./Messages/ActionsDefault";
 import TitleDefault from "./Messages/TitleNew";
 import TitleNew from "./Messages/TitleDefault";
 import MessageTitle from './Messages/MessageTitle';
+import Statistics from './Stats/Statistics';
 
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
@@ -191,5 +192,6 @@ export {
 	ActionsDefault,
 	TitleDefault,
 	TitleNew,
-	MessageTitle
+	MessageTitle,
+	Statistics
 };

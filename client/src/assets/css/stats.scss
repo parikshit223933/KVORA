@@ -1,0 +1,8 @@
+.custom-reverse-flex {
+	flex-direction: row;
+}
+@media screen and(max-width:768px) {
+	.custom-reverse-flex {
+		flex-direction: column-reverse;
+	}
+}
