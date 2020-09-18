@@ -100,7 +100,7 @@ import StatRight from "./Stats/StatRight";
 import StatShares from "./Stats/Graph/StatShares";
 import StatUpvotes from "./Stats/Graph/StatUpvotes";
 import StatViews from "./Stats/Graph/StatViews";
-
+import MainChart from './Stats/Graph/MainChart';
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
 */
@@ -208,4 +208,5 @@ export {
 	StatShares,
 	StatUpvotes,
 	StatViews,
+	MainChart
 };
