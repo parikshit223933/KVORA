@@ -21,7 +21,8 @@ import {
 	Help,
 	MessagesPopUp,
 	Statistics,
-	YourContentLanding
+	YourContentLanding,
+	Bookmarks,
 } from "..";
 
 class App extends React.Component {
@@ -31,7 +32,7 @@ class App extends React.Component {
 			<Router>
 				<div className="App">
 					{isLoggedIn && <Navbar />}
-					<MessagesPopUp/>
+					<MessagesPopUp />
 					{/* This pop up is invoke by messages/messagespopup */}
 					<Switch>
 						<Route exact path="/" component={Home} />
@@ -66,8 +67,13 @@ class App extends React.Component {
 						/>
 						<Route path="/settings" component={Settings} />
 						<Route path="/help" component={Help} />
-						<Route path="/stats" component={Statistics}/>
-						<Route exact path="/content" component={YourContentLanding}/>
+						<Route path="/stats" component={Statistics} />
+						<Route
+							exact
+							path="/content"
+							component={YourContentLanding}
+						/>
+						<Route exact path="/bookmarks" component={Bookmarks} />
 					</Switch>
 				</div>
 			</Router>

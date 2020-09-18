@@ -83,15 +83,15 @@ class ProfilePictureDropDown extends React.Component {
 						</div>
 						<div>Your Content</div>
 					</Link>
-					<a
-						href="/"
+					<Link
+						to="/bookmarks"
 						className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center"
 					>
 						<div className="mr-2">
 							<i className="fas fa-bookmark"></i>
 						</div>
 						<div>Bookmarks</div>
-					</a>
+					</Link>
 					<a
 						href="/"
 						className="dropdown-item text-secondary pl-3 py-2 d-flex flex-row justify-content-start align-items-center"

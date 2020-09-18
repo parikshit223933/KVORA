@@ -105,6 +105,7 @@ import YourContentLanding from './YourContent/YourContentLanding';
 import ContentFilter from './YourContent/ContentFilter';
 import ContentMain from './YourContent/ContentMain';
 import ContentItems from './YourContent/Reusables/ContentItems';
+import Bookmarks from './Bookmarks/Bookmarks';
 
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
@@ -217,5 +218,6 @@ export {
 	YourContentLanding,
 	ContentFilter,
 	ContentMain,
-	ContentItems
+	ContentItems,
+	Bookmarks
 };
