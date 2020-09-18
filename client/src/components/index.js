@@ -101,6 +101,10 @@ import StatShares from "./Stats/Graph/StatShares";
 import StatUpvotes from "./Stats/Graph/StatUpvotes";
 import StatViews from "./Stats/Graph/StatViews";
 import MainChart from './Stats/Graph/MainChart';
+import YourContentLanding from './YourContent/YourContentLanding';
+import ContentFilter from './YourContent/ContentFilter';
+import ContentMain from './YourContent/ContentMain';
+
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
 */
@@ -208,5 +212,8 @@ export {
 	StatShares,
 	StatUpvotes,
 	StatViews,
-	MainChart
+	MainChart,
+	YourContentLanding,
+	ContentFilter,
+	ContentMain
 };

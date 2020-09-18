@@ -20,7 +20,8 @@ import {
 	Settings,
 	Help,
 	MessagesPopUp,
-	Statistics
+	Statistics,
+	YourContentLanding
 } from "..";
 
 class App extends React.Component {
@@ -66,6 +67,7 @@ class App extends React.Component {
 						<Route path="/settings" component={Settings} />
 						<Route path="/help" component={Help} />
 						<Route path="/stats" component={Statistics}/>
+						<Route exact path="/content" component={YourContentLanding}/>
 					</Switch>
 				</div>
 			</Router>
