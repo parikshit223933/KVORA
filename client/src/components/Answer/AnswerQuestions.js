@@ -10,7 +10,7 @@ class AnswerQuestions extends React.Component
                 <hr className="mt-1 mb-1 pl-3"/>
                 <p className="mb-1">Questions for you</p>
                 <p className="mb-1">Answer Requests</p>
-                <p className="mb-1">Answer Later</p>
+                <p className="mb-1">Answer Drafts</p>
             </div>
         )
     }

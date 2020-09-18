@@ -23,6 +23,7 @@ import {
 	Statistics,
 	YourContentLanding,
 	Bookmarks,
+	Drafts,
 } from "..";
 
 class App extends React.Component {
@@ -74,6 +75,7 @@ class App extends React.Component {
 							component={YourContentLanding}
 						/>
 						<Route exact path="/bookmarks" component={Bookmarks} />
+						<Route exact path="/drafts" component={Drafts} />
 					</Switch>
 				</div>
 			</Router>

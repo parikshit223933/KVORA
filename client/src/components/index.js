@@ -100,12 +100,15 @@ import StatRight from "./Stats/StatRight";
 import StatShares from "./Stats/Graph/StatShares";
 import StatUpvotes from "./Stats/Graph/StatUpvotes";
 import StatViews from "./Stats/Graph/StatViews";
-import MainChart from './Stats/Graph/MainChart';
-import YourContentLanding from './YourContent/YourContentLanding';
-import ContentFilter from './YourContent/ContentFilter';
-import ContentMain from './YourContent/ContentMain';
-import ContentItems from './YourContent/Reusables/ContentItems';
-import Bookmarks from './Bookmarks/Bookmarks';
+import MainChart from "./Stats/Graph/MainChart";
+import YourContentLanding from "./YourContent/YourContentLanding";
+import ContentFilter from "./YourContent/ContentFilter";
+import ContentMain from "./YourContent/ContentMain";
+import ContentItems from "./YourContent/Reusables/ContentItems";
+import Bookmarks from "./Bookmarks/Bookmarks";
+import Drafts from "./Drafts/Drafts";
+import DraftsMid from "./Drafts/DraftsMid";
+import DraftsReusable from './Drafts/Reusables/DraftsReusable';
 
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
@@ -219,5 +222,8 @@ export {
 	ContentFilter,
 	ContentMain,
 	ContentItems,
-	Bookmarks
+	Bookmarks,
+	Drafts,
+	DraftsMid,
+	DraftsReusable
 };
