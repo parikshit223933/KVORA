@@ -55,7 +55,7 @@ class PrivacySettings extends React.Component {
 							className="form-check-label"
 							for="exampleRadios1"
 						>
-							Allow any person on Quora to send me messages.
+							Allow any person on Kvora to send me messages.
 						</label>
 					</div>
 					<div className="form-check">
@@ -70,7 +70,7 @@ class PrivacySettings extends React.Component {
 							className="form-check-label"
 							for="exampleRadios2"
 						>
-							Allow any person on Quora I follow or
+							Allow any person on Kvora I follow or
 							admin/moderator of a space I follow to send me
 							messages.
 						</label>
@@ -149,7 +149,7 @@ class PrivacySettings extends React.Component {
 							id="exampleCheck1"
 						/>
 						<label className="form-check-label" for="exampleCheck1">
-							Allow advertisers on Quora to promote your answers.
+							Allow advertisers on Kvora to promote your answers.
 						</label>
 					</div>
 				</div>

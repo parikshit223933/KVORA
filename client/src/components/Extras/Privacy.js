@@ -19,7 +19,7 @@ class Privacy extends React.Component {
 						<p>
 							This Privacy Policy applies to activities by Kvora,
 							Inc. and its affiliates and subsidiaries
-							(collectively “Quora,” “we” or “us”). Capitalized
+							(collectively “Kvora,” “we” or “us”). Capitalized
 							terms that are not defined in this Privacy Policy
 							have the meaning given to them in our Terms of
 							Service.
@@ -393,7 +393,7 @@ class Privacy extends React.Component {
 							that saw a particular ad or content and related
 							audience engagement information to users of our Ad
 							Services and to publishers of content on the Kvora
-							Platform. See Quora’s Pixel Privacy Terms for more
+							Platform. See Kvora’s Pixel Privacy Terms for more
 							information about how our Pixels are used, and also
 							see the Your Choices section below for information
 							about opting out of tracking by our Pixels.
@@ -497,7 +497,7 @@ class Privacy extends React.Component {
 							any time. Any questions you have posted may remain
 							on the Kvora Platform and be edited by other users.
 							Any deleted content will be removed from third-party
-							sites from which it has been shared via Quora’s
+							sites from which it has been shared via Kvora’s
 							standard sharing features; however we have no
 							control over deletions or changes to your content if
 							it has been shared manually by others. When you make
@@ -723,7 +723,7 @@ class Privacy extends React.Component {
 							and where required by law, we will obtain your
 							consent or give you the opportunity to opt out of
 							such changes. By continuing to use the Kvora
-							Platform and Quora’s services without consenting to
+							Platform and Kvora’s services without consenting to
 							the changes or opting out, it will be deemed that
 							you have consented to such changes by your conduct.
 						</p>
@@ -746,8 +746,8 @@ class Privacy extends React.Component {
 							specified in the Privacy Policy, ‘personal
 							information’ will include ‘sensitive personal
 							information’ as well. By using the Kvora Platform
-							and Quora’s services, you will be deemed to have
-							consented to Quora’s collection, disclosure and
+							and Kvora’s services, you will be deemed to have
+							consented to Kvora’s collection, disclosure and
 							transfer of your personal information. By way of
 							illustration, you will have provided us such consent
 							by your conduct if you choose to share your personal

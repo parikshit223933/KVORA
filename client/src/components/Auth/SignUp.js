@@ -95,7 +95,7 @@ class SignUp extends React.Component {
 						/>
 					</div>
                     <div className="form-row text-secondary">
-                    <small>By clicking "Sign Up" you indicate that you have read and agree to Quora's Terms of Service and Privacy Policy.</small>
+                    <small>By clicking "Sign Up" you indicate that you have read and agree to Kvora's Terms of Service and Privacy Policy.</small>
                     </div>
                     <div className="form-group d-flex flex-row justify-content-end align-items-center">
                         <div className="mr-3">

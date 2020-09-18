@@ -32,7 +32,7 @@ class ShareReusable extends React.Component {
 				</div>
 				<div className="my-2 text-dark">
 					Contributors and submitters might want to be aware of this
-					that came down recently from Quora, Inc. re: Space content.
+					that came down recently from Kvora, Inc. re: Space content.
 					I don't interpret it as particularly prohibiting the content
 					here, but do mind BNBR as I've previously noted.
 				</div>
@@ -59,7 +59,7 @@ class ShareReusable extends React.Component {
 					</div>
 					<div className="my-1">
 						<b className="font-15 text-dark">
-							What is Quora's content and image policy in Spaces?
+							What is Kvora's content and image policy in Spaces?
 						</b>
 					</div>
 					<div className="text-dark">

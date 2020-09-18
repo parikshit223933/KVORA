@@ -8,7 +8,7 @@ class Terms extends React.Component {
 					<div className="col-md-10 offset-md-1 font-16">
 						<h2 className="text-center my-4">Terms of Service</h2>
 						<p>
-							<b>An Introduction to Quora’s Terms of Service</b>
+							<b>An Introduction to Kvora’s Terms of Service</b>
 						</p>
 						<p>
 							Welcome to Kvora! Here is a quick summary of the
@@ -111,10 +111,10 @@ class Terms extends React.Component {
 						<p>
 							These terms of service (“Terms of Service”) set
 							forth the agreement (“Agreement”) between you and
-							Kvora, Inc. (“Quora” “we” or “us”). It governs your
+							Kvora, Inc. (“Kvora” “we” or “us”). It governs your
 							use of the products and services we offer through
 							our websites and applications (collectively the
-							“Quora Platform”).
+							“Kvora Platform”).
 						</p>
 						<p>
 							Please make sure to read it, because, by using the
@@ -488,7 +488,7 @@ class Terms extends React.Component {
 											laws and regulations in connection
 											with Your Content. You are
 											responsible for ensuring that Your
-											Content does not violate Quora’s
+											Content does not violate Kvora’s
 											Acceptable Use Policy, Copyright
 											Policy, Trademark Policy, other
 											published Kvora policy, or any
@@ -760,7 +760,7 @@ class Terms extends React.Component {
 								us to pass to, and receive from, the Integrated
 								Service Provider your log-in information and
 								other user data. For more information about
-								Quora’s use, storage, and disclosure of
+								Kvora’s use, storage, and disclosure of
 								information related to you and your use of
 								integrated services within Kvora, please see our
 								Privacy Policy. Note that your use of any
@@ -870,7 +870,7 @@ class Terms extends React.Component {
 												such buttons, links and widgets,
 												and the website on which such
 												buttons, links and widgets are
-												used do not violate Quora’s
+												used do not violate Kvora’s
 												Acceptable Use Policy.
 											</li>
 											<li>
@@ -940,7 +940,7 @@ class Terms extends React.Component {
 											<b>Reports of Other Violations. </b>
 											<p>
 												If you believe content on the
-												Kvora Platform violates Quora’s
+												Kvora Platform violates Kvora’s
 												Acceptable Use Policy or
 												otherwise violates applicable
 												law (apart from copyright or
@@ -975,7 +975,7 @@ class Terms extends React.Component {
 										ENTITIES TO YOU.
 									</b>
 									<p>
-										“QUORA ENTITIES” MEANS Kvora, INC., AND
+										“Kvora ENTITIES” MEANS Kvora, INC., AND
 										ANY SUBSIDIARIES, AFFILIATES, RELATED
 										COMPANIES, SUPPLIERS, LICENSORS AND
 										PARTNERS, AND THE OFFICERS, DIRECTORS,
@@ -1073,7 +1073,7 @@ class Terms extends React.Component {
 											</li>
 											<li>
 												WITHOUT LIMITING THE FOREGOING,
-												QUORA’S MAXIMUM AGGREGATE
+												Kvora’S MAXIMUM AGGREGATE
 												LIABILITY TO YOU FOR LOSSES OR
 												DAMAGES THAT YOU SUFFER IN
 												CONNECTION WITH THE Kvora
@@ -1097,7 +1097,7 @@ class Terms extends React.Component {
 												APPLY TO A RESIDENT OF NEW
 												JERSEY, TO THE EXTENT DAMAGES TO
 												SUCH NEW JERSEY RESIDENT ARE THE
-												RESULT OF QUORA’S NEGLIGENT,
+												RESULT OF Kvora’S NEGLIGENT,
 												FRAUDULENT, RECKLESS, OR
 												INTENTIONAL MISCONDUCT.
 											</li>

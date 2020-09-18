@@ -7,25 +7,25 @@ class YourAdChoices extends React.Component {
 				<div className="row">
 					<div className="col-md-6 offset-md-3 font-16">
 						<h2 className="my-4 text-center">
-							Your Ad Choices – Quora Advertising Preferences
+							Your Ad Choices – Kvora Advertising Preferences
 						</h2>
 						<p>
 							As described in our Privacy Policy, we may display
 							interest-based advertising to you based on
-							information that we have collected via the Quora
+							information that we have collected via the Kvora
 							Platform, and through our Pixels, widgets, and
 							buttons embedded on third-party sites that you may
-							have visited over time. See Quora’s Pixel Privacy
+							have visited over time. See Kvora’s Pixel Privacy
 							Terms for more information about how our Pixels are
 							used.
 						</p>
 						<p>
-							<b>Pixels.</b> To opt out of tracking via the Quora
+							<b>Pixels.</b> To opt out of tracking via the Kvora
 							Pixels, please visit this page. Opting out of Pixels
 							tracking may impact our ability to personalize ads
 							and content tailored to your interests. This setting
 							is tied to your cookies, and, unless you are logged
-							in to the Quora Platform, will only be effective on
+							in to the Kvora Platform, will only be effective on
 							the browser for which you have performed the opt-out
 						</p>
 						<p>

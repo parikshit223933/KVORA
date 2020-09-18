@@ -19,7 +19,7 @@ class StatHeader extends React.Component {
 									aria-haspopup="true"
 									aria-expanded="false"
 								>
-									Dropdown button
+									Choose Period
 								</button>
 								<div
 									className="dropdown-menu"
@@ -53,7 +53,7 @@ class StatHeader extends React.Component {
 									aria-haspopup="true"
 									aria-expanded="false"
 								>
-									Dropdown button
+									Choose Content
 								</button>
 								<div
 									className="dropdown-menu"

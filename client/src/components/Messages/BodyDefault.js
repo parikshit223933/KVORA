@@ -9,7 +9,7 @@ class BodyDefault extends React.Component {
 				</div>
 				<div className="font-20 font-heavy">No Messages</div>
 				<div className="text-secondary">
-					Connect with others on Quora by beginning a new
+					Connect with others on Kvora by beginning a new
 					conversation.
 				</div>
 			</div>

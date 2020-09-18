@@ -9,24 +9,24 @@ class AcceptableUse extends React.Component {
                         <h2 className="text-center my-4">Acceptable Use Policy</h2>
 						<p>Last updated: December 18, 2017</p>
 						<p>
-							Quora is a place that empowers people to share and
+							Kvora is a place that empowers people to share and
 							grow the world’s knowledge. We believe if people
 							don’t feel safe they can’t contribute to knowledge
 							or listen to another person’s point of view. The
-							following rules help everyone on Quora have a safe
+							following rules help everyone on Kvora have a safe
 							experience
 						</p>
 						<p>
 							<b>Be Nice, Be Respectful</b>
 						</p>
 						<p>
-							Follow Quora's Be Nice, Be Respectful policy
+							Follow Kvora's Be Nice, Be Respectful policy
 							(“BNBR”), which includes the following:
 						</p>
 						<p>
 							Engage with Others in a Constructive Way
 							<br />
-							Assume everyone on Quora is here to make the
+							Assume everyone on Kvora is here to make the
 							platform a great resource with diverse backgrounds,
 							beliefs, and opinions. It is OK to disagree, but
 							please be civil, respectful, and considerate to
@@ -35,7 +35,7 @@ class AcceptableUse extends React.Component {
 						<p>
 							No Hate Speech
 							<br />
-							Quora is a place for civil discourse and does not
+							Kvora is a place for civil discourse and does not
 							tolerate content that attacks or disparages an
 							individual or group based on race, gender, religion,
 							nationality, ethnicity, political group, sexual
@@ -58,9 +58,9 @@ class AcceptableUse extends React.Component {
 						<p>
 							Identity and Deceptive Activity
 							<br />
-							Your Quora profile should use your real name or
+							Your Kvora profile should use your real name or
 							legally incorporated business name and use accurate
-							and truthful credentials. Do not use Quora to
+							and truthful credentials. Do not use Kvora to
 							impersonate another person, act as another entity
 							without authorization, or create multiple accounts.
 						</p>
@@ -73,34 +73,34 @@ class AcceptableUse extends React.Component {
 							attributed and block quoted. Learn More.
 						</p>
 						<p>
-							<b>Respect the Quora Platform</b>
+							<b>Respect the Kvora Platform</b>
 						</p>
 						<p>
 							No Spam
 							<br />
-							Do not use Quora to post or attract spam. Learn More
+							Do not use Kvora to post or attract spam. Learn More
 						</p>
 						<p>
 							No Malicious or Illegal Activity
 							<br />
 							Do not contribute viruses, malware, and other
 							malicious programs or engage in activity that harms
-							or interferes with the operation of Quora or seeks
+							or interferes with the operation of Kvora or seeks
 							to circumvent security or authentication measures.
-							Do not use Quora to engage in unlawful or fraudulent
+							Do not use Kvora to engage in unlawful or fraudulent
 							activity, or to promote illegal acts.
 						</p>
 						<p>
-							Abide by Other Quora Policies
+							Abide by Other Kvora Policies
 							<br />
-							Follow Quora's other policies, which Quora may add
+							Follow Kvora's other policies, which Kvora may add
 							or change from time to time. Learn more
 						</p>
 						<p>
 							<b>Reporting Problems</b>
 						</p>
 						<p>
-							If you see something on Quora that you believe
+							If you see something on Kvora that you believe
 							violates our guidelines or policies, please report
 							it to us using the in-product reporting tool, or via
 							our contact form.
@@ -108,7 +108,7 @@ class AcceptableUse extends React.Component {
 						<p>
 							Violating the Acceptable Use Policy may result in
 							the removal of content, or in the limitation or
-							termination of a user’s access to Quora. Learn More
+							termination of a user’s access to Kvora. Learn More
 						</p>
 					</div>
 				</div>

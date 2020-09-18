@@ -429,7 +429,7 @@ class EmailAndNotifications extends React.Component {
 				</div>
 
 				<div className="py-2">
-					<b>From Quora</b>
+					<b>From Kvora</b>
 				</div>
 				<hr className="mt-2 mb-4" />
 
@@ -440,7 +440,7 @@ class EmailAndNotifications extends React.Component {
 					}}
 					className="mb-3"
 				>
-					<div className="p-3 font-heavy">Quora Digest</div>
+					<div className="p-3 font-heavy">Kvora Digest</div>
 					<hr className="m-0" />
 					<div className="pb-4">
 						<div className="p-3">

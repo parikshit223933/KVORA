@@ -26,7 +26,7 @@ class SocialLogin extends React.Component {
 					<p className="text-secondary sign-up-desc">
 						<Link to="/auth/sign-up">Sign Up</Link> With Email. By
 						signing up you indicate that you have read and agree to
-						Quora's Terms of Service and Privacy Policy.
+						Kvora's Terms of Service and Privacy Policy.
 					</p>
 				</div>
 			</React.Fragment>
