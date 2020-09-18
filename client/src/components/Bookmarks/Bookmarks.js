@@ -1,5 +1,5 @@
 import React from "react";
-import {HomeSpaces} from '../';
+import { HomeSingleFeed, HomeSpaces } from "../";
 
 class Bookmarks extends React.Component {
 	render() {
@@ -11,9 +11,21 @@ class Bookmarks extends React.Component {
 						<HomeSpaces />
 					</div>
 					<div className="col-lg-7 col-md-9 col-sm-12">
-                    
+						<div>
+							<b>Bookmarks</b>
+						</div>
+						<hr className="my-3" />
+						<div>
+							<HomeSingleFeed />
+							<HomeSingleFeed />
+							<HomeSingleFeed />
+							<HomeSingleFeed />
+							<HomeSingleFeed />
+							<HomeSingleFeed />
+							<HomeSingleFeed />
+							<HomeSingleFeed />
+						</div>
 					</div>
-					{/* hidden below medium screen */}
 				</div>
 			</div>
 		);
