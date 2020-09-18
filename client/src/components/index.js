@@ -104,6 +104,7 @@ import MainChart from './Stats/Graph/MainChart';
 import YourContentLanding from './YourContent/YourContentLanding';
 import ContentFilter from './YourContent/ContentFilter';
 import ContentMain from './YourContent/ContentMain';
+import ContentItems from './YourContent/Reusables/ContentItems';
 
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
@@ -215,5 +216,6 @@ export {
 	MainChart,
 	YourContentLanding,
 	ContentFilter,
-	ContentMain
+	ContentMain,
+	ContentItems
 };
