@@ -23,10 +23,10 @@ class SpaceLeft extends React.Component {
 							Action
 						</button>
 						<div className="dropdown-menu">
-							<a className="dropdown-item" href="#">
+							<a className="dropdown-item" href="/">
 								Recent
 							</a>
-							<a className="dropdown-item" href="#">
+							<a className="dropdown-item" href="/">
 								Top
 							</a>
 						</div>

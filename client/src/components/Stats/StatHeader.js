@@ -25,19 +25,19 @@ class StatHeader extends React.Component {
 									className="dropdown-menu"
 									aria-labelledby="dropdownMenuButton"
 								>
-									<a className="dropdown-item" href="#">
+									<a className="dropdown-item" href="/">
 										Last 7 Days
 									</a>
-									<a className="dropdown-item" href="#">
+									<a className="dropdown-item" href="/">
 										Last 30 Days
 									</a>
-									<a className="dropdown-item" href="#">
+									<a className="dropdown-item" href="/">
 										Last 3 Months
 									</a>
-									<a className="dropdown-item" href="#">
+									<a className="dropdown-item" href="/">
 										Last Year
 									</a>
-									<a className="dropdown-item" href="#">
+									<a className="dropdown-item" href="/">
 										All Time
 									</a>
 								</div>
@@ -59,19 +59,19 @@ class StatHeader extends React.Component {
 									className="dropdown-menu"
 									aria-labelledby="dropdownMenuButton"
 								>
-									<a className="dropdown-item" href="#">
+									<a className="dropdown-item" href="/">
 										Anwers
 									</a>
-									<a className="dropdown-item" href="#">
+									<a className="dropdown-item" href="/">
 										Questions
 									</a>
-									<a className="dropdown-item" href="#">
+									<a className="dropdown-item" href="/">
 										Shares
 									</a>
-									<a className="dropdown-item" href="#">
+									<a className="dropdown-item" href="/">
 										Space Posts
 									</a>
-									<a className="dropdown-item" href="#">
+									<a className="dropdown-item" href="/">
 										All Content
 									</a>
 								</div>
