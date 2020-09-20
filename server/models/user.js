@@ -40,6 +40,7 @@ const userSchema = new mongoose.Schema({
 		{
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'Space',
+			muted: Boolean,
 		},
 	],
 	knowsAbout: [
@@ -101,9 +102,11 @@ const userSchema = new mongoose.Schema({
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'Activity',
 		},
-    ],
-    settings:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Setting'
-    }
+	],
+	settings: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'Setting',
+	},
 });
+const user=mongoose.model('User', userSchema);
+module.exports=user;
