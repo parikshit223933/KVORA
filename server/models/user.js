@@ -47,6 +47,17 @@ const userSchema = new mongoose.Schema({
 		{
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'Topic',
+			muted: Boolean,
+			bookmarked: Boolean,
+		},
+	],
+	thankedTopicLogs: [
+		{
+			topicLog: {
+				type: mongoose.Schema.Types.ObjectId,
+				ref: 'TopicLog',
+			},
+			isThanked: Boolean,
 		},
 	],
 	credentials: [
@@ -108,5 +119,6 @@ const userSchema = new mongoose.Schema({
 		ref: 'Setting',
 	},
 });
-const user=mongoose.model('User', userSchema);
-module.exports=user;
+
+const user = mongoose.model('User', userSchema);
+module.exports = user;
