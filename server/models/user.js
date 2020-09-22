@@ -39,8 +39,17 @@ const userSchema = new mongoose.Schema(
 		},
 		notifications: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Notification',
+				notification: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Notification',
+				},
+				markedAsRead: Boolean,
+				alerts: {
+					noNotification: Boolean,
+					allNotification: Boolean,
+					highlights: Boolean,
+					fewerNotifications: Boolean,
+				},
 			},
 		],
 		spaces: [
