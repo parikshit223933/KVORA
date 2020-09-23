@@ -27,3 +27,5 @@ const notificationSchema = new mongoose.Schema(
 		validateBeforeSave: true,
 	}
 );
+const notification = mongoose.model('Notification', notificationSchema);
+module.exports = notification;

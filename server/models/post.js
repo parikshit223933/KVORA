@@ -53,3 +53,6 @@ const postSchema = new mongoose.Schema(
 		validateBeforeSave: true,
 	}
 );
+
+const post = mongoose.model('Post', postSchema);
+module.exports = post;
