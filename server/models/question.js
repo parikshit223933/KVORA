@@ -6,9 +6,42 @@ const questionSchema = new mongoose.Schema(
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'User',
 		},
+		content: {
+			type: String,
+		},
 		contextLink: {
 			type: String,
 		},
+		answers: [
+			{
+				type: mongoose.Schema.Types.ObjectId,
+				ref: 'Answer',
+			},
+		],
+		followers: [
+			{
+				type: mongoose.Schema.Types.ObjectId,
+				ref: 'User',
+			},
+		],
+		comments: [
+			{
+				type: mongoose.Schema.Types.ObjectId,
+				ref: 'Comment',
+			},
+		],
+		downvotes: [
+			{
+				type: mongoose.Schema.Types.ObjectId,
+				ref: 'User',
+			},
+		],
+		relatedTopics: [
+			{
+				type: mongoose.Schema.Types.ObjectId,
+				ref: 'Topic',
+			},
+		],
 		isPublic: {
 			type: Boolean,
 			default: false,
