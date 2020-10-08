@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const multer = require('multer');
+const path = require('path');
 
 const answerSchema = new mongoose.Schema(
 	{
@@ -49,6 +51,22 @@ const answerSchema = new mongoose.Schema(
 		validateBeforeSave: true,
 	}
 );
+
+let storage = multer.diskStorage({
+	destination: function (req, file, cb) {
+		cb(
+			null,
+			path.join(__dirname, '..', './uploads', './answers', './images')
+		);
+	},
+	filename: function (req, file, cb) {
+		cb(null, file.fieldname + '-' + Date.now());
+	},
+});
+
+answerSchema.statics.uploadedAvatar = multer({
+	storage: storage,
+}).single('image');
 
 const answer = mongoose.model('Answer', answerSchema);
 module.exports = answer;
