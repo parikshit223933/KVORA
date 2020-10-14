@@ -9,10 +9,16 @@ const userSchema = new mongoose.Schema(
 			required: true,
 			unique: true,
 		},
-		password: {
+
+		hash: {
 			type: String,
 			required: true,
 		},
+		salt: {
+			type: String,
+			required: true,
+		},
+
 		firstName: {
 			type: String,
 			required: true,
