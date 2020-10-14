@@ -2,13 +2,7 @@ const userUtility = new (require('../../../utility/userUtility'))();
 const generalUtility = new (require('../../../utility/generalUtility'))();
 const { ReasonPhrases, StatusCodes, getReasonPhrase, getStatusCode } = require('http-status-codes');
 const User = require('../../../models/user');
-const randomBytesForPasswordSalt = 50;
-const saltHashIterations = 5000;
-const hashKeyLength = 100;
-const crypto = require('crypto');
 const chalk = require('chalk');
-const passwordHashingAlgorithm = 'sha512';
-const stringFormat = 'hex';
 
 // Input: formData {firstName, lastName, email, password}
 module.exports.signUp = async (req, res) => {
@@ -35,10 +29,7 @@ module.exports.signUp = async (req, res) => {
 		);
 	}
 
-	const salt = crypto.randomBytes(randomBytesForPasswordSalt).toString('hex');
-	const hash = crypto
-		.pbkdf2Sync(password, salt, saltHashIterations, hashKeyLength, passwordHashingAlgorithm)
-		.toString(stringFormat);
+	const { salt, hash } = userUtility.getNewSaltAndHash(password);
 	try {
 		let user = await User.create({
 			firstName,
