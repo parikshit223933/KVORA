@@ -1,7 +1,9 @@
 const utils = new (require('../../../utility/utils'))();
-const { ReasonPhrases, StatusCodes, getReasonPhrase, getStatusCode } = require('http-status-codes');
+const { StatusCodes, getReasonPhrase } = require('http-status-codes');
 const User = require('../../../models/user');
 const chalk = require('chalk');
+const jwt = require('jsonwebtoken');
+const passportJWTSecret = 'secret';
 
 // Input: formData {firstName, lastName, email, password}
 module.exports.signUp = async (req, res) => {
@@ -14,11 +16,11 @@ module.exports.signUp = async (req, res) => {
 		return utils.response(res, StatusCodes.NOT_FOUND, 'Please fill in all fields', false);
 	}
 
-	if (User.doesUserExists(email)) {
+	if (await User.doesUserExists(email)) {
 		return utils.response(res, StatusCodes.PRECONDITION_FAILED, 'User already exists!', false);
 	}
 
-	const { salt, hash } = User.getNewSaltAndHash(password);
+	const { salt, hash } =await User.getNewSaltAndHash(password);
 	try {
 		let user = await User.create({
 			firstName,
@@ -28,7 +30,14 @@ module.exports.signUp = async (req, res) => {
 			email,
 		});
 		await user.save();
+		const token = jwt.sign({
+			firstName: user.firstName,
+			lastName: user.lastName,
+			email: user.email,
+			id: user.id,
+		}, passportJWTSecret);
 		return utils.response(res, StatusCodes.OK, 'Account created successfully!', true, {
+			token,
 			user: {
 				firstName: user.firstName,
 				lastName: user.lastName,
