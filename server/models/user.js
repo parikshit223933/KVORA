@@ -172,7 +172,6 @@ userSchema.statics.uploadedAvatar = multer({
 
 userSchema.statics.doesUserExists = async function (email) {
 	let user = await this.findOne({ email });
-	console.log(user)
 	if (user) {
 		return true;
 	}
