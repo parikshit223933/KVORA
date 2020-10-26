@@ -1,6 +1,6 @@
 const express = require('express');
 
-class generalUtility {
+class util {
 	isNullOrUndefined = (param) => {
 		if (param.length != undefined) {
 			// it is an array
@@ -18,11 +18,10 @@ class generalUtility {
 			}
 			return false;
 		}
-    };
-    areEqual=(param1, param2)=>
-    {
-        return param1==param2;
-    }
+	};
+	areEqual = (param1, param2) => {
+		return param1 == param2;
+	};
 	response = (
 		res,
 		statusCode = 500,
@@ -37,4 +36,4 @@ class generalUtility {
 		});
 	};
 }
-module.exports = generalUtility;
+module.exports = util;

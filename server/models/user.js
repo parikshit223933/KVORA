@@ -1,6 +1,13 @@
 const mongoose = require('mongoose');
 const multer = require('multer');
 const path = require('path');
+const chalk = require('chalk');
+const passwordHashingAlgorithm = 'sha512';
+const stringFormat = 'hex';
+const randomBytesForPasswordSalt = 50;
+const saltHashIterations = 5000;
+const hashKeyLength = 100;
+const crypto = require('crypto');
 
 const userSchema = new mongoose.Schema(
 	{
@@ -161,6 +168,45 @@ let storage = multer.diskStorage({
 userSchema.statics.uploadedAvatar = multer({
 	storage: storage,
 }).single('avatar');
+
+
+userSchema.statics.doesUserExists = async function (email) {
+	let user = await this.findOne({ email });
+	if (user) {
+		return true;
+	}
+	return false;
+};
+
+userSchema.statics.isPasswordCorrect = async function (email, password) {
+	try {
+		let user = await this.findOne({ email });
+		const hashInDB = user.hash;
+		const saltinDB = user.salt;
+
+		const newHash = crypto
+			.pbkdf2Sync(
+				password,
+				saltinDB,
+				saltHashIterations,
+				hashKeyLength,
+				passwordHashingAlgorithm
+			)
+			.toString(stringFormat);
+		return hashInDB === newHash;
+	} catch (error) {
+		console.log(chalk.redBright(error));
+		return;
+	}
+};
+
+userSchema.statics.getNewSaltAndHash = (password) => {
+	const salt = crypto.randomBytes(randomBytesForPasswordSalt).toString('hex');
+	const hash = crypto
+		.pbkdf2Sync(password, salt, saltHashIterations, hashKeyLength, passwordHashingAlgorithm)
+		.toString(stringFormat);
+	return { salt, hash };
+};
 
 const user = mongoose.model('User', userSchema);
 module.exports = user;

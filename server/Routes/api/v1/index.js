@@ -1,7 +1,7 @@
 const express=require('express');
 const router=express.Router();
-const homeController=require('../../../Controllers/api/v1/home');
+const userRouter=require('./user');
 
-router.use('/', homeController.home);
+router.use('/user', userRouter);
 
 module.exports=router;
