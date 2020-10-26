@@ -47,7 +47,6 @@ class SignUp extends React.Component {
 		});
 	};
 	render() {
-		console.log(this.state);
 		return (
 			<React.Fragment>
 				<small>
