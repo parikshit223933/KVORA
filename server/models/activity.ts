@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const activitySchema = new mongoose.Schema(
 	{
-		Type: {
+		type: {
 			type: String,
 		},
 		title: {
@@ -17,6 +17,10 @@ const activitySchema = new mongoose.Schema(
 		validateBeforeSave: true,
 	}
 );
+export interface Activity {
+	type:string,
+	title:string,
+	description:string
+}
+export default mongoose.model< mongoose.Document >('Activity', activitySchema);
 
-const activity = mongoose.model('Activity', activitySchema);
-module.exports = activity;

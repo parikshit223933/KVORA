@@ -1,22 +1,23 @@
-const mongoose = require('mongoose');
-const multer = require('multer');
-const path = require('path');
-const chalk = require('chalk');
+import mongoose from 'mongoose';
+import multer from 'multer';
+import path from 'path';
+import chalk from 'chalk';
+import { Document, Model, model, Types, Schema, Query } from "mongoose"
+import crypto from 'crypto';
+
 const passwordHashingAlgorithm = 'sha512';
 const stringFormat = 'hex';
 const randomBytesForPasswordSalt = 50;
 const saltHashIterations = 5000;
 const hashKeyLength = 100;
-const crypto = require('crypto');
 
-const userSchema = new mongoose.Schema(
+const userSchema = new Schema(
 	{
 		email: {
 			type: String,
 			required: true,
 			unique: true,
 		},
-
 		hash: {
 			type: String,
 			required: true,
@@ -69,15 +70,19 @@ const userSchema = new mongoose.Schema(
 		],
 		spaces: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Space',
+				space: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Space',
+				},
 				muted: Boolean,
 			},
 		],
 		knowsAbout: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Topic',
+				topic: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Topic',
+				},
 				muted: Boolean,
 				bookmarked: Boolean,
 			},
@@ -99,55 +104,73 @@ const userSchema = new mongoose.Schema(
 		],
 		questions: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Question',
+				question: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Question',
+				},
 			},
 		],
 		answers: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Answer',
+				answer: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Answer',
+				},
 			},
 		],
 		shares: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Share',
+				share: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Share',
+				},
 			},
 		],
 		posts: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Post',
+				post: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Post',
+				},
 			},
 		],
 		followers: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'User',
+				follower: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'User',
+				},
 			},
 		],
 		following: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'User',
+				user: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'User',
+				},
 			},
 		],
 		edits: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Edit',
+				edit: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Edit',
+				},
 			},
 		],
-		activity: [
+		activities: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Activity',
+				activity: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Activity',
+				},
 			},
 		],
 		settings: {
-			type: mongoose.Schema.Types.ObjectId,
-			ref: 'Setting',
+			setting: {
+				type: mongoose.Schema.Types.ObjectId,
+				ref: 'Setting',
+			},
 		},
 	},
 	{
@@ -156,38 +179,48 @@ const userSchema = new mongoose.Schema(
 	}
 );
 
-let storage = multer.diskStorage({
-	destination: function (req, file, cb) {
+export interface User {
+	email: string;
+	hash: string;
+	salt: string;
+	firstName: string;
+	lastName: string;
+	avatar: string;
+	title: string;
+	description: string;
+	google: string;
+	facebook: string;
+	twitter: string;
+}
+
+const storage = multer.diskStorage({
+	destination(req, file, cb) {
 		cb(null, path.join(__dirname, '..', './uploads', './user', './avatars'));
 	},
-	filename: function (req, file, cb) {
+	filename(req, file, cb) {
 		cb(null, file.fieldname + '-' + Date.now());
 	},
 });
 
 userSchema.statics.uploadedAvatar = multer({
-	storage: storage,
+	storage,
 }).single('avatar');
 
-
-userSchema.statics.doesUserExists = async function (email) {
-	let user = await this.findOne({ email });
-	if (user) {
-		return true;
-	}
-	return false;
+userSchema.statics.doesUserExists = async function (email: string) {
+	const _user = await this.findOne({ email });
+	return !!_user;
 };
 
-userSchema.statics.isPasswordCorrect = async function (email, password) {
+userSchema.statics.isPasswordCorrect = async function (email: string, password: string) {
 	try {
-		let user = await this.findOne({ email });
-		const hashInDB = user.hash;
-		const saltinDB = user.salt;
+		const _user = await this.findOne({ email });
+		const hashInDB = _user.hash;
+		const saltInDB = _user.salt;
 
 		const newHash = crypto
 			.pbkdf2Sync(
 				password,
-				saltinDB,
+				saltInDB,
 				saltHashIterations,
 				hashKeyLength,
 				passwordHashingAlgorithm
@@ -195,12 +228,12 @@ userSchema.statics.isPasswordCorrect = async function (email, password) {
 			.toString(stringFormat);
 		return hashInDB === newHash;
 	} catch (error) {
+		// tslint:disable-next-line:no-console
 		console.log(chalk.redBright(error));
-		return;
 	}
 };
 
-userSchema.statics.getNewSaltAndHash = (password) => {
+userSchema.statics.getNewSaltAndHash = (password: string) => {
 	const salt = crypto.randomBytes(randomBytesForPasswordSalt).toString('hex');
 	const hash = crypto
 		.pbkdf2Sync(password, salt, saltHashIterations, hashKeyLength, passwordHashingAlgorithm)
@@ -208,5 +241,5 @@ userSchema.statics.getNewSaltAndHash = (password) => {
 	return { salt, hash };
 };
 
-const user = mongoose.model('User', userSchema);
-module.exports = user;
+const User = mongoose.model('User', userSchema);
+export default User;

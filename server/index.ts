@@ -1,11 +1,13 @@
-const express = require('express');
+import express from 'express';
 const app = express();
 const port = 8000;
-const cors = require('cors');
-const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
-const db = require('./config/mongoose');
-const sessionSecret='foo';
+import cors from 'cors';
+import session from 'express-session';
+import ConnectMongo from 'connect-mongo';
+const MongoStore = ConnectMongo(session);
+import db from './config/mongoose';
+const sessionSecret = 'foo';
+import Routes from './Routes';
 
 app.use(
 	session({
@@ -13,20 +15,20 @@ app.use(
 		name: 'Kvora',
 		resave: false,
 		cookie: { maxAge: 1000 * 60 * 1000 },
-		store: new MongoStore({ mongooseConnection: db, autoRemove: 'disabled' }, function (error) {
-			console.log(error || 'Connect Mongo Setup is working fine!');
-		}),
+		store: new MongoStore({ mongooseConnection: db, autoRemove: 'disabled' }),
 		saveUninitialized: false,
 	})
 );
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(require('./Routes'));
+app.use(Routes);
 
 app.listen(port, (error) => {
 	if (error) {
+		// tslint:disable-next-line: no-console
 		console.log('There was an error in Starting the server at the port', port);
 		return;
 	}
+	// tslint:disable-next-line: no-console
 	console.log(`Server is running on the port ${port}`);
 });

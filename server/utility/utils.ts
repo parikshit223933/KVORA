@@ -1,11 +1,11 @@
-const express = require('express');
+import express from 'express';
 
-class util {
-	isNullOrUndefined = (param) => {
-		if (param.length != undefined) {
+class Util {
+	isNullOrUndefined = (param: any) => {
+		if (param.length !== undefined) {
 			// it is an array
 			let isInvalid = false;
-			param.forEach((element) => {
+			param.forEach((element: any) => {
 				if (!element) {
 					isInvalid = true;
 				}
@@ -19,11 +19,11 @@ class util {
 			return false;
 		}
 	};
-	areEqual = (param1, param2) => {
-		return param1 == param2;
+	areEqual = (param1: any, param2: any) => {
+		return param1 === param2;
 	};
 	response = (
-		res,
+		res: express.Response,
 		statusCode = 500,
 		message = 'Internal Server Error!',
 		success = false,
@@ -36,4 +36,4 @@ class util {
 		});
 	};
 }
-module.exports = util;
+module.exports = Util;
