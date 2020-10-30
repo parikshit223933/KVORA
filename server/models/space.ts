@@ -61,19 +61,19 @@ const spaceSchema = new mongoose.Schema(
 );
 
 let storage = multer.diskStorage({
-	destination: function (req, file, cb) {
+	destination (req, file, cb) {
 		cb(
 			null,
 			path.join(__dirname, '..', './uploads', './spaces', './avatars')
 		);
 	},
-	filename: function (req, file, cb) {
+	filename (req, file, cb) {
 		cb(null, file.fieldname + '-' + Date.now());
 	},
 });
 
 spaceSchema.statics.uploadedAvatar = multer({
-	storage: storage,
+	storage,
 }).single('avatar');
 
 const space = mongoose.model('Space', spaceSchema);

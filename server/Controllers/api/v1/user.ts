@@ -23,7 +23,7 @@ module.exports.signUp = async (req:express.Request, res:express.Response) => {
 
 	const { salt, hash } =await User.getNewSaltAndHash(password);
 	try {
-		let user = await User.create({
+		const user = await User.create({
 			firstName,
 			lastName,
 			hash,

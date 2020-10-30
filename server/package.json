@@ -17,6 +17,7 @@
     "@types/jsonwebtoken": "^8.5.0",
     "@types/mongoose": "^5.7.36",
     "@types/multer": "^1.4.4",
+    "@types/nodemon": "^1.19.0",
     "chalk": "^4.1.0",
     "connect-mongo": "^3.2.0",
     "cors": "^2.8.5",

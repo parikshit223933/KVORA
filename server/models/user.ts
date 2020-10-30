@@ -2,16 +2,112 @@ import mongoose from 'mongoose';
 import multer from 'multer';
 import path from 'path';
 import chalk from 'chalk';
-import { Document, Model, model, Types, Schema, Query } from "mongoose"
 import crypto from 'crypto';
-
 const passwordHashingAlgorithm = 'sha512';
 const stringFormat = 'hex';
 const randomBytesForPasswordSalt = 50;
 const saltHashIterations = 5000;
 const hashKeyLength = 100;
 
-const userSchema = new Schema(
+export interface IUser extends mongoose.Document {
+	email: string;
+	hash: string;
+	salt: string;
+	firstName: string;
+	lastName: string;
+	avatar: string;
+	title: string;
+	description: string;
+	google: string;
+	twitter: string;
+	facebook: string;
+	notifications: [
+		{
+			notification: INotification | mongoose.Schema.Types.ObjectId;
+			markedAsRead: boolean;
+			alerts: {
+				noNotification: boolean;
+				allNotification: boolean;
+				highlights: boolean;
+				fewerNotifications: boolean;
+			};
+		}
+	];
+	spaces: [
+		{
+			space: ISpace | mongoose.Schema.Types.ObjectId;
+			muted: boolean;
+		}
+	];
+	knowsAbout: [
+		{
+			topic: ITopic | mongoose.Schema.Types.ObjectId;
+			muted: boolean;
+			bookmarked: boolean;
+		}
+	];
+	thankedTopicLogs: [
+		{
+			topicLog: ITopicLog | mongoose.Schema.Types.ObjectId;
+			isThanked: boolean;
+		}
+	];
+	credentials: [
+		{
+			name: string;
+			isDefault: boolean;
+		}
+	];
+	questions: [
+		{
+			question: IQuestion | mongoose.Schema.Types.ObjectId;
+		}
+	];
+	answers: [
+		{
+			answer: IAnswer | mongoose.Schema.Types.ObjectId;
+		}
+	];
+	shares: [
+		{
+			share: IShare | mongoose.Schema.Types.ObjectId;
+		}
+	];
+	posts: [
+		{
+			post: IPost | mongoose.Schema.Types.ObjectId;
+		}
+	];
+	followers: [
+		{
+			follower: IUser | mongoose.Schema.Types.ObjectId;
+		}
+	];
+	following: [
+		{
+			user: IUser;
+		}
+	];
+	edits: [
+		{
+			edit: IEdit | mongoose.Schema.Types.ObjectId;
+		}
+	];
+	activities: [
+		{
+			activity: IActivity | mongoose.Schema.Types.ObjectId;
+		}
+	];
+	settings: {
+		setting: ISetting | mongoose.Schema.Types.ObjectId;
+	};
+	getNewSaltAndHash(password: string): object;
+	isPasswordCorrect(email: string, password: string): Promise<boolean>;
+	doesUserExists(email: string): Promise<boolean>;
+	uploadedAvatar(...args: any[]): any;
+}
+
+const userSchema: mongoose.Schema = new mongoose.Schema(
 	{
 		email: {
 			type: String,
@@ -179,21 +275,7 @@ const userSchema = new Schema(
 	}
 );
 
-export interface User {
-	email: string;
-	hash: string;
-	salt: string;
-	firstName: string;
-	lastName: string;
-	avatar: string;
-	title: string;
-	description: string;
-	google: string;
-	facebook: string;
-	twitter: string;
-}
-
-const storage = multer.diskStorage({
+const storage: multer.StorageEngine = multer.diskStorage({
 	destination(req, file, cb) {
 		cb(null, path.join(__dirname, '..', './uploads', './user', './avatars'));
 	},
@@ -206,12 +288,15 @@ userSchema.statics.uploadedAvatar = multer({
 	storage,
 }).single('avatar');
 
-userSchema.statics.doesUserExists = async function (email: string) {
+userSchema.statics.doesUserExists = async function (email: string): Promise<boolean> {
 	const _user = await this.findOne({ email });
 	return !!_user;
 };
 
-userSchema.statics.isPasswordCorrect = async function (email: string, password: string) {
+userSchema.statics.isPasswordCorrect = async function (
+	email: string,
+	password: string
+): Promise<boolean> {
 	try {
 		const _user = await this.findOne({ email });
 		const hashInDB = _user.hash;
@@ -233,13 +318,12 @@ userSchema.statics.isPasswordCorrect = async function (email: string, password: 
 	}
 };
 
-userSchema.statics.getNewSaltAndHash = (password: string) => {
-	const salt = crypto.randomBytes(randomBytesForPasswordSalt).toString('hex');
-	const hash = crypto
+userSchema.statics.getNewSaltAndHash = (password: string): object => {
+	const salt: string = crypto.randomBytes(randomBytesForPasswordSalt).toString('hex');
+	const hash: string = crypto
 		.pbkdf2Sync(password, salt, saltHashIterations, hashKeyLength, passwordHashingAlgorithm)
 		.toString(stringFormat);
 	return { salt, hash };
 };
 
-const User = mongoose.model('User', userSchema);
-export default User;
+export default mongoose.model<IUser>('User', userSchema);
