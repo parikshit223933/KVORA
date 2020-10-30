@@ -1,6 +1,101 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+import { IUser } from './user';
 
-const TopicSchema = mongoose.Schema(
+export interface ITopic extends mongoose.Document {
+	name: string;
+	posts: [
+		{
+			post: IPost;
+		}
+	];
+	questions: [
+		{
+			question: IQuestion | mongoose.Schema.Types.ObjectId;
+		}
+	];
+	related: [
+		{
+			related: ITopic | mongoose.Schema.Types.ObjectId;
+		}
+	];
+	mostViewedWriters: [
+		{
+			user: IUser | mongoose.Schema.Types.ObjectId;
+		}
+	];
+	followers: [
+		{
+			user: IUser | mongoose.Schema.Types.ObjectId;
+		}
+	];
+	manage: {
+		ontology: {
+			parentTopics: [
+				{
+					topic: ITopic | mongoose.Schema.Types.ObjectId;
+				}
+			];
+			childTopics: [
+				{
+					topic: ITopic | mongoose.Schema.Types.ObjectId;
+				}
+			];
+		};
+		aliases: [
+			{
+				alias: string;
+			}
+		];
+		mergedTopics: [
+			{
+				topic: ITopic | mongoose.Schema.Types.ObjectId;
+			}
+		];
+		settings: {
+			isLocked: boolean;
+			onkvora: {
+				typeOfQuestion: boolean;
+				grammaticalStructureOfQuestion: boolean;
+				organiseOtherTopics: boolean;
+				isAdultTopic: boolean;
+			};
+			asConcept: {
+				isUniversalAbstractConcept: boolean;
+				exampleOfConcept: boolean;
+				isNamedEntity: boolean;
+			};
+			asRelatesToPlace: {
+				isLocation: boolean;
+				canBeLocalized: boolean;
+				localizedFormOfGeneralTopic: boolean;
+			};
+			asEvent: {
+				isEvent: boolean;
+				isrecruitingEvent: boolean;
+			};
+			toDescribeType: {
+				isAcademicFieldOrSubject: boolean;
+				isJobProfessionCareer: boolean;
+				isAboutActivity: boolean;
+				isPerson: boolean;
+				associatedWithSpecificProfile: boolean;
+				isCompanyOrganization: boolean;
+				isSpecificSchool: boolean;
+				isProductService: boolean;
+			};
+		};
+	};
+	logs: [
+		{
+			log: {
+				type: mongoose.Schema.Types.ObjectId;
+				ref: 'TopicLog';
+			};
+		}
+	];
+}
+
+const TopicSchema = new mongoose.Schema(
 	{
 		name: {
 			type: String,
@@ -8,59 +103,77 @@ const TopicSchema = mongoose.Schema(
 		},
 		posts: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Post',
+				post: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Post',
+				},
 			},
 		],
 		questions: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Question',
+				question: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Question',
+				},
 			},
 		],
 		related: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Topic',
+				related: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Topic',
+				},
 			},
 		],
 		mostViewedWriters: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'User',
+				user: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'User',
+				},
 			},
 		],
 		followers: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'User',
+				user: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'User',
+				},
 			},
 		],
 		manage: {
 			ontology: {
 				parentTopics: [
 					{
-						type: mongoose.Schema.Types.ObjectId,
-						ref: 'Topic',
+						topic: {
+							type: mongoose.Schema.Types.ObjectId,
+							ref: 'Topic',
+						},
 					},
 				],
 				childTopics: [
 					{
-						type: mongoose.Schema.Types.ObjectId,
-						ref: 'Topic',
+						topic: {
+							type: mongoose.Schema.Types.ObjectId,
+							ref: 'Topic',
+						},
 					},
 				],
 			},
 			aliases: [
 				{
-					type: mongoose.Schema.Types.ObjectId,
-					ref: 'String',
+					alias: {
+						type: mongoose.Schema.Types.ObjectId,
+						ref: 'String',
+					},
 				},
 			],
 			mergedTopics: [
 				{
-					type: mongoose.Schema.Types.ObjectId,
-					ref: 'Topic',
+					topic: {
+						type: mongoose.Schema.Types.ObjectId,
+						ref: 'Topic',
+					},
 				},
 			],
 			settings: {
@@ -99,8 +212,10 @@ const TopicSchema = mongoose.Schema(
 		},
 		logs: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'TopicLog',
+				log: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'TopicLog',
+				},
 			},
 		],
 	},
@@ -110,5 +225,4 @@ const TopicSchema = mongoose.Schema(
 	}
 );
 
-const topic = mongoose.model('Topic', TopicSchema);
-module.exports = topic;
+export default mongoose.model<ITopic>('Topic', TopicSchema);
