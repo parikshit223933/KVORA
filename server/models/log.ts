@@ -1,5 +1,16 @@
-import { User } from './user';
+import { IUser } from './user';
 import mongoose from 'mongoose';
+
+export interface ILog extends mongoose.Document {
+	typeOfAction: string;
+	actionTakenBy: mongoose.Schema.Types.ObjectId | IUser;
+	description: string;
+	thanks: [
+		{
+			user: mongoose.Schema.Types.ObjectId | IUser;
+		}
+	];
+}
 
 const logSchema = new mongoose.Schema(
 	{
@@ -17,8 +28,10 @@ const logSchema = new mongoose.Schema(
 		},
 		thanks: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'User',
+				user: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'User',
+				},
 			},
 		],
 	},
@@ -27,17 +40,5 @@ const logSchema = new mongoose.Schema(
 		validateBeforeSave: true,
 	}
 );
-export interface Log extends mongoose.Document
-{
-	typeOfAction: string;
-	actionTakenBy: mongoose.Types.ObjectId | User | string;
-	description: string;
-	thanks:mongoose.Types.ObjectId | User | string
-}
-export interface LogPopulated extends Log
-{
-	actionTakenBy: User;
-	thanks:User;
-}
-const log = mongoose.model<Log|LogPopulated>('Log', logSchema);
-module.exports = log;
+
+export default mongoose.model<ILog>('Log', logSchema);

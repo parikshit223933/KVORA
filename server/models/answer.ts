@@ -1,6 +1,39 @@
 import mongoose from 'mongoose';
 import multer from 'multer';
 import path from 'path';
+import { IUser } from './user';
+import { IQuestion } from './question';
+
+export interface IAnswer extends mongoose.Document {
+	author: mongoose.Schema.Types.ObjectId | IUser;
+	content: string;
+	associatedQuestion: mongoose.Schema.Types.ObjectId | IQuestion;
+	views: [
+		{
+			user: mongoose.Schema.Types.ObjectId | IUser;
+		}
+	];
+	upvotes: [
+		{
+			user: mongoose.Schema.Types.ObjectId | IUser;
+		}
+	];
+	downvotes: [
+		{
+			user: mongoose.Schema.Types.ObjectId | IUser;
+		}
+	];
+	shares: [
+		{
+			user: mongoose.Schema.Types.ObjectId | IUser;
+		}
+	];
+	comments: [
+		{
+			comment: mongoose.Schema.Types.ObjectId | IComment;
+		}
+	];
+}
 
 const answerSchema = new mongoose.Schema(
 	{
@@ -17,32 +50,42 @@ const answerSchema = new mongoose.Schema(
 		},
 		views: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'User',
+				user: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'User',
+				},
 			},
 		],
 		upvotes: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'User',
+				user: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'User',
+				},
 			},
 		],
 		downvotes: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'User',
+				user: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'User',
+				},
 			},
 		],
 		shares: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'User',
+				user: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'User',
+				},
 			},
 		],
 		comments: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Comment',
+				comment: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Comment',
+				},
 			},
 		],
 	},
@@ -53,13 +96,10 @@ const answerSchema = new mongoose.Schema(
 );
 
 const storage = multer.diskStorage({
-	destination (req, file, cb) {
-		cb(
-			null,
-			path.join(__dirname, '..', './uploads', './answers', './images')
-		);
+	destination(req, file, cb) {
+		cb(null, path.join(__dirname, '..', './uploads', './answers', './images'));
 	},
-	filename (req, file, cb) {
+	filename(req, file, cb) {
 		cb(null, file.fieldname + '-' + Date.now());
 	},
 });
@@ -68,5 +108,4 @@ answerSchema.statics.uploadedAvatar = multer({
 	storage,
 }).single('image');
 
-const answer = mongoose.model('Answer', answerSchema);
-module.exports = answer;
+export default mongoose.model<IAnswer>('Answer', answerSchema);

@@ -1,5 +1,11 @@
 import mongoose from 'mongoose';
 
+export interface IActivity extends mongoose.Document {
+	type: string;
+	title: string;
+	description: string;
+}
+
 const activitySchema = new mongoose.Schema(
 	{
 		type: {
@@ -17,10 +23,5 @@ const activitySchema = new mongoose.Schema(
 		validateBeforeSave: true,
 	}
 );
-export interface Activity {
-	type:string,
-	title:string,
-	description:string
-}
-export default mongoose.model< mongoose.Document >('Activity', activitySchema);
 
+export default mongoose.model<IActivity>('Activity', activitySchema);

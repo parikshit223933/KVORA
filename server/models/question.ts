@@ -1,10 +1,49 @@
-const mongoose = require('mongoose');
-
+import mongoose from 'mongoose';
+import { IUser } from './user';
+import { ITopic } from './topic';
+import { ISpace } from './space';
+import { IAnswer } from './answer';
+export interface IQuestion extends mongoose.Document {
+	author: mongoose.Schema.Types.ObjectId | IUser;
+	content: string;
+	contextLink: string;
+	answers: [
+		{
+			answer: mongoose.Schema.Types.ObjectId | IAnswer;
+		}
+	];
+	followers: [
+		{
+			user: mongoose.Schema.Types.ObjectId | IUser;
+		}
+	];
+	comments: [
+		{
+			comment: mongoose.Schema.Types.ObjectId | IComment;
+		}
+	];
+	downvotes: [
+		{
+			user: mongoose.Schema.Types.ObjectId | IUser;
+		}
+	];
+	relatedTopics: [
+		{
+			topic: mongoose.Schema.Types.ObjectId | ITopic;
+		}
+	];
+	isPublic: boolean;
+	isAnonymous: boolean;
+	isLimited: boolean;
+	isAQuestion: boolean;
+	isASharedLink: boolean;
+	linkDescription: string;
+	associatedSpace: mongoose.Schema.Types.ObjectId | ISpace;
+}
 const questionSchema = new mongoose.Schema(
 	{
 		author: {
-			type: mongoose.Schema.Types.ObjectId,
-			ref: 'User',
+			user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
 		},
 		content: {
 			type: String,
@@ -14,32 +53,42 @@ const questionSchema = new mongoose.Schema(
 		},
 		answers: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Answer',
+				answer: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Answer',
+				},
 			},
 		],
 		followers: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'User',
+				user: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'User',
+				},
 			},
 		],
 		comments: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Comment',
+				comment: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Comment',
+				},
 			},
 		],
 		downvotes: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'User',
+				user: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'User',
+				},
 			},
 		],
 		relatedTopics: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Topic',
+				topic: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Topic',
+				},
 			},
 		],
 		isPublic: {
@@ -75,5 +124,4 @@ const questionSchema = new mongoose.Schema(
 	}
 );
 
-const question = mongoose.model('Question', questionSchema);
-module.exports = question;
+export default mongoose.model<IQuestion>('Question', questionSchema);

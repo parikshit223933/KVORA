@@ -1,4 +1,40 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+import { IQuestion } from './question';
+import { IUser } from './user';
+import { ISpace } from './space';
+import { IShare } from './share';
+
+export interface IPost extends mongoose.Document {
+	type: string;
+	question: mongoose.Schema.Types.ObjectId | IQuestion;
+	answer: mongoose.Schema.Types.ObjectId | IAnswer;
+	author: mongoose.Schema.Types.ObjectId | IUser;
+	thanks: [
+		{
+			user: mongoose.Schema.Types.ObjectId | IUser;
+		}
+	];
+	upvotes: [
+		{
+			user: mongoose.Schema.Types.ObjectId | IUser;
+		}
+	];
+	shares: [
+		{
+			share: mongoose.Schema.Types.ObjectId | IShare;
+		}
+	];
+	comments: [
+		{
+			comment: mongoose.Schema.Types.ObjectId | IComment;
+		}
+	];
+	associatedSpaces: [
+		{
+			space: mongoose.Schema.Types.ObjectId | ISpace;
+		}
+	];
+}
 
 const postSchema = new mongoose.Schema(
 	{
@@ -19,32 +55,42 @@ const postSchema = new mongoose.Schema(
 		},
 		thanks: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'User',
+				user: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'User',
+				},
 			},
 		],
 		upvotes: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'User',
+				user: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'User',
+				},
 			},
 		],
 		shares: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Share',
+				share: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Share',
+				},
 			},
 		],
 		comments: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Comment',
+				comment: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Comment',
+				},
 			},
 		],
 		associatedSpaces: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Space',
+				space: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Space',
+				},
 			},
 		],
 	},
@@ -54,5 +100,4 @@ const postSchema = new mongoose.Schema(
 	}
 );
 
-const post = mongoose.model('Post', postSchema);
-module.exports = post;
+export default mongoose.model<IPost>('Post', postSchema);

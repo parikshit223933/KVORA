@@ -179,8 +179,10 @@ const settingSchema = new mongoose.Schema(
 		},
 		spaces_you_follow: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Space',
+				space: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Space',
+				},
 				alert_type: {
 					type: Number,
 					min: 0,
@@ -198,14 +200,18 @@ const settingSchema = new mongoose.Schema(
 		},
 		your_subscriptions: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'User',
+				user: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'User',
+				},
 			},
 		],
 		people_you_follow: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'User',
+				user: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'User',
+				},
 				is_subscribed: {
 					type: Boolean,
 					default: true,
@@ -233,9 +239,7 @@ const settingSchema = new mongoose.Schema(
 		},
 		// quora digest
 		quora_digest: {
-			type: Boolean,
-			required: true,
-			default: true,
+			digest: { type: Boolean, required: true, default: true },
 			email_frequency: {
 				type: Number,
 				min: 0,
@@ -262,7 +266,7 @@ const settingSchema = new mongoose.Schema(
 		// LANGUAGES **************************************************************
 		languages: [
 			{
-				type: String,
+				language: { type: String },
 				is_primary: {
 					type: Boolean,
 					default: false,

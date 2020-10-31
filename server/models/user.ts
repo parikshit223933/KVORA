@@ -3,6 +3,17 @@ import multer from 'multer';
 import path from 'path';
 import chalk from 'chalk';
 import crypto from 'crypto';
+import { INotification } from './notification';
+import { ISpace } from './space';
+import { ITopic } from './topic';
+import { ILog } from './log';
+import { IQuestion } from './question';
+import { IAnswer } from './answer';
+import { IShare } from './share';
+import { IPost } from './post';
+import { IEdit } from './edit';
+import { IActivity } from './activity';
+import { ISetting } from './setting';
 const passwordHashingAlgorithm = 'sha512';
 const stringFormat = 'hex';
 const randomBytesForPasswordSalt = 50;
@@ -48,7 +59,7 @@ export interface IUser extends mongoose.Document {
 	];
 	thankedTopicLogs: [
 		{
-			topicLog: ITopicLog | mongoose.Schema.Types.ObjectId;
+			topicLog: ILog | mongoose.Schema.Types.ObjectId;
 			isThanked: boolean;
 		}
 	];

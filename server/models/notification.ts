@@ -1,4 +1,16 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+import { IUser } from './user';
+import { IQuestion } from './question';
+import { ISpace } from './space';
+import { IAnswer } from './answer';
+
+export interface INotification extends mongoose.Document {
+	user: mongoose.Schema.Types.ObjectId | IUser;
+	description: string;
+	associatedQuestion: mongoose.Schema.Types.ObjectId | IQuestion;
+	associatedSpace: mongoose.Schema.Types.ObjectId | ISpace;
+	associatedAnswer: mongoose.Schema.Types.ObjectId | IAnswer;
+}
 
 const notificationSchema = new mongoose.Schema(
 	{
@@ -27,5 +39,4 @@ const notificationSchema = new mongoose.Schema(
 		validateBeforeSave: true,
 	}
 );
-const notification = mongoose.model('Notification', notificationSchema);
-module.exports = notification;
+export default mongoose.model<INotification>('Notification', notificationSchema);
