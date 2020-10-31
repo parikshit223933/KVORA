@@ -1,5 +1,16 @@
-const mongoose = require('mongoose');
-
+import mongoose from 'mongoose';
+import { IUser } from './user';
+export interface IShare extends mongoose.Document {
+	sharableType: string;
+	sharableId: mongoose.Schema.Types.ObjectId | IShare;
+	from: mongoose.Schema.Types.ObjectId | IUser;
+	to: {
+		facebook: boolean;
+		twitter: boolean;
+		copyLink: boolean;
+		embedAnswer: boolean;
+	};
+}
 const shareSchema = new mongoose.Schema({
 	sharableType: {
 		type: String,
@@ -26,5 +37,4 @@ const shareSchema = new mongoose.Schema({
 		},
 	},
 });
-const share = mongoose.model('Share', shareSchema);
-module.exports = share;
+export default mongoose.model<IShare>('Share', shareSchema);

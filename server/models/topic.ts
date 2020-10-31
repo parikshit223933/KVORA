@@ -53,7 +53,7 @@ export interface ITopic extends mongoose.Document {
 		];
 		settings: {
 			isLocked: boolean;
-			onkvora: {
+			onKvora: {
 				typeOfQuestion: boolean;
 				grammaticalStructureOfQuestion: boolean;
 				organiseOtherTopics: boolean;
@@ -71,7 +71,7 @@ export interface ITopic extends mongoose.Document {
 			};
 			asEvent: {
 				isEvent: boolean;
-				isrecruitingEvent: boolean;
+				isRecruitingEvent: boolean;
 			};
 			toDescribeType: {
 				isAcademicFieldOrSubject: boolean;

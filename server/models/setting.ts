@@ -1,4 +1,78 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+import { IUser } from './user';
+import { ISpace } from './space';
+
+export interface ISetting extends mongoose.Document {
+	user: mongoose.Schema.Types.ObjectId | IUser;
+	// PRIVACY SETTINGS ******************************************************
+	allow_seaarch_engines_to_index_name: boolean;
+	allow_adult_content_in_feed: boolean;
+	// Inbox preferences
+	recieve_messages_from: number;
+	// Comment preferences\
+	allow_others_to_comment: boolean;
+	// Translation preferences
+	allow_translation_by_others: boolean;
+	// Content preferences
+	allow_gif_autoplay: boolean;
+	allow_advertisers_to_promote_answers: boolean;
+	// Delete or deactivate your account
+	deactivated_in_all_languages: boolean;
+	account_deleted: boolean;
+	// EMAIL AND NOTIFICATION SETTINGS ****************************************
+	// general questions and answers
+	new_answers: boolean;
+	requests: boolean;
+	session_answers: boolean;
+	// messages, comments and mentions
+	messages: boolean;
+	comments_and_replies: boolean;
+	mentions: boolean;
+	// spaces
+	space_invites: boolean;
+	unloked_features: boolean;
+	spaces_you_follow: [
+		{
+			space: mongoose.Schema.Types.ObjectId | ISpace;
+			alert_type: number;
+		}
+	];
+	// you and your network
+	new_followers: boolean;
+	your_subscriptions: [
+		{
+			user: mongoose.Schema.Types.ObjectId | IUser;
+		}
+	];
+	people_you_follow: [
+		{
+			user: mongoose.Schema.Types.ObjectId | IUser;
+			is_subscribed: boolean;
+		}
+	];
+	// upvotes
+	upvotes: boolean;
+	// shares
+	shares_of_my_content: boolean;
+	// moderation
+	my_answers: boolean;
+	// quora digest
+	quora_digest: {
+		digest: boolean;
+		email_frequency: number;
+	};
+	// things you might like
+	popular_answers: boolean;
+	stories_based_on_my_activity: boolean;
+	recommended_questions: boolean;
+	// LANGUAGES **************************************************************
+	languages: [
+		{
+			language: string;
+			is_primary: boolean;
+		}
+	];
+}
 
 const settingSchema = new mongoose.Schema(
 	{
@@ -202,5 +276,4 @@ const settingSchema = new mongoose.Schema(
 	}
 );
 
-const setting = mongoose.model('Setting', settingSchema);
-module.exports = setting;
+export default mongoose.model<ISetting>('Setting', settingSchema);

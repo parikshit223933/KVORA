@@ -1,6 +1,42 @@
-const mongoose = require('mongoose');
-const path = require('path');
-const multer = require('multer');
+import mongoose from 'mongoose';
+import path from 'path';
+import multer from 'multer';
+import { IUser } from './user';
+
+export interface ISpace extends mongoose.Document {
+	name: string;
+	cover: string;
+	avatar: string;
+	about: string;
+	details: string;
+	followers: [
+		{
+			user: mongoose.Schema.Types.ObjectId | IUser;
+		}
+	];
+	admins: [
+		{
+			user: mongoose.Schema.Types.ObjectId | IUser;
+		}
+	];
+	contributors: [
+		{
+			user: mongoose.Schema.Types.ObjectId | IUser;
+		}
+	];
+	kvoraId: string;
+	posts: [
+		{
+			post: mongoose.Schema.Types.ObjectId | IPost;
+		}
+	];
+	questions: [
+		{
+			question: mongoose.Schema.Types.ObjectId | IQuestion;
+		}
+	];
+	uploadedAvatar(...args: any[]): any;
+}
 
 const spaceSchema = new mongoose.Schema(
 	{
@@ -22,20 +58,26 @@ const spaceSchema = new mongoose.Schema(
 		},
 		followers: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'User',
+				user: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'User',
+				},
 			},
 		],
 		admins: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'User',
+				user: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'User',
+				},
 			},
 		],
 		contributors: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'User',
+				user: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'User',
+				},
 			},
 		],
 		kvoraId: {
@@ -43,14 +85,18 @@ const spaceSchema = new mongoose.Schema(
 		},
 		posts: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Post',
+				post: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Post',
+				},
 			},
 		],
 		questions: [
 			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: 'Question',
+				question: {
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'Question',
+				},
 			},
 		],
 	},
@@ -61,13 +107,10 @@ const spaceSchema = new mongoose.Schema(
 );
 
 let storage = multer.diskStorage({
-	destination (req, file, cb) {
-		cb(
-			null,
-			path.join(__dirname, '..', './uploads', './spaces', './avatars')
-		);
+	destination(req, file, cb) {
+		cb(null, path.join(__dirname, '..', './uploads', './spaces', './avatars'));
 	},
-	filename (req, file, cb) {
+	filename(req, file, cb) {
 		cb(null, file.fieldname + '-' + Date.now());
 	},
 });
@@ -76,5 +119,4 @@ spaceSchema.statics.uploadedAvatar = multer({
 	storage,
 }).single('avatar');
 
-const space = mongoose.model('Space', spaceSchema);
-module.exports = space;
+export default mongoose.model<ISpace>('Space', spaceSchema);
