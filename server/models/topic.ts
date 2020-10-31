@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 import { IUser } from './user';
+import { IQuestion } from './question';
+import { IPost } from './post';
 
 export interface ITopic extends mongoose.Document {
 	name: string;

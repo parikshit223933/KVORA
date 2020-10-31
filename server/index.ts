@@ -23,12 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(Routes);
 
-app.listen(port, (error) => {
-	if (error) {
-		// tslint:disable-next-line: no-console
-		console.log('There was an error in Starting the server at the port', port);
-		return;
-	}
+app.listen(port, () => {
 	// tslint:disable-next-line: no-console
 	console.log(`Server is running on the port ${port}`);
 });

@@ -2,6 +2,8 @@ import mongoose from 'mongoose';
 import path from 'path';
 import multer from 'multer';
 import { IUser } from './user';
+import { IPost } from './post';
+import { IQuestion } from './question';
 
 export interface ISpace extends mongoose.Document {
 	name: string;
@@ -106,7 +108,7 @@ const spaceSchema = new mongoose.Schema(
 	}
 );
 
-let storage = multer.diskStorage({
+const storage = multer.diskStorage({
 	destination(req, file, cb) {
 		cb(null, path.join(__dirname, '..', './uploads', './spaces', './avatars'));
 	},

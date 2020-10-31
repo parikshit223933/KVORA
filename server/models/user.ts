@@ -26,13 +26,13 @@ export interface IUser extends mongoose.Document {
 	salt: string;
 	firstName: string;
 	lastName: string;
-	avatar: string;
-	title: string;
-	description: string;
-	google: string;
-	twitter: string;
-	facebook: string;
-	notifications: [
+	avatar?: string;
+	title?: string;
+	description?: string;
+	google?: string;
+	twitter?: string;
+	facebook?: string;
+	notifications?: [
 		{
 			notification: INotification | mongoose.Schema.Types.ObjectId;
 			markedAsRead: boolean;
@@ -44,75 +44,75 @@ export interface IUser extends mongoose.Document {
 			};
 		}
 	];
-	spaces: [
+	spaces?: [
 		{
 			space: ISpace | mongoose.Schema.Types.ObjectId;
 			muted: boolean;
 		}
 	];
-	knowsAbout: [
+	knowsAbout?: [
 		{
 			topic: ITopic | mongoose.Schema.Types.ObjectId;
 			muted: boolean;
 			bookmarked: boolean;
 		}
 	];
-	thankedTopicLogs: [
+	thankedTopicLogs?: [
 		{
 			topicLog: ILog | mongoose.Schema.Types.ObjectId;
 			isThanked: boolean;
 		}
 	];
-	credentials: [
+	credentials?: [
 		{
 			name: string;
 			isDefault: boolean;
 		}
 	];
-	questions: [
+	questions?: [
 		{
 			question: IQuestion | mongoose.Schema.Types.ObjectId;
 		}
 	];
-	answers: [
+	answers?: [
 		{
 			answer: IAnswer | mongoose.Schema.Types.ObjectId;
 		}
 	];
-	shares: [
+	shares?: [
 		{
 			share: IShare | mongoose.Schema.Types.ObjectId;
 		}
 	];
-	posts: [
+	posts?: [
 		{
 			post: IPost | mongoose.Schema.Types.ObjectId;
 		}
 	];
-	followers: [
+	followers?: [
 		{
 			follower: IUser | mongoose.Schema.Types.ObjectId;
 		}
 	];
-	following: [
+	following?: [
 		{
 			user: IUser;
 		}
 	];
-	edits: [
+	edits?: [
 		{
 			edit: IEdit | mongoose.Schema.Types.ObjectId;
 		}
 	];
-	activities: [
+	activities?: [
 		{
 			activity: IActivity | mongoose.Schema.Types.ObjectId;
 		}
 	];
-	settings: {
+	settings?: {
 		setting: ISetting | mongoose.Schema.Types.ObjectId;
 	};
-	getNewSaltAndHash(password: string): object;
+	getNewSaltAndHash(password: string): {salt:string, hash:string};
 	isPasswordCorrect(email: string, password: string): Promise<boolean>;
 	doesUserExists(email: string): Promise<boolean>;
 	uploadedAvatar(...args: any[]): any;
