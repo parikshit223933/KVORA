@@ -3,6 +3,7 @@ import { IUser } from './user';
 import { ITopic } from './topic';
 import { ISpace } from './space';
 import { IAnswer } from './answer';
+import { IComment } from './comment';
 export interface IQuestion extends mongoose.Document {
 	author: mongoose.Schema.Types.ObjectId | IUser;
 	content: string;

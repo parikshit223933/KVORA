@@ -3,6 +3,8 @@ import { IQuestion } from './question';
 import { IUser } from './user';
 import { ISpace } from './space';
 import { IShare } from './share';
+import { IComment } from './comment';
+import { IAnswer } from './answer';
 
 export interface IPost extends mongoose.Document {
 	type: string;

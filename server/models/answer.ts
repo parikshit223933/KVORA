@@ -3,6 +3,7 @@ import multer from 'multer';
 import path from 'path';
 import { IUser } from './user';
 import { IQuestion } from './question';
+import { IComment } from './comment';
 
 export interface IAnswer extends mongoose.Document {
 	author: mongoose.Schema.Types.ObjectId | IUser;
