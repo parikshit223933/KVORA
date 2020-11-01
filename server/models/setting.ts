@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
-import { IUser } from './user';
-import { ISpace } from './space';
+import { IUserDocument } from './user';
+import { ISpaceDocument } from './space';
 
-export interface ISetting extends mongoose.Document {
-	user: mongoose.Schema.Types.ObjectId | IUser;
+export interface ISettingDocument extends mongoose.Document {
+	user: mongoose.Schema.Types.ObjectId | IUserDocument;
 	// PRIVACY SETTINGS ******************************************************
 	allow_seaarch_engines_to_index_name: boolean;
 	allow_adult_content_in_feed: boolean;
@@ -33,7 +33,7 @@ export interface ISetting extends mongoose.Document {
 	unloked_features: boolean;
 	spaces_you_follow: [
 		{
-			space: mongoose.Schema.Types.ObjectId | ISpace;
+			space: mongoose.Schema.Types.ObjectId | ISpaceDocument;
 			alert_type: number;
 		}
 	];
@@ -41,12 +41,12 @@ export interface ISetting extends mongoose.Document {
 	new_followers: boolean;
 	your_subscriptions: [
 		{
-			user: mongoose.Schema.Types.ObjectId | IUser;
+			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
 	people_you_follow: [
 		{
-			user: mongoose.Schema.Types.ObjectId | IUser;
+			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 			is_subscribed: boolean;
 		}
 	];
@@ -280,4 +280,4 @@ const settingSchema = new mongoose.Schema(
 	}
 );
 
-export default mongoose.model<ISetting>('Setting', settingSchema);
+export default mongoose.model<ISettingDocument>('Setting', settingSchema);

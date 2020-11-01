@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-export interface IEdit extends mongoose.Document {
+export interface IEditDocument extends mongoose.Document {
 	type: string;
 	previousValue: string;
 	newValue: string;
@@ -27,4 +27,4 @@ const editSchema = new mongoose.Schema(
 	}
 );
 
-export default mongoose.model<IEdit>('Edit', editSchema);
+export default mongoose.model<IEditDocument>('Edit', editSchema);

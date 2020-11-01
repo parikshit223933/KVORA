@@ -1,37 +1,37 @@
 import mongoose from 'mongoose';
 import multer from 'multer';
 import path from 'path';
-import { IUser } from './user';
-import { IQuestion } from './question';
-import { IComment } from './comment';
+import { IUserDocument } from './user';
+import { IQuestionDocument } from './question';
+import { ICommentDocument } from './comment';
 
-export interface IAnswer extends mongoose.Document {
-	author: mongoose.Schema.Types.ObjectId | IUser;
+export interface IAnswerDocument extends mongoose.Document {
+	author: mongoose.Schema.Types.ObjectId | IUserDocument;
 	content: string;
-	associatedQuestion: mongoose.Schema.Types.ObjectId | IQuestion;
+	associatedQuestion: mongoose.Schema.Types.ObjectId | IQuestionDocument;
 	views: [
 		{
-			user: mongoose.Schema.Types.ObjectId | IUser;
+			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
 	upvotes: [
 		{
-			user: mongoose.Schema.Types.ObjectId | IUser;
+			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
 	downvotes: [
 		{
-			user: mongoose.Schema.Types.ObjectId | IUser;
+			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
 	shares: [
 		{
-			user: mongoose.Schema.Types.ObjectId | IUser;
+			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
 	comments: [
 		{
-			comment: mongoose.Schema.Types.ObjectId | IComment;
+			comment: mongoose.Schema.Types.ObjectId | ICommentDocument;
 		}
 	];
 }
@@ -109,4 +109,4 @@ answerSchema.statics.uploadedAvatar = multer({
 	storage,
 }).single('image');
 
-export default mongoose.model<IAnswer>('Answer', answerSchema);
+export default mongoose.model<IAnswerDocument>('Answer', answerSchema);

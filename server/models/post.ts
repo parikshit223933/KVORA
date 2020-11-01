@@ -1,39 +1,39 @@
 import mongoose from 'mongoose';
-import { IQuestion } from './question';
-import { IUser } from './user';
-import { ISpace } from './space';
-import { IShare } from './share';
-import { IComment } from './comment';
-import { IAnswer } from './answer';
+import { IQuestionDocument } from './question';
+import { IUserDocument } from './user';
+import { ISpaceDocument } from './space';
+import { IShareDocument } from './share';
+import { ICommentDocument } from './comment';
+import { IAnswerDocument } from './answer';
 
-export interface IPost extends mongoose.Document {
+export interface IPostDocument extends mongoose.Document {
 	type: string;
-	question: mongoose.Schema.Types.ObjectId | IQuestion;
-	answer: mongoose.Schema.Types.ObjectId | IAnswer;
-	author: mongoose.Schema.Types.ObjectId | IUser;
+	question: mongoose.Schema.Types.ObjectId | IQuestionDocument;
+	answer: mongoose.Schema.Types.ObjectId | IAnswerDocument;
+	author: mongoose.Schema.Types.ObjectId | IUserDocument;
 	thanks: [
 		{
-			user: mongoose.Schema.Types.ObjectId | IUser;
+			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
 	upvotes: [
 		{
-			user: mongoose.Schema.Types.ObjectId | IUser;
+			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
 	shares: [
 		{
-			share: mongoose.Schema.Types.ObjectId | IShare;
+			share: mongoose.Schema.Types.ObjectId | IShareDocument;
 		}
 	];
 	comments: [
 		{
-			comment: mongoose.Schema.Types.ObjectId | IComment;
+			comment: mongoose.Schema.Types.ObjectId | ICommentDocument;
 		}
 	];
 	associatedSpaces: [
 		{
-			space: mongoose.Schema.Types.ObjectId | ISpace;
+			space: mongoose.Schema.Types.ObjectId | ISpaceDocument;
 		}
 	];
 }
@@ -102,4 +102,4 @@ const postSchema = new mongoose.Schema(
 	}
 );
 
-export default mongoose.model<IPost>('Post', postSchema);
+export default mongoose.model<IPostDocument>('Post', postSchema);

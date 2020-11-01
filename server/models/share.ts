@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
-import { IUser } from './user';
-export interface IShare extends mongoose.Document {
+import { IUserDocument } from './user';
+export interface IShareDocument extends mongoose.Document {
 	sharableType: string;
-	sharableId: mongoose.Schema.Types.ObjectId | IShare;
-	from: mongoose.Schema.Types.ObjectId | IUser;
+	sharableId: mongoose.Schema.Types.ObjectId | IShareDocument;
+	from: mongoose.Schema.Types.ObjectId | IUserDocument;
 	to: {
 		facebook: boolean;
 		twitter: boolean;
@@ -37,4 +37,4 @@ const shareSchema = new mongoose.Schema({
 		},
 	},
 });
-export default mongoose.model<IShare>('Share', shareSchema);
+export default mongoose.model<IShareDocument>('Share', shareSchema);

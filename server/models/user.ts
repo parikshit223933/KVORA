@@ -3,24 +3,24 @@ import multer from 'multer';
 import path from 'path';
 import chalk from 'chalk';
 import crypto from 'crypto';
-import { INotification } from './notification';
-import { ISpace } from './space';
-import { ITopic } from './topic';
-import { ILog } from './log';
-import { IQuestion } from './question';
-import { IAnswer } from './answer';
-import { IShare } from './share';
-import { IPost } from './post';
-import { IEdit } from './edit';
+import { INotificationDocument } from './notification';
+import { ISpaceDocument } from './space';
+import { ITopicDocument } from './topic';
+import { ILogDocument } from './log';
+import { IQuestionDocument } from './question';
+import { IAnswerDocument } from './answer';
+import { IShareDocument } from './share';
+import { IPostDocument } from './post';
+import { IEditDocument } from './edit';
 import { IActivity } from './activity';
-import { ISetting } from './setting';
+import { ISettingDocument } from './setting';
 const passwordHashingAlgorithm = 'sha512';
 const stringFormat = 'hex';
 const randomBytesForPasswordSalt = 50;
 const saltHashIterations = 5000;
 const hashKeyLength = 100;
 
-export interface IUser extends mongoose.Document {
+export interface IUserDocument extends mongoose.Document {
 	email: string;
 	hash: string;
 	salt: string;
@@ -34,7 +34,7 @@ export interface IUser extends mongoose.Document {
 	facebook?: string;
 	notifications?: [
 		{
-			notification: INotification | mongoose.Schema.Types.ObjectId;
+			notification: INotificationDocument | mongoose.Schema.Types.ObjectId;
 			markedAsRead: boolean;
 			alerts: {
 				noNotification: boolean;
@@ -46,20 +46,20 @@ export interface IUser extends mongoose.Document {
 	];
 	spaces?: [
 		{
-			space: ISpace | mongoose.Schema.Types.ObjectId;
+			space: ISpaceDocument | mongoose.Schema.Types.ObjectId;
 			muted: boolean;
 		}
 	];
 	knowsAbout?: [
 		{
-			topic: ITopic | mongoose.Schema.Types.ObjectId;
+			topic: ITopicDocument | mongoose.Schema.Types.ObjectId;
 			muted: boolean;
 			bookmarked: boolean;
 		}
 	];
 	thankedTopicLogs?: [
 		{
-			topicLog: ILog | mongoose.Schema.Types.ObjectId;
+			topicLog: ILogDocument | mongoose.Schema.Types.ObjectId;
 			isThanked: boolean;
 		}
 	];
@@ -71,37 +71,37 @@ export interface IUser extends mongoose.Document {
 	];
 	questions?: [
 		{
-			question: IQuestion | mongoose.Schema.Types.ObjectId;
+			question: IQuestionDocument | mongoose.Schema.Types.ObjectId;
 		}
 	];
 	answers?: [
 		{
-			answer: IAnswer | mongoose.Schema.Types.ObjectId;
+			answer: IAnswerDocument | mongoose.Schema.Types.ObjectId;
 		}
 	];
 	shares?: [
 		{
-			share: IShare | mongoose.Schema.Types.ObjectId;
+			share: IShareDocument | mongoose.Schema.Types.ObjectId;
 		}
 	];
 	posts?: [
 		{
-			post: IPost | mongoose.Schema.Types.ObjectId;
+			post: IPostDocument | mongoose.Schema.Types.ObjectId;
 		}
 	];
 	followers?: [
 		{
-			follower: IUser | mongoose.Schema.Types.ObjectId;
+			follower: IUserDocument | mongoose.Schema.Types.ObjectId;
 		}
 	];
 	following?: [
 		{
-			user: IUser;
+			user: IUserDocument;
 		}
 	];
 	edits?: [
 		{
-			edit: IEdit | mongoose.Schema.Types.ObjectId;
+			edit: IEditDocument | mongoose.Schema.Types.ObjectId;
 		}
 	];
 	activities?: [
@@ -110,9 +110,12 @@ export interface IUser extends mongoose.Document {
 		}
 	];
 	settings?: {
-		setting: ISetting | mongoose.Schema.Types.ObjectId;
+		setting: ISettingDocument | mongoose.Schema.Types.ObjectId;
 	};
-	getNewSaltAndHash(password: string): {salt:string, hash:string};
+}
+
+export interface IUserModel extends mongoose.Model<IUserDocument> {
+	getNewSaltAndHash(password: string): { salt: string; hash: string };
 	isPasswordCorrect(email: string, password: string): Promise<boolean>;
 	doesUserExists(email: string): Promise<boolean>;
 	uploadedAvatar(...args: any[]): any;
@@ -337,4 +340,4 @@ userSchema.statics.getNewSaltAndHash = (password: string): object => {
 	return { salt, hash };
 };
 
-export default mongoose.model<IUser>('User', userSchema);
+export default mongoose.model<IUserDocument, IUserModel>('User', userSchema);
