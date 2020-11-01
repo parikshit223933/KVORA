@@ -37,6 +37,9 @@ export interface ISpaceDocument extends mongoose.Document {
 			question: mongoose.Schema.Types.ObjectId | IQuestionDocument;
 		}
 	];
+}
+
+export interface ISpaceModel extends mongoose.Model<ISpaceDocument>{
 	uploadedAvatar(...args: any[]): any;
 }
 
@@ -121,4 +124,4 @@ spaceSchema.statics.uploadedAvatar = multer({
 	storage,
 }).single('avatar');
 
-export default mongoose.model<ISpaceDocument>('Space', spaceSchema);
+export default mongoose.model<ISpaceDocument, ISpaceModel>('Space', spaceSchema);

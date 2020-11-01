@@ -36,6 +36,10 @@ export interface IAnswerDocument extends mongoose.Document {
 	];
 }
 
+export interface IAnswerModel extends mongoose.Model<IAnswerDocument> {
+	uploadedAvatar(...args: any[]): any;
+}
+
 const answerSchema = new mongoose.Schema(
 	{
 		author: {
@@ -109,4 +113,4 @@ answerSchema.statics.uploadedAvatar = multer({
 	storage,
 }).single('image');
 
-export default mongoose.model<IAnswerDocument>('Answer', answerSchema);
+export default mongoose.model<IAnswerDocument, IAnswerModel>('Answer', answerSchema);
