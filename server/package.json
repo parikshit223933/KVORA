@@ -17,6 +17,7 @@
     "@types/cors": "^2.8.8",
     "@types/express-serve-static-core": "^4.17.13",
     "@types/express-session": "^1.17.0",
+    "@types/http-status-codes": "^1.2.0",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/mongoose": "^5.7.36",
     "@types/multer": "^1.4.4",

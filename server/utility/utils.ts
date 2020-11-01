@@ -1,6 +1,6 @@
 import express from 'express';
 
-class Util {
+export default class Util {
 	isNullOrUndefined = (param: any) => {
 		if (param.length !== undefined) {
 			// it is an array
@@ -13,10 +13,7 @@ class Util {
 			return isInvalid;
 		} else {
 			// it is not an array
-			if (!param) {
-				return true;
-			}
-			return false;
+			return !param;
 		}
 	};
 	areEqual = (param1: any, param2: any) => {
@@ -36,4 +33,3 @@ class Util {
 		});
 	};
 }
-module.exports = Util;

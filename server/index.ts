@@ -1,13 +1,14 @@
 import express from 'express';
-const app = express();
+const app:express.Application = express();
+import dbConnector from './config/mongooseConfig.js';
+const db = await dbConnector()
 const port = 8000;
 import cors from 'cors';
 import session from 'express-session';
 import ConnectMongo from 'connect-mongo';
 const MongoStore = ConnectMongo(session);
-import db from './config/mongoose';
 const sessionSecret = 'foo';
-import Routes from './Routes';
+import Routes from './Routes/index.js';
 
 app.use(
 	session({

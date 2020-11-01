@@ -1,6 +1,8 @@
-const util = new (require('../../../utility/utils'))();
-import { StatusCodes, getReasonPhrase } from 'http-status-codes';
-import UserModel, { IUser } from '../../../models/user';
+import UtilsClass from '../../../utility/utils.js';
+const util = new UtilsClass();
+import StatusCodes from 'http-status-codes';
+import getReasonPhrase from 'http-status-codes'
+import UserModel, { IUser } from '../../../models/user.js';
 import chalk from 'chalk';
 import jwt from 'jsonwebtoken';
 const passportJWTSecret = 'secret';
@@ -55,9 +57,6 @@ export const signUp = async (req: express.Request, res: express.Response) => {
 		console.log(chalk.redBright(error));
 		return util.response(
 			res,
-			StatusCodes.INTERNAL_SERVER_ERROR,
-			getReasonPhrase(StatusCodes.INTERNAL_SERVER_ERROR),
-			false
 		);
 	}
 };
