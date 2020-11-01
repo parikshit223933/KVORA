@@ -1,4 +1,10 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+
+export interface IEdit extends mongoose.Document {
+	type: string;
+	previousValue: string;
+	newValue: string;
+}
 
 const editSchema = new mongoose.Schema(
 	{
@@ -21,5 +27,4 @@ const editSchema = new mongoose.Schema(
 	}
 );
 
-const edit = mongoose.model('Edit', editSchema);
-module.exports = edit;
+export default mongoose.model<IEdit>('Edit', editSchema);

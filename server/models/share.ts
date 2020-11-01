@@ -1,0 +1,40 @@
+import mongoose from 'mongoose';
+import { IUser } from './user';
+export interface IShare extends mongoose.Document {
+	sharableType: string;
+	sharableId: mongoose.Schema.Types.ObjectId | IShare;
+	from: mongoose.Schema.Types.ObjectId | IUser;
+	to: {
+		facebook: boolean;
+		twitter: boolean;
+		copyLink: boolean;
+		embedAnswer: boolean;
+	};
+}
+const shareSchema = new mongoose.Schema({
+	sharableType: {
+		type: String,
+	},
+	sharableId: {
+		type: mongoose.Schema.Types.ObjectId,
+	},
+	from: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'User',
+	},
+	to: {
+		facebook: {
+			type: Boolean,
+		},
+		twitter: {
+			type: Boolean,
+		},
+		copyLink: {
+			type: Boolean,
+		},
+		embedAnswer: {
+			type: Boolean,
+		},
+	},
+});
+export default mongoose.model<IShare>('Share', shareSchema);
