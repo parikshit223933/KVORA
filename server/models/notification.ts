@@ -1,15 +1,15 @@
 import mongoose from 'mongoose';
-import { IUser } from './user';
-import { IQuestion } from './question';
-import { ISpace } from './space';
-import { IAnswer } from './answer';
+import { IUserDocument } from './user';
+import { IQuestionDocument } from './question';
+import { ISpaceDocument } from './space';
+import { IAnswerDocument } from './answer';
 
-export interface INotification extends mongoose.Document {
-	user: mongoose.Schema.Types.ObjectId | IUser;
+export interface INotificationDocument extends mongoose.Document {
+	user: mongoose.Schema.Types.ObjectId | IUserDocument;
 	description: string;
-	associatedQuestion: mongoose.Schema.Types.ObjectId | IQuestion;
-	associatedSpace: mongoose.Schema.Types.ObjectId | ISpace;
-	associatedAnswer: mongoose.Schema.Types.ObjectId | IAnswer;
+	associatedQuestion: mongoose.Schema.Types.ObjectId | IQuestionDocument;
+	associatedSpace: mongoose.Schema.Types.ObjectId | ISpaceDocument;
+	associatedAnswer: mongoose.Schema.Types.ObjectId | IAnswerDocument;
 }
 
 const notificationSchema = new mongoose.Schema(
@@ -39,4 +39,4 @@ const notificationSchema = new mongoose.Schema(
 		validateBeforeSave: true,
 	}
 );
-export default mongoose.model<INotification>('Notification', notificationSchema);
+export default mongoose.model<INotificationDocument>('Notification', notificationSchema);

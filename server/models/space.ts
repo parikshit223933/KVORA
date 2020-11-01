@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 import path from 'path';
 import multer from 'multer';
-import { IUser } from './user';
-import { IPost } from './post';
-import { IQuestion } from './question';
+import { IUserDocument } from './user';
+import { IPostDocument } from './post';
+import { IQuestionDocument } from './question';
 
-export interface ISpace extends mongoose.Document {
+export interface ISpaceDocument extends mongoose.Document {
 	name: string;
 	cover: string;
 	avatar: string;
@@ -13,30 +13,33 @@ export interface ISpace extends mongoose.Document {
 	details: string;
 	followers: [
 		{
-			user: mongoose.Schema.Types.ObjectId | IUser;
+			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
 	admins: [
 		{
-			user: mongoose.Schema.Types.ObjectId | IUser;
+			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
 	contributors: [
 		{
-			user: mongoose.Schema.Types.ObjectId | IUser;
+			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
 	kvoraId: string;
 	posts: [
 		{
-			post: mongoose.Schema.Types.ObjectId | IPost;
+			post: mongoose.Schema.Types.ObjectId | IPostDocument;
 		}
 	];
 	questions: [
 		{
-			question: mongoose.Schema.Types.ObjectId | IQuestion;
+			question: mongoose.Schema.Types.ObjectId | IQuestionDocument;
 		}
 	];
+}
+
+export interface ISpaceModel extends mongoose.Model<ISpaceDocument>{
 	uploadedAvatar(...args: any[]): any;
 }
 
@@ -121,4 +124,4 @@ spaceSchema.statics.uploadedAvatar = multer({
 	storage,
 }).single('avatar');
 
-export default mongoose.model<ISpace>('Space', spaceSchema);
+export default mongoose.model<ISpaceDocument, ISpaceModel>('Space', spaceSchema);

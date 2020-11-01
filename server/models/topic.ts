@@ -1,45 +1,45 @@
 import mongoose from 'mongoose';
-import { IUser } from './user';
-import { IQuestion } from './question';
-import { IPost } from './post';
+import { IUserDocument } from './user';
+import { IQuestionDocument } from './question';
+import { IPostDocument } from './post';
 
-export interface ITopic extends mongoose.Document {
+export interface ITopicDocument extends mongoose.Document {
 	name: string;
 	posts: [
 		{
-			post: IPost;
+			post: IPostDocument;
 		}
 	];
 	questions: [
 		{
-			question: IQuestion | mongoose.Schema.Types.ObjectId;
+			question: IQuestionDocument | mongoose.Schema.Types.ObjectId;
 		}
 	];
 	related: [
 		{
-			related: ITopic | mongoose.Schema.Types.ObjectId;
+			related: ITopicDocument | mongoose.Schema.Types.ObjectId;
 		}
 	];
 	mostViewedWriters: [
 		{
-			user: IUser | mongoose.Schema.Types.ObjectId;
+			user: IUserDocument | mongoose.Schema.Types.ObjectId;
 		}
 	];
 	followers: [
 		{
-			user: IUser | mongoose.Schema.Types.ObjectId;
+			user: IUserDocument | mongoose.Schema.Types.ObjectId;
 		}
 	];
 	manage: {
 		ontology: {
 			parentTopics: [
 				{
-					topic: ITopic | mongoose.Schema.Types.ObjectId;
+					topic: ITopicDocument | mongoose.Schema.Types.ObjectId;
 				}
 			];
 			childTopics: [
 				{
-					topic: ITopic | mongoose.Schema.Types.ObjectId;
+					topic: ITopicDocument | mongoose.Schema.Types.ObjectId;
 				}
 			];
 		};
@@ -50,7 +50,7 @@ export interface ITopic extends mongoose.Document {
 		];
 		mergedTopics: [
 			{
-				topic: ITopic | mongoose.Schema.Types.ObjectId;
+				topic: ITopicDocument | mongoose.Schema.Types.ObjectId;
 			}
 		];
 		settings: {
@@ -227,4 +227,4 @@ const TopicSchema = new mongoose.Schema(
 	}
 );
 
-export default mongoose.model<ITopic>('Topic', TopicSchema);
+export default mongoose.model<ITopicDocument>('Topic', TopicSchema);

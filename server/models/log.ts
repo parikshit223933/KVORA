@@ -1,13 +1,13 @@
-import { IUser } from './user';
+import { IUserDocument } from './user';
 import mongoose from 'mongoose';
 
-export interface ILog extends mongoose.Document {
+export interface ILogDocument extends mongoose.Document {
 	typeOfAction: string;
-	actionTakenBy: mongoose.Schema.Types.ObjectId | IUser;
+	actionTakenBy: mongoose.Schema.Types.ObjectId | IUserDocument;
 	description: string;
 	thanks: [
 		{
-			user: mongoose.Schema.Types.ObjectId | IUser;
+			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
 }
@@ -41,4 +41,4 @@ const logSchema = new mongoose.Schema(
 	}
 );
 
-export default mongoose.model<ILog>('Log', logSchema);
+export default mongoose.model<ILogDocument>('Log', logSchema);

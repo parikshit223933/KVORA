@@ -1,28 +1,28 @@
 import mongoose from 'mongoose';
-import { IUser } from './user';
+import { IUserDocument } from './user';
 
-export interface IComment extends mongoose.Document {
+export interface ICommentDocument extends mongoose.Document {
 	isRootComment: boolean;
 	content: string;
 	upvotes: [
 		{
-			user: mongoose.Schema.Types.ObjectId | IUser;
+			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
 	downvotes: [
 		{
-			user: mongoose.Schema.Types.ObjectId | IUser;
+			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
 	reports: [
 		{
-			user: mongoose.Schema.Types.ObjectId | IUser;
+			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
-	parent: mongoose.Schema.Types.ObjectId | IComment;
+	parent: mongoose.Schema.Types.ObjectId | ICommentDocument;
 	directChildren: [
 		{
-			comment: mongoose.Schema.Types.ObjectId | IComment;
+			comment: mongoose.Schema.Types.ObjectId | ICommentDocument;
 		}
 	];
 }
@@ -81,4 +81,4 @@ const commnetSchema = new mongoose.Schema(
 	}
 );
 
-export default mongoose.model<IComment>('Comment', commnetSchema);
+export default mongoose.model<ICommentDocument>('Comment', commnetSchema);

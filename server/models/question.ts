@@ -1,36 +1,36 @@
 import mongoose from 'mongoose';
-import { IUser } from './user';
-import { ITopic } from './topic';
-import { ISpace } from './space';
-import { IAnswer } from './answer';
-import { IComment } from './comment';
-export interface IQuestion extends mongoose.Document {
-	author: mongoose.Schema.Types.ObjectId | IUser;
+import { IUserDocument } from './user';
+import { ITopicDocument } from './topic';
+import { ISpaceDocument } from './space';
+import { IAnswerDocument } from './answer';
+import { ICommentDocument } from './comment';
+export interface IQuestionDocument extends mongoose.Document {
+	author: mongoose.Schema.Types.ObjectId | IUserDocument;
 	content: string;
 	contextLink: string;
 	answers: [
 		{
-			answer: mongoose.Schema.Types.ObjectId | IAnswer;
+			answer: mongoose.Schema.Types.ObjectId | IAnswerDocument;
 		}
 	];
 	followers: [
 		{
-			user: mongoose.Schema.Types.ObjectId | IUser;
+			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
 	comments: [
 		{
-			comment: mongoose.Schema.Types.ObjectId | IComment;
+			comment: mongoose.Schema.Types.ObjectId | ICommentDocument;
 		}
 	];
 	downvotes: [
 		{
-			user: mongoose.Schema.Types.ObjectId | IUser;
+			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
 	relatedTopics: [
 		{
-			topic: mongoose.Schema.Types.ObjectId | ITopic;
+			topic: mongoose.Schema.Types.ObjectId | ITopicDocument;
 		}
 	];
 	isPublic: boolean;
@@ -39,7 +39,7 @@ export interface IQuestion extends mongoose.Document {
 	isAQuestion: boolean;
 	isASharedLink: boolean;
 	linkDescription: string;
-	associatedSpace: mongoose.Schema.Types.ObjectId | ISpace;
+	associatedSpace: mongoose.Schema.Types.ObjectId | ISpaceDocument;
 }
 const questionSchema = new mongoose.Schema(
 	{
@@ -125,4 +125,4 @@ const questionSchema = new mongoose.Schema(
 	}
 );
 
-export default mongoose.model<IQuestion>('Question', questionSchema);
+export default mongoose.model<IQuestionDocument>('Question', questionSchema);
