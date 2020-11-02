@@ -1,4 +1,11 @@
-import { SIGNUP_FAILURE, SIGNUP_START, SIGNUP_SUCCESS } from "./actionTypes";
+import {
+	SIGNIN_FAILURE,
+	SIGNIN_START,
+	SIGNIN_SUCCESS,
+	SIGNUP_FAILURE,
+	SIGNUP_START,
+	SIGNUP_SUCCESS,
+} from "./actionTypes";
 import { API_URLS } from "../helpers/urls";
 import formUrlEncoded from "form-urlencoded";
 
@@ -46,6 +53,46 @@ export const signUp = (firstName, lastName, email, password) => {
 					return;
 				}
 				dispatch(signUpFailure(data.message));
+			});
+	};
+};
+// LOGIN
+export const signInStart = () => {
+	return {
+		type: SIGNIN_START,
+	};
+};
+export const signInSuccess = (user) => {
+	return {
+		user,
+		type: SIGNIN_SUCCESS,
+	};
+};
+export const signInFailure = (error) => {
+	return {
+		error,
+		type: SIGNIN_FAILURE,
+	};
+};
+export const signIn = (email, password) => {
+	return (dispatch) => {
+		const url = API_URLS.signIn();
+		dispatch(signInStart());
+		fetch(url, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+			},
+			body: formUrlEncoded({ email, password }),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				if (data.success) {
+					dispatch(signInSuccess(data.data.user));
+					localStorage.setItem("kvoraToken", data.data.token);
+					return;
+				}
+				dispatch(signInFailure(data.message));
 			});
 	};
 };

@@ -1,7 +1,7 @@
-import UtilsClass from "../../../utility/utils.js"
+import UtilsClass from '../../../utility/utils.js';
 const util = new UtilsClass();
 import StatusCodes from 'http-status-codes';
-import User, { IUserDocument } from '../../../models/user.js';
+import User from '../../../models/user.js';
 import chalk from 'chalk';
 import jwt from 'jsonwebtoken';
 const passportJWTSecret = 'secret';
@@ -52,8 +52,53 @@ export const signUp = async (req: express.Request, res: express.Response) => {
 	} catch (error) {
 		// tslint:disable-next-line:no-console
 		console.log(chalk.redBright(error));
-		return util.response(
-			res,
-		);
+		return util.response(res);
 	}
+};
+
+// req.body => {email, password}
+export const signIn = async (req: express.Request, res: express.Response) => {
+	const email: string = req.body.email;
+	const password: string = req.body.password;
+
+	if (!email || !password) {
+		return util.response(res, StatusCodes.FORBIDDEN, 'One of the fields is empty', false);
+	}
+
+	const correctnessArray: [
+		boolean,
+		string,
+		string,
+		string,
+		string
+	] = await User.isPasswordCorrect(email, password);
+
+	const existsInDB: boolean = correctnessArray[0];
+	const firstNameOfUserInDB: string = correctnessArray[1];
+	const lastNameOfUserInDB: string = correctnessArray[2];
+	const userEmailInDB: string = correctnessArray[3];
+	const userIdInDB: string = correctnessArray[4];
+
+	if (!existsInDB) {
+		return util.response(res, StatusCodes.FORBIDDEN, 'Wrong email/password', false);
+	}
+
+	const token = jwt.sign(
+		{
+			firstName: firstNameOfUserInDB,
+			lastName: lastNameOfUserInDB,
+			email: userEmailInDB,
+			id: userIdInDB,
+		},
+		passportJWTSecret
+	);
+
+	return util.response(res, StatusCodes.OK, 'Account created successfully!', true, {
+		token,
+		user: {
+			firstName: firstNameOfUserInDB,
+			lastName: lastNameOfUserInDB,
+			email: userEmailInDB,
+		},
+	});
 };

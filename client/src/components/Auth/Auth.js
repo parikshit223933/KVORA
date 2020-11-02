@@ -2,8 +2,31 @@ import React from "react";
 import "../../assets/css/signIn.scss";
 import { SocialLogin, SignUp } from "..";
 import { Route } from "react-router-dom";
+import { connect } from "react-redux";
+import { signIn } from "../../actions/auth";
 
 class Auth extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			email: "",
+			password: "",
+		};
+	}
+	inputOnChangeHandler = (param, value) => {
+		this.setState({
+			[param]: value,
+		});
+	};
+	onSubmitHandler = () => {
+		console.log('hola')
+		if(!this.state.email||!this.state.password)
+		{
+			console.log('One of the fields is empty');
+			return;
+		}
+		this.props.dispatch(signIn(this.state.email, this.state.password));
+	};
 	render() {
 		return (
 			<div className="signIn-component">
@@ -36,7 +59,7 @@ class Auth extends React.Component {
 									width: "70%",
 									margin: "20px 0px",
 									height: "1px",
-									backgroundColor: "#dadada"
+									backgroundColor: "#dadada",
 								}}
 							></div>
 							<div
@@ -44,7 +67,7 @@ class Auth extends React.Component {
 								style={{
 									width: "1px",
 									height: "200px",
-									backgroundColor: "#dadada"
+									backgroundColor: "#dadada",
 								}}
 							></div>
 							<div className="sign-in-form">
@@ -57,6 +80,12 @@ class Auth extends React.Component {
 											aria-describedby="emailHelp"
 											required
 											placeholder="Email"
+											onChange={(event) =>
+												this.inputOnChangeHandler(
+													"email",
+													event.target.value
+												)
+											}
 										/>
 									</div>
 									<div className="form-group">
@@ -65,6 +94,12 @@ class Auth extends React.Component {
 											type="password"
 											className="form-control form-control-sm"
 											placeholder="Password"
+											onChange={(event) =>
+												this.inputOnChangeHandler(
+													"password",
+													event.target.value
+												)
+											}
 										/>
 									</div>
 									<div className="d-flex flex-row justify-content-between align-items-start">
@@ -73,7 +108,8 @@ class Auth extends React.Component {
 										</div>
 										<div>
 											<button
-												type="submit"
+												type="button"
+												onClick={()=>this.onSubmitHandler()}
 												className="btn btn-sm btn-primary"
 											>
 												Submit
@@ -90,7 +126,7 @@ class Auth extends React.Component {
 									width: "100%",
 									margin: "5px 0px",
 									height: "1px",
-									backgroundColor: "#dadada"
+									backgroundColor: "#dadada",
 								}}
 							></div>
 							<div className="text-center text-secondary">
@@ -122,4 +158,7 @@ class Auth extends React.Component {
 		);
 	}
 }
-export default Auth;
+const mapStateToProps = ({ ...state }) => {
+	return { auth: state.auth };
+};
+export default connect(mapStateToProps)(Auth);

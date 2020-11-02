@@ -116,7 +116,10 @@ export interface IUserDocument extends mongoose.Document {
 
 export interface IUserModel extends mongoose.Model<IUserDocument> {
 	getNewSaltAndHash(password: string): { salt: string; hash: string };
-	isPasswordCorrect(email: string, password: string): Promise<boolean>;
+	isPasswordCorrect(
+		email: string,
+		password: string
+	): Promise<[boolean, string, string, string, string]>;
 	doesUserExists(email: string): Promise<boolean>;
 	uploadedAvatar(...args: any[]): any;
 }
@@ -310,7 +313,7 @@ userSchema.statics.doesUserExists = async function (email: string): Promise<bool
 userSchema.statics.isPasswordCorrect = async function (
 	email: string,
 	password: string
-): Promise<boolean> {
+): Promise<[boolean, string, string, string, string]> {
 	try {
 		const _user = await this.findOne({ email });
 		const hashInDB = _user.hash;
@@ -325,10 +328,13 @@ userSchema.statics.isPasswordCorrect = async function (
 				passwordHashingAlgorithm
 			)
 			.toString(stringFormat);
-		return hashInDB === newHash;
+		return hashInDB === newHash
+			? [true, _user.firstName, _user.lastName, _user.email, _user.id]
+			: [false, '', '', '', ''];
 	} catch (error) {
 		// tslint:disable-next-line:no-console
 		console.log(chalk.redBright(error));
+		return [false, '', '', '', ''];
 	}
 };
 

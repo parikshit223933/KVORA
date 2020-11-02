@@ -1,11 +1,12 @@
 {
-  "defaultSeverity": "error",
-  "extends": [
-      "tslint:recommended"
-  ],
-  "jsRules": {},
-  "rules": {
-      "trailing-comma": [ false ]
-  },
-  "rulesDirectory": []
+	"defaultSeverity": "error",
+	"extends": ["tslint:recommended"],
+	"jsRules": {
+		"indent": [true, "spaces", 4]
+	},
+	"rules": {
+		"indent": [true, "tabs", 4],
+		"trailing-comma": [false]
+	},
+	"rulesDirectory": []
 }
