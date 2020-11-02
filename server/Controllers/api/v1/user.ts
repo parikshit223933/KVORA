@@ -102,3 +102,21 @@ export const signIn = async (req: express.Request, res: express.Response) => {
 		},
 	});
 };
+
+// req.body => {email, userId}
+export const refreshAuth = async (req: express.Request, res: express.Response) => {
+	const userId = req.body.userId;
+	const email = req.body.email;
+	const user = await User.findById(userId);
+	if(!email||user.email!==email)
+	{
+		return util.response(res, StatusCodes.FORBIDDEN, 'Something went wrong!', false);
+	}
+	return util.response(res, StatusCodes.OK, 'Authenticated Successfully!', true, {
+		user: {
+			firstName: user.firstName,
+			lastName: user.lastName,
+			email: user.email,
+		},
+	})
+};

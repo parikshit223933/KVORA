@@ -25,8 +25,23 @@ import {
 	Bookmarks,
 	Drafts,
 } from "..";
+import { getAuthtokenFromLocalStorage } from "../../helpers/utils";
+import jwt_decode from 'jwt-decode';
+import { refreshAuth } from "../../actions/auth";
+import { connect } from "react-redux";
 
 class App extends React.Component {
+	componentDidMount()
+	{
+		let token=getAuthtokenFromLocalStorage();
+		if(token)
+		{
+			const decoded_token=jwt_decode(token);
+			const email=decoded_token.email;
+			const userId=decoded_token.id;
+			this.props.dispatch(refreshAuth(email, userId));
+		}
+	}
 	render() {
 		const isLoggedIn = true;
 		return (
@@ -82,4 +97,10 @@ class App extends React.Component {
 		);
 	}
 }
-export default App;
+const mapStateToProps=({...state})=>
+{
+	return{
+		auth:state.auth
+	}
+}
+export default connect(mapStateToProps)(App);

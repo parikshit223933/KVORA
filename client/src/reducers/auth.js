@@ -1,4 +1,7 @@
 import {
+	REFRESH_AUTH_FAILURE,
+	REFRESH_AUTH_START,
+	REFRESH_AUTH_SUCCESS,
 	SIGNIN_FAILURE,
 	SIGNIN_START,
 	SIGNIN_SUCCESS,
@@ -15,8 +18,8 @@ let currentAuthState = {
 	},
 	inProgress: false,
 	isLoggedIn: false,
-	error: false,
-	success: false,
+	error: null,
+	success: null,
 };
 
 export default function auth(state = currentAuthState, action) {
@@ -26,8 +29,8 @@ export default function auth(state = currentAuthState, action) {
 				...state,
 				inProgress: true,
 				isLoggedIn: false,
-				error: false,
-				success: false,
+				error: null,
+				success: null,
 			};
 		case SIGNUP_SUCCESS:
 			return {
@@ -53,8 +56,8 @@ export default function auth(state = currentAuthState, action) {
 			return {
 				...state,
 				inProgress: false,
-				success: false,
-				error: false,
+				success: null,
+				error: null,
 			};
 		case SIGNIN_SUCCESS:
 			return {
@@ -70,6 +73,29 @@ export default function auth(state = currentAuthState, action) {
 				inProgress: false,
 				isLoggedIn: false,
 				error: action.error,
+			};
+		case REFRESH_AUTH_START:
+			return {
+				...state,
+				inProgress: false,
+				success: null,
+				error: null,
+			};
+		case REFRESH_AUTH_SUCCESS:
+			return {
+				...state,
+				user: action.user,
+				success: true,
+				inProgress: false,
+				isLoggedIn: true,
+			};
+		case REFRESH_AUTH_FAILURE:
+			return {
+				...state,
+				success: false,
+				error: action.error,
+				inProgress: false,
+				isLoggedIn: false,
 			};
 		default:
 			return state;

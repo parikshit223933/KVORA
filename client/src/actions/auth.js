@@ -1,4 +1,7 @@
 import {
+	REFRESH_AUTH_FAILURE,
+	REFRESH_AUTH_START,
+	REFRESH_AUTH_SUCCESS,
 	SIGNIN_FAILURE,
 	SIGNIN_START,
 	SIGNIN_SUCCESS,
@@ -8,7 +11,9 @@ import {
 } from "./actionTypes";
 import { API_URLS } from "../helpers/urls";
 import formUrlEncoded from "form-urlencoded";
+import { getAuthtokenFromLocalStorage } from "../helpers/utils";
 
+// SIGN UP
 export const signUpStart = () => {
 	return {
 		type: SIGNUP_START,
@@ -56,7 +61,8 @@ export const signUp = (firstName, lastName, email, password) => {
 			});
 	};
 };
-// LOGIN
+
+// SIGN IN
 export const signInStart = () => {
 	return {
 		type: SIGNIN_START,
@@ -96,3 +102,51 @@ export const signIn = (email, password) => {
 			});
 	};
 };
+
+// REFRESH AUTH
+export const refreshAuthStart=()=>
+{
+	return{
+		type: REFRESH_AUTH_START
+	}
+}
+export const refreshAuthSuccess = (user)=>
+{
+	return{
+		type:REFRESH_AUTH_SUCCESS,
+		user
+	}
+}
+export const refreshAuthFailure=(error)=>
+{
+	return{
+		error,
+		type:REFRESH_AUTH_FAILURE
+	}
+}
+export const refreshAuth=(email, userId)=>
+{
+	return dispatch=>
+	{
+		const url=API_URLS.refreshAuth();
+		dispatch(refreshAuthStart());
+		fetch(url, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				'Authorization': `Bearer ${getAuthtokenFromLocalStorage()}`
+			},
+			body: formUrlEncoded({ email, userId }),
+		})
+		.then(res=>res.json())
+		.then(data=>
+			{
+				if(data.success)
+				{
+					dispatch(refreshAuthSuccess(data.data.user));
+					return;
+				}
+				dispatch(refreshAuthFailure(data.message));
+			})
+	}
+}
