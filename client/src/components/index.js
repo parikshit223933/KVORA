@@ -109,6 +109,9 @@ import Bookmarks from "./Bookmarks/Bookmarks";
 import Drafts from "./Drafts/Drafts";
 import DraftsMid from "./Drafts/DraftsMid";
 import DraftsReusable from './Drafts/Reusables/DraftsReusable';
+import ScreenLoader from './Loaders/ScreenLoader';
+import PrivateRoute from './SpecialRoutes/PrivateRoute';
+import RestrictedRoute from './SpecialRoutes/RestrictedRoute';
 
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
@@ -225,5 +228,8 @@ export {
 	Bookmarks,
 	Drafts,
 	DraftsMid,
-	DraftsReusable
+	DraftsReusable,
+	ScreenLoader,
+	PrivateRoute,
+	RestrictedRoute
 };

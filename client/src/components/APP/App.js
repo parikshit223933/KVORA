@@ -1,6 +1,6 @@
 import React from "react";
 import "../../assets/css/App.scss";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import {
 	Auth,
 	Home,
@@ -24,6 +24,8 @@ import {
 	YourContentLanding,
 	Bookmarks,
 	Drafts,
+	PrivateRoute,
+	RestrictedRoute
 } from "..";
 import { getAuthtokenFromLocalStorage } from "../../helpers/utils";
 import jwt_decode from 'jwt-decode';
@@ -51,46 +53,46 @@ class App extends React.Component {
 					<MessagesPopUp />
 					{/* This pop up is invoke by messages/messagespopup */}
 					<Switch>
-						<Route exact path="/" component={Home} />
-						<Route path="/auth" component={Auth} />
-						<Route exact path="/answer" component={Answer} />
-						<Route
+						<PrivateRoute exact path="/" component={Home} />
+						<RestrictedRoute path="/auth" component={Auth} />
+						<PrivateRoute exact path="/answer" component={Answer} />
+						<PrivateRoute
 							exact
 							path="/notification"
 							component={Notification}
 						/>
-						<Route path="/profile/:userId" component={Profile} />
-						<Route exact path="/all-spaces" component={AllSpaces} />
-						<Route
+						<PrivateRoute path="/profile/:userId" component={Profile} />
+						<PrivateRoute exact path="/all-spaces" component={AllSpaces} />
+						<PrivateRoute
 							exact
 							path="/spaces/:spaceId"
 							component={SingleSpace}
 						/>
-						<Route exact path="/about" component={About} />
-						<Route exact path="/careers" component={Careers} />
-						<Route exact path="/terms" component={Terms} />
-						<Route exact path="/privacy" component={Privacy} />
-						<Route
+						<PrivateRoute exact path="/about" component={About} />
+						<PrivateRoute exact path="/careers" component={Careers} />
+						<PrivateRoute exact path="/terms" component={Terms} />
+						<PrivateRoute exact path="/privacy" component={Privacy} />
+						<PrivateRoute
 							exact
 							path="/acceptable-use"
 							component={AcceptableUse}
 						/>
-						<Route exact path="/business" component={Business} />
-						<Route
+						<PrivateRoute exact path="/business" component={Business} />
+						<PrivateRoute
 							exact
 							path="/your-ad-choices"
 							component={YourAdChoices}
 						/>
-						<Route path="/settings" component={Settings} />
-						<Route path="/help" component={Help} />
-						<Route path="/stats" component={Statistics} />
-						<Route
+						<PrivateRoute path="/settings" component={Settings} />
+						<PrivateRoute path="/help" component={Help} />
+						<PrivateRoute path="/stats" component={Statistics} />
+						<PrivateRoute
 							exact
 							path="/content"
 							component={YourContentLanding}
 						/>
-						<Route exact path="/bookmarks" component={Bookmarks} />
-						<Route exact path="/drafts" component={Drafts} />
+						<PrivateRoute exact path="/bookmarks" component={Bookmarks} />
+						<PrivateRoute exact path="/drafts" component={Drafts} />
 					</Switch>
 				</div>
 			</Router>

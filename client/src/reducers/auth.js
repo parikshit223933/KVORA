@@ -55,7 +55,7 @@ export default function auth(state = currentAuthState, action) {
 		case SIGNIN_START:
 			return {
 				...state,
-				inProgress: false,
+				inProgress: true,
 				success: null,
 				error: null,
 			};
@@ -77,7 +77,7 @@ export default function auth(state = currentAuthState, action) {
 		case REFRESH_AUTH_START:
 			return {
 				...state,
-				inProgress: false,
+				inProgress: true,
 				success: null,
 				error: null,
 			};
