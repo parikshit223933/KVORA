@@ -9,13 +9,13 @@ class Navbar extends React.Component {
 		return (
 			<div className="navbar-container fixed-top bg-white">
 				<nav className="navbar pt-0 pb-0 navbar-expand-lg navbar-light bg-white container">
-					<a
+					<Link
 						className="navbar-brand website-logo"
-						href="/"
+						to="/"
 						style={{ fontSize: "26px" }}
 					>
 						Kvora
-					</a>
+					</Link>
 					<button
 						className="navbar-toggler"
 						type="button"
