@@ -1,4 +1,5 @@
 import {
+	LOG_OUT,
 	REFRESH_AUTH_FAILURE,
 	REFRESH_AUTH_START,
 	REFRESH_AUTH_SUCCESS,
@@ -97,6 +98,16 @@ export default function auth(state = currentAuthState, action) {
 				inProgress: false,
 				isLoggedIn: false,
 			};
+		case LOG_OUT:
+			return {user: {
+				firstName: "",
+				lastName: "",
+				email: "",
+			},
+			inProgress: false,
+			isLoggedIn: false,
+			error: null,
+			success: true,};
 		default:
 			return state;
 	}

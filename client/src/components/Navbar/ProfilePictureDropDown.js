@@ -1,8 +1,13 @@
 import React from "react";
 import image from "../../assets/images/signInBackground.png";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { logOut } from "../../actions/auth";
 
 class ProfilePictureDropDown extends React.Component {
+	logOutHandler = () => {
+		this.props.dispatch(logOut());
+	};
 	render() {
 		return (
 			<div
@@ -123,12 +128,12 @@ class ProfilePictureDropDown extends React.Component {
 					>
 						Help
 					</Link>
-					<Link
-						to="/"
+					<div
+						onClick={() => this.logOutHandler()}
 						className="dropdown-item font-weight-bold text-black-50 pl-3 py-1 d-flex flex-row justify-content-start align-items-center"
 					>
 						Logout
-					</Link>
+					</div>
 				</div>
 
 				<hr className="mt-1 mb-0" />
@@ -179,5 +184,9 @@ class ProfilePictureDropDown extends React.Component {
 		);
 	}
 }
-
-export default ProfilePictureDropDown;
+const mapStateToProps = ({ ...state }) => {
+	return {
+		auth: state.auth,
+	};
+};
+export default connect(mapStateToProps)(ProfilePictureDropDown);

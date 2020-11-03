@@ -1,4 +1,5 @@
 import {
+	LOG_OUT,
 	REFRESH_AUTH_FAILURE,
 	REFRESH_AUTH_START,
 	REFRESH_AUTH_SUCCESS,
@@ -153,5 +154,12 @@ export const refreshAuth=(email, userId)=>
 					localStorage.removeItem('kvoraToken');
 					dispatch(refreshAuthFailure('Please sign in again'));
 				})
+	}
+}
+export const logOut=()=>
+{
+	localStorage.removeItem('kvoraToken');
+	return{
+		type:LOG_OUT
 	}
 }
