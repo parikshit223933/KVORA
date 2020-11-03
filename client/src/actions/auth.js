@@ -148,5 +148,10 @@ export const refreshAuth=(email, userId)=>
 				}
 				dispatch(refreshAuthFailure(data.message));
 			})
+			.catch(error=>
+				{
+					localStorage.removeItem('kvoraToken');
+					dispatch(refreshAuthFailure('Please sign in again'));
+				})
 	}
 }

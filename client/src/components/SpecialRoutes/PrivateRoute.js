@@ -14,10 +14,7 @@ class PrivateRoute extends React.Component {
 			} else {
 				return (
 					<Redirect
-						to={{
-							path: "/auth/sign-in",
-							state: { from: rest.location },
-						}}
+						to="/auth/sign-in"
 					/>
 				);
 			}

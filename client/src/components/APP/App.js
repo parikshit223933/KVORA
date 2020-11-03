@@ -29,7 +29,7 @@ import {
 } from "..";
 import { getAuthtokenFromLocalStorage } from "../../helpers/utils";
 import jwt_decode from 'jwt-decode';
-import { refreshAuth } from "../../actions/auth";
+import { refreshAuth, refreshAuthFailure, refreshAuthStart } from "../../actions/auth";
 import { connect } from "react-redux";
 
 class App extends React.Component {
@@ -43,9 +43,13 @@ class App extends React.Component {
 			const userId=decoded_token.id;
 			this.props.dispatch(refreshAuth(email, userId));
 		}
+		else{
+			this.props.dispatch(refreshAuthStart());
+			this.props.dispatch(refreshAuthFailure('Please Login again'));
+		}
 	}
 	render() {
-		const isLoggedIn = true;
+		const isLoggedIn = this.props.auth.isLoggedIn;
 		return (
 			<Router>
 				<div className="App">
