@@ -1,20 +1,11 @@
 import React from "react";
 
-class ScreenLoader extends React.Component {
+class ComponentLoader extends React.Component {
 	render() {
 		const loaderSize = 50;
 		const unit = "px";
 		return (
 			<div
-				style={{
-					height: "100vh",
-					width: "100vw",
-					position: "absolute",
-					top: 0,
-					left: 0,
-					zIndex: 100000,
-					backgroundColor: "#00000017",
-				}}
 				className="d-flex flex-row justify-content-center align-items-center"
 			>
 				<div
@@ -31,4 +22,4 @@ class ScreenLoader extends React.Component {
 		);
 	}
 }
-export default ScreenLoader;
+export default ComponentLoader;

@@ -108,10 +108,11 @@ import ContentItems from "./YourContent/Reusables/ContentItems";
 import Bookmarks from "./Bookmarks/Bookmarks";
 import Drafts from "./Drafts/Drafts";
 import DraftsMid from "./Drafts/DraftsMid";
-import DraftsReusable from './Drafts/Reusables/DraftsReusable';
-import ScreenLoader from './Loaders/ScreenLoader';
-import PrivateRoute from './SpecialRoutes/PrivateRoute';
-import RestrictedRoute from './SpecialRoutes/RestrictedRoute';
+import DraftsReusable from "./Drafts/Reusables/DraftsReusable";
+import ScreenLoader from "./Loaders/ScreenLoader";
+import PrivateRoute from "./SpecialRoutes/PrivateRoute";
+import RestrictedRoute from "./SpecialRoutes/RestrictedRoute";
+import ComponentLoader from "./Loaders/ComponentLoader";
 
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
@@ -231,5 +232,6 @@ export {
 	DraftsReusable,
 	ScreenLoader,
 	PrivateRoute,
-	RestrictedRoute
+	RestrictedRoute,
+	ComponentLoader,
 };

@@ -1,9 +1,11 @@
 import React from "react";
 import image from "../../assets/images/signInBackground.png";
 import { HomeModal, HomeSingleFeed } from "../";
+import { connect } from "react-redux";
 
 class HomeFeed extends React.Component {
 	render() {
+		console.log(this.props.session)
 		return (
 			<React.Fragment>
 				<div
@@ -50,4 +52,10 @@ class HomeFeed extends React.Component {
 		);
 	}
 }
-export default HomeFeed;
+const mapStateToProps=({...state})=>
+{
+	return{
+		session:state.session
+	}
+}
+export default connect(mapStateToProps)(HomeFeed);
