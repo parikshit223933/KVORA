@@ -35,10 +35,6 @@ import {
 	refreshAuthStart,
 } from "../../actions/auth";
 import { connect } from "react-redux";
-import {
-	refreshNotificationData,
-	refreshPostsData,
-} from "../../actions/session";
 
 class App extends React.Component {
 	componentDidMount() {
@@ -48,8 +44,6 @@ class App extends React.Component {
 			const email = decoded_token.email;
 			const userId = decoded_token.id;
 			this.props.dispatch(refreshAuth(email, userId));
-			this.props.dispatch(refreshNotificationData());
-			this.props.dispatch(refreshPostsData());
 		} else {
 			this.props.dispatch(refreshAuthStart());
 			this.props.dispatch(refreshAuthFailure("Please Login again"));
