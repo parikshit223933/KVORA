@@ -2,6 +2,12 @@ import {
 	ADD_QUESTION_FAILURE,
 	ADD_QUESTION_START,
 	ADD_QUESTION_SUCCESS,
+	REFRESH_NOTIFICATION_DATA_FAILURE,
+	REFRESH_NOTIFICATION_DATA_START,
+	REFRESH_NOTIFICATION_DATA_SUCCESS,
+	REFRESH_POSTS_DATA_FAILURE,
+	REFRESH_POSTS_DATA_START,
+	REFRESH_POSTS_DATA_SUCCESS,
 } from "../actions/actionTypes";
 
 let currentSessionState = {
@@ -35,6 +41,46 @@ export default function session(state = currentSessionState, action) {
 				success: true,
 			};
 		case ADD_QUESTION_FAILURE:
+			return {
+				...state,
+				error: action.error,
+				inProgress: false,
+			};
+		case REFRESH_NOTIFICATION_DATA_START:
+			return {
+				...state,
+				inProgress: true,
+				error: false,
+				success: false,
+			};
+		case REFRESH_NOTIFICATION_DATA_SUCCESS:
+			return {
+				...state,
+				inProgress: false,
+				success: true,
+				notifications: action.notifications,
+			};
+		case REFRESH_NOTIFICATION_DATA_FAILURE:
+			return {
+				...state,
+				error: action.error,
+				inProgress: false,
+			};
+		case REFRESH_POSTS_DATA_START:
+			return {
+				...state,
+				inProgress: true,
+				error: false,
+				success: false,
+			};
+		case REFRESH_POSTS_DATA_SUCCESS:
+			return {
+				...state,
+				inProgress: false,
+				success: true,
+				posts: action.posts,
+			};
+		case REFRESH_POSTS_DATA_FAILURE:
 			return {
 				...state,
 				error: action.error,

@@ -25,27 +25,34 @@ import {
 	Bookmarks,
 	Drafts,
 	PrivateRoute,
-	RestrictedRoute
+	RestrictedRoute,
 } from "..";
 import { getAuthtokenFromLocalStorage } from "../../helpers/utils";
-import jwt_decode from 'jwt-decode';
-import { refreshAuth, refreshAuthFailure, refreshAuthStart } from "../../actions/auth";
+import jwt_decode from "jwt-decode";
+import {
+	refreshAuth,
+	refreshAuthFailure,
+	refreshAuthStart,
+} from "../../actions/auth";
 import { connect } from "react-redux";
+import {
+	refreshNotificationData,
+	refreshPostsData,
+} from "../../actions/session";
 
 class App extends React.Component {
-	componentDidMount()
-	{
-		let token=getAuthtokenFromLocalStorage();
-		if(token)
-		{
-			const decoded_token=jwt_decode(token);
-			const email=decoded_token.email;
-			const userId=decoded_token.id;
+	componentDidMount() {
+		let token = getAuthtokenFromLocalStorage();
+		if (token) {
+			const decoded_token = jwt_decode(token);
+			const email = decoded_token.email;
+			const userId = decoded_token.id;
 			this.props.dispatch(refreshAuth(email, userId));
-		}
-		else{
+			this.props.dispatch(refreshNotificationData());
+			this.props.dispatch(refreshPostsData());
+		} else {
 			this.props.dispatch(refreshAuthStart());
-			this.props.dispatch(refreshAuthFailure('Please Login again'));
+			this.props.dispatch(refreshAuthFailure("Please Login again"));
 		}
 	}
 	render() {
@@ -65,23 +72,42 @@ class App extends React.Component {
 							path="/notification"
 							component={Notification}
 						/>
-						<PrivateRoute path="/profile/:userId" component={Profile} />
-						<PrivateRoute exact path="/all-spaces" component={AllSpaces} />
+						<PrivateRoute
+							path="/profile/:userId"
+							component={Profile}
+						/>
+						<PrivateRoute
+							exact
+							path="/all-spaces"
+							component={AllSpaces}
+						/>
 						<PrivateRoute
 							exact
 							path="/spaces/:spaceId"
 							component={SingleSpace}
 						/>
 						<PrivateRoute exact path="/about" component={About} />
-						<PrivateRoute exact path="/careers" component={Careers} />
+						<PrivateRoute
+							exact
+							path="/careers"
+							component={Careers}
+						/>
 						<PrivateRoute exact path="/terms" component={Terms} />
-						<PrivateRoute exact path="/privacy" component={Privacy} />
+						<PrivateRoute
+							exact
+							path="/privacy"
+							component={Privacy}
+						/>
 						<PrivateRoute
 							exact
 							path="/acceptable-use"
 							component={AcceptableUse}
 						/>
-						<PrivateRoute exact path="/business" component={Business} />
+						<PrivateRoute
+							exact
+							path="/business"
+							component={Business}
+						/>
 						<PrivateRoute
 							exact
 							path="/your-ad-choices"
@@ -95,7 +121,11 @@ class App extends React.Component {
 							path="/content"
 							component={YourContentLanding}
 						/>
-						<PrivateRoute exact path="/bookmarks" component={Bookmarks} />
+						<PrivateRoute
+							exact
+							path="/bookmarks"
+							component={Bookmarks}
+						/>
 						<PrivateRoute exact path="/drafts" component={Drafts} />
 					</Switch>
 				</div>
@@ -103,10 +133,9 @@ class App extends React.Component {
 		);
 	}
 }
-const mapStateToProps=({...state})=>
-{
-	return{
-		auth:state.auth
-	}
-}
+const mapStateToProps = ({ ...state }) => {
+	return {
+		auth: state.auth,
+	};
+};
 export default connect(mapStateToProps)(App);
