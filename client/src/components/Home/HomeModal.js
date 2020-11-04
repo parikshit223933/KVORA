@@ -1,6 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
+import { addQuestion } from "../../actions/session";
 import image from "../../assets/images/signInBackground.png";
+import { getAuthtokenFromLocalStorage } from "../../helpers/utils";
+import jwt_decode from "jwt-decode";
 
 class HomeModal extends React.Component {
 	constructor() {
@@ -9,20 +12,54 @@ class HomeModal extends React.Component {
 			addQuestion: {
 				question: "",
 				link: "",
+				Visibility: "Public",
 			},
 			shareLink: {
 				opinion: "",
 				link: "",
 			},
 			submitButtonName: "Add Question",
-			submitButtonType: 0,
+			submitButtonType: 0, // This can either be 0 or 1
 		};
 	}
+
+	handleQuestionSubmit = () => {
+		if (
+			!this.state.addQuestion.Visibility ||
+			!this.state.addQuestion.link ||
+			!this.state.addQuestion.question
+		) {
+			console.log("One of the fields is empty!");
+			return;
+		}
+		const isPublic =
+			this.state.addQuestion.Visibility === "Public" ? true : false;
+		const isAnonymous =
+			this.state.addQuestion.Visibility === "Anonymous" ? true : false;
+		const isLimited =
+			this.state.addQuestion.Visibility === "Limited" ? true : false;
+
+		this.props.dispatch(
+			addQuestion(
+				this.state.addQuestion.question,
+				this.state.addQuestion.link,
+				{
+					...this.props.auth.user,
+					id: jwt_decode(getAuthtokenFromLocalStorage()).id,
+				},
+				isPublic,
+				isAnonymous,
+				isLimited
+			)
+		);
+	};
+
 	handleResetState = () => {
 		this.setState({
 			addQuestion: {
 				question: "",
 				link: "",
+				Visibility: "Public",
 			},
 			shareLink: {
 				opinion: "",
@@ -32,6 +69,7 @@ class HomeModal extends React.Component {
 			submitButtonType: 0,
 		});
 	};
+
 	handleChangeSubmitButtons = (triggeredButtonType) => {
 		if (triggeredButtonType === 0 && this.state.submitButtonType !== 0) {
 			this.setState({
@@ -50,6 +88,7 @@ class HomeModal extends React.Component {
 			});
 		}
 	};
+
 	handleOnChangeForAddQuestion = (param, value) => {
 		this.setState({
 			...this.state,
@@ -59,6 +98,7 @@ class HomeModal extends React.Component {
 			},
 		});
 	};
+
 	handleOnChangeForShareLink = (param, value) => {
 		this.setState({
 			...this.state,
@@ -68,6 +108,17 @@ class HomeModal extends React.Component {
 			},
 		});
 	};
+
+	handleVisibilityChangeForAddQuestion = (value) => {
+		this.setState({
+			...this.state,
+			addQuestion: {
+				...this.state.addQuestion,
+				Visibility: value,
+			},
+		});
+	};
+
 	render() {
 		console.log(this.state);
 		return (
@@ -141,7 +192,7 @@ class HomeModal extends React.Component {
 								className="close"
 								data-dismiss="modal"
 								aria-label="Close"
-								onClick={()=>this.handleResetState()}
+								onClick={() => this.handleResetState()}
 							>
 								<span aria-hidden="true">&times;</span>
 							</button>
@@ -198,27 +249,35 @@ class HomeModal extends React.Component {
 											Parikshit Singh Asked
 										</div>
 										<div className="my-2">
-											<button
-												type="button"
-												style={{
-													borderRadius: 50,
-													border: "1px solid #dadada",
-													paddingBottom: 3,
-													paddingTop: 2,
-													fontSize: 15,
-												}}
-												className="btn btn-light"
-											>
-												<i
-													className="fas fa-user-friends"
-													style={{ opacity: 0.5 }}
-												></i>{" "}
-												Public{" "}
-												<i
-													className="fas fa-chevron-down"
-													style={{ opacity: 0.5 }}
-												></i>
-											</button>
+											<div className="form-group mb-0">
+												<select
+													style={{
+														borderRadius: 50,
+														border:
+															"1px solid #dadada",
+														paddingBottom: 3,
+														paddingTop: 2,
+														fontSize: 15,
+													}}
+													className="btn btn-white"
+													id="exampleFormControlSelect1"
+													onChange={(event) =>
+														this.handleVisibilityChangeForAddQuestion(
+															event.target.value
+														)
+													}
+												>
+													<option value="Public">
+														Public
+													</option>
+													<option value="Anonymous">
+														Anonymous
+													</option>
+													<option value="Limited">
+														Limited
+													</option>
+												</select>
+											</div>
 										</div>
 									</div>
 									<div className="mb-3">
@@ -232,7 +291,9 @@ class HomeModal extends React.Component {
 													event.target.value
 												)
 											}
-											value={this.state.addQuestion.question}
+											value={
+												this.state.addQuestion.question
+											}
 										/>
 									</div>
 									<div className="d-flex flex-row justify-content-start align-items-center">
@@ -250,7 +311,9 @@ class HomeModal extends React.Component {
 														event.target.value
 													)
 												}
-											value={this.state.addQuestion.link}
+												value={
+													this.state.addQuestion.link
+												}
 											/>
 										</div>
 									</div>
@@ -333,7 +396,9 @@ class HomeModal extends React.Component {
 														event.target.value
 													)
 												}
-											value={this.state.shareLink.link}
+												value={
+													this.state.shareLink.link
+												}
 											/>
 										</div>
 									</div>
@@ -350,7 +415,7 @@ class HomeModal extends React.Component {
 								className="btn btn-light"
 								style={{ borderRadius: "50px" }}
 								data-dismiss="modal"
-								onClick={()=>this.handleResetState()}
+								onClick={() => this.handleResetState()}
 							>
 								Cancel
 							</button>
@@ -358,6 +423,7 @@ class HomeModal extends React.Component {
 								type="button"
 								className="btn btn-primary"
 								style={{ borderRadius: "50px" }}
+								onClick={(event) => this.handleQuestionSubmit()}
 							>
 								{this.state.submitButtonName}
 							</button>

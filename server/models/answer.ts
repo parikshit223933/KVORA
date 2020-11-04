@@ -4,6 +4,7 @@ import path from 'path';
 import { IUserDocument } from './user';
 import { IQuestionDocument } from './question';
 import { ICommentDocument } from './comment';
+import { IShareDocument } from './share';
 
 export interface IAnswerDocument extends mongoose.Document {
 	author: mongoose.Schema.Types.ObjectId | IUserDocument;
@@ -26,7 +27,7 @@ export interface IAnswerDocument extends mongoose.Document {
 	];
 	shares: [
 		{
-			user: mongoose.Schema.Types.ObjectId | IUserDocument;
+			user: mongoose.Schema.Types.ObjectId | IShareDocument;
 		}
 	];
 	comments: [
@@ -81,7 +82,7 @@ const answerSchema = new mongoose.Schema(
 			{
 				user: {
 					type: mongoose.Schema.Types.ObjectId,
-					ref: 'User',
+					ref: 'Share',
 				},
 			},
 		],

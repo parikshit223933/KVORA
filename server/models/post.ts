@@ -7,31 +7,35 @@ import { ICommentDocument } from './comment';
 import { IAnswerDocument } from './answer';
 
 export interface IPostDocument extends mongoose.Document {
-	type: string;
+	type: string; // composed or share
 	question: mongoose.Schema.Types.ObjectId | IQuestionDocument;
-	answer: mongoose.Schema.Types.ObjectId | IAnswerDocument;
+	answers?: [
+		{
+			answer: mongoose.Schema.Types.ObjectId | IAnswerDocument;
+		}
+	];
 	author: mongoose.Schema.Types.ObjectId | IUserDocument;
-	thanks: [
+	thanks?: [
 		{
 			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
-	upvotes: [
+	upvotes?: [
 		{
 			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
-	shares: [
+	shares?: [
 		{
 			share: mongoose.Schema.Types.ObjectId | IShareDocument;
 		}
 	];
-	comments: [
+	comments?: [
 		{
 			comment: mongoose.Schema.Types.ObjectId | ICommentDocument;
 		}
 	];
-	associatedSpaces: [
+	associatedSpaces?: [
 		{
 			space: mongoose.Schema.Types.ObjectId | ISpaceDocument;
 		}
@@ -47,10 +51,11 @@ const postSchema = new mongoose.Schema(
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'Question',
 		},
-		answer: {
-			type: mongoose.Schema.Types.ObjectId,
-			ref: 'Answer',
-		},
+		answers: [
+			{
+				answer: { type: mongoose.Schema.Types.ObjectId, ref: 'Answer' },
+			},
+		],
 		author: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'User',

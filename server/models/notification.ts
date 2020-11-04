@@ -8,8 +8,8 @@ export interface INotificationDocument extends mongoose.Document {
 	user: mongoose.Schema.Types.ObjectId | IUserDocument;
 	description: string;
 	associatedQuestion: mongoose.Schema.Types.ObjectId | IQuestionDocument;
-	associatedSpace: mongoose.Schema.Types.ObjectId | ISpaceDocument;
-	associatedAnswer: mongoose.Schema.Types.ObjectId | IAnswerDocument;
+	associatedSpace?: mongoose.Schema.Types.ObjectId | ISpaceDocument;
+	associatedAnswer?: mongoose.Schema.Types.ObjectId | IAnswerDocument;
 }
 
 const notificationSchema = new mongoose.Schema(

@@ -7,39 +7,39 @@ import { ICommentDocument } from './comment';
 export interface IQuestionDocument extends mongoose.Document {
 	author: mongoose.Schema.Types.ObjectId | IUserDocument;
 	content: string;
-	contextLink: string;
-	answers: [
+	contextLink?: string;
+	answers?: [
 		{
 			answer: mongoose.Schema.Types.ObjectId | IAnswerDocument;
 		}
 	];
-	followers: [
+	followers?: [
 		{
 			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
-	comments: [
+	comments?: [
 		{
 			comment: mongoose.Schema.Types.ObjectId | ICommentDocument;
 		}
 	];
-	downvotes: [
+	downvotes?: [
 		{
 			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
-	relatedTopics: [
+	relatedTopics?: [
 		{
 			topic: mongoose.Schema.Types.ObjectId | ITopicDocument;
 		}
 	];
-	isPublic: boolean;
-	isAnonymous: boolean;
-	isLimited: boolean;
-	isAQuestion: boolean;
-	isASharedLink: boolean;
-	linkDescription: string;
-	associatedSpace: mongoose.Schema.Types.ObjectId | ISpaceDocument;
+	isPublic?: boolean;
+	isAnonymous?: boolean;
+	isLimited?: boolean;
+	isAQuestion?: boolean;
+	isASharedLink?: boolean;
+	linkDescription?: string;
+	associatedSpace?: mongoose.Schema.Types.ObjectId | ISpaceDocument;
 }
 const questionSchema = new mongoose.Schema(
 	{

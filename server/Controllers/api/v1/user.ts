@@ -4,7 +4,8 @@ import StatusCodes from 'http-status-codes';
 import User from '../../../models/user.js';
 import chalk from 'chalk';
 import jwt from 'jsonwebtoken';
-const passportJWTSecret = 'secret';
+import base64url from 'base64url';
+const passportJWTSecret = 'Secret_123';
 import express from 'express';
 
 // Input: formData {firstName, lastName, email, password}
@@ -39,7 +40,8 @@ export const signUp = async (req: express.Request, res: express.Response) => {
 				email: user.email,
 				id: user.id,
 			},
-			passportJWTSecret
+			passportJWTSecret,
+			{expiresIn:1000*60*60*24}
 		);
 		return util.response(res, StatusCodes.OK, 'Account created successfully!', true, {
 			token,
@@ -90,7 +92,8 @@ export const signIn = async (req: express.Request, res: express.Response) => {
 			email: userEmailInDB,
 			id: userIdInDB,
 		},
-		passportJWTSecret
+		passportJWTSecret,
+		{expiresIn:1000*60*60*24}
 	);
 
 	return util.response(res, StatusCodes.OK, 'Account created successfully!', true, {

@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 import { IUserDocument } from './user';
 import { IQuestionDocument } from './question';
 import { IPostDocument } from './post';
+import { ILogDocument } from './log';
 
 export interface ITopicDocument extends mongoose.Document {
 	name: string;
@@ -89,10 +90,7 @@ export interface ITopicDocument extends mongoose.Document {
 	};
 	logs: [
 		{
-			log: {
-				type: mongoose.Schema.Types.ObjectId;
-				ref: 'TopicLog';
-			};
+			log:  ILogDocument | mongoose.Schema.Types.ObjectId;
 		}
 	];
 }
@@ -165,8 +163,7 @@ const TopicSchema = new mongoose.Schema(
 			aliases: [
 				{
 					alias: {
-						type: mongoose.Schema.Types.ObjectId,
-						ref: 'String',
+						type: String
 					},
 				},
 			],
@@ -216,7 +213,7 @@ const TopicSchema = new mongoose.Schema(
 			{
 				log: {
 					type: mongoose.Schema.Types.ObjectId,
-					ref: 'TopicLog',
+					ref: 'Log',
 				},
 			},
 		],

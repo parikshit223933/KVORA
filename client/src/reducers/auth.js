@@ -99,15 +99,17 @@ export default function auth(state = currentAuthState, action) {
 				isLoggedIn: false,
 			};
 		case LOG_OUT:
-			return {user: {
-				firstName: "",
-				lastName: "",
-				email: "",
-			},
-			inProgress: false,
-			isLoggedIn: false,
-			error: null,
-			success: true,};
+			return {
+				user: {
+					firstName: "",
+					lastName: "",
+					email: "",
+				},
+				inProgress: false,
+				isLoggedIn: false,
+				error: null,
+				success: true,
+			};
 		default:
 			return state;
 	}
