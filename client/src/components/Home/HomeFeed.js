@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 
 class HomeFeed extends React.Component {
 	render() {
-		console.log(this.props.session)
 		return (
 			<React.Fragment>
 				<div

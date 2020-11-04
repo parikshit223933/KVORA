@@ -1,9 +1,23 @@
 import React from "react";
 import "../../assets/css/home.scss";
-import { HomeSpaces, HomeFeed, HomeFeedImprove } from "..";
+import { HomeSpaces, HomeFeed, HomeFeedImprove, ComponentLoader } from "..";
+import {
+	refreshNotificationData,
+	refreshPostsData,
+} from "../../actions/session";
+import { connect } from "react-redux";
 
 class Home extends React.Component {
+	componentDidMount()
+	{
+		this.props.dispatch(refreshNotificationData());
+		this.props.dispatch(refreshPostsData());
+	}
 	render() {
+		if(this.props.session.inProgress)
+		{
+			return <ComponentLoader/>
+		}
 		return (
 			<div className="home-component container">
 				<div className="row">
@@ -23,4 +37,11 @@ class Home extends React.Component {
 		);
 	}
 }
-export default Home;
+
+const mapStateToProps = ({ ...state }) => {
+	return {
+		session:state.session
+	};
+};
+
+export default connect(mapStateToProps)(Home);
