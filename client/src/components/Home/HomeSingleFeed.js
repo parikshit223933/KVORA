@@ -68,7 +68,11 @@ class HomeSingleFeed extends React.Component {
 						<span>View Upvoters</span> &#8226;{" "}
 						<span>View Sharers</span>
 					</div>
-					<FeedActions upvotes={this.props.post.upvotes} shares={this.props.post.shares} comments={this.props.post.comments} />
+					<FeedActions
+						upvotes={this.props.post.upvotes}
+						shares={this.props.post.shares}
+						comments={this.props.post.comments}
+					/>
 				</div>
 				<div>
 					<NewComment />
