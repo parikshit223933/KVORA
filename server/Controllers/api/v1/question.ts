@@ -76,6 +76,8 @@ export const create = async (req: express.Request, res: express.Response) => {
 				notificationId: notification.id,
 				description: notification.description,
 				associatedQuestion: question.content,
+				updatedAt: (notification as any).updatedAt,
+				createdAt: (notification as any).createdAt,
 			},
 			post: {
 				postId: post.id,
@@ -84,6 +86,8 @@ export const create = async (req: express.Request, res: express.Response) => {
 				upvotes: post.upvotes,
 				shares: post.shares,
 				comments: post.comments,
+				updatedAt: (post as any).updatedAt,
+				createdAt: (post as any).createdAt,
 				author: {
 					firstname: user.firstName,
 					lastName: user.lastName,

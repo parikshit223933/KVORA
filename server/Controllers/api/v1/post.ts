@@ -2,7 +2,7 @@ import express from 'express';
 import UtilClass from '../../../utility/utils.js';
 import StatusCodes from 'http-status-codes';
 const util = new UtilClass();
-import Post from '../../../models/post.js';
+import Post, { IPostDocument } from '../../../models/post.js';
 import { IQuestionDocument } from '../../../models/question.js';
 import { IUserDocument } from '../../../models/user.js';
 
@@ -22,6 +22,8 @@ export const getAllPosts = async (req: express.Request, res: express.Response) =
 					upvotes: post.upvotes,
 					shares: post.shares,
 					comments: post.comments,
+					updatedAt: (post as any).updatedAt,
+					createdAt: (post as any).createdAt,
 					author: {
 						firstname: (post.author as IUserDocument).firstName,
 						lastName: (post.author as IUserDocument).lastName,

@@ -17,6 +17,8 @@ export const getAllNotifications = async (req: express.Request, res: express.Res
 					notificationId: notif.id,
 					description: notif.description,
 					associatedQuestion: (notif.associatedQuestion as IQuestionDocument).content,
+					updatedAt: (notif as any).updatedAt,
+					createdAt: (notif as any).createdAt,
 				};
 			}),
 		});

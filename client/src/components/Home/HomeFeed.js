@@ -40,12 +40,10 @@ class HomeFeed extends React.Component {
 				{/* MODAL END */}
 
 				<div className="news-feeds">
-					<HomeSingleFeed/>
-					<HomeSingleFeed/>
-					<HomeSingleFeed/>
-					<HomeSingleFeed/>
-					<HomeSingleFeed/>
-					<HomeSingleFeed/>
+					{this.props.session.posts.length!==0?this.props.session.posts.map(post=>
+					{
+						return <HomeSingleFeed post={post} key={post.postId}/>
+					}):<div className="text-center"><h4>No Posts Yet</h4></div>}
 				</div>
 			</React.Fragment>
 		);

@@ -1,6 +1,6 @@
 import React from "react";
 import "../../assets/css/home.scss";
-import { HomeSpaces, HomeFeed, HomeFeedImprove, ComponentLoader } from "..";
+import { HomeSpaces, HomeFeed, HomeFeedImprove, ScreenLoader } from "..";
 import {
 	refreshNotificationData,
 	refreshPostsData,
@@ -14,9 +14,9 @@ class Home extends React.Component {
 		this.props.dispatch(refreshPostsData());
 	}
 	render() {
-		if(this.props.session.inProgress)
+		if(this.props.session.isLoading)
 		{
-			return <ComponentLoader/>
+			return <ScreenLoader/>
 		}
 		return (
 			<div className="home-component container">
