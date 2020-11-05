@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 class AnswerSubItem extends React.Component {
 	render() {
@@ -10,18 +11,28 @@ class AnswerSubItem extends React.Component {
 						style={{ fontSize: 13 }}
 					>
 						<span>Question added</span> &bull;{" "}
-						<span>New Delhi</span>
+						<span>
+							{this.props.question.associatedSpace
+								? this.props.question.associatedSpace
+								: "No Associated Space"}
+						</span>
 					</div>
 					<div className="text-dark">
 						<h5 style={{ fontSize: 18 }}>
-							<b>What is "Lutyens’ Delhi"?</b>
+							<b>{this.props.question.content}</b>
 						</h5>
 					</div>
 					<div className="text-black-50" style={{ fontSize: 13 }}>
 						<span>
-							<b>3 Answers</b>
+							<b>{this.props.question.answers.length} Answers</b>
 						</span>{" "}
-						&bull; <span>Last followed July 1</span>
+						&bull;{" "}
+						<span>
+							Last followed{" "}
+							{moment(this.props.question.lastFollowedAt).format(
+								"DD MMMM YYYY"
+							)}
+						</span>
 					</div>
 					<div className="d-flex flex-row justify-content-between align-items-center flex-wrap">
 						<div className="d-flex flex-row justify-content-start align-items-center mb-2">
@@ -38,7 +49,8 @@ class AnswerSubItem extends React.Component {
 									type="button"
 									className="btn btn-sm btn-light"
 								>
-									<i className="fas fa-rss"></i> Follow &bull; 8
+									<i className="fas fa-rss"></i> Follow &bull;
+									{this.props.question.followers.length}
 								</button>
 							</div>
 							<div className="action-left-button">

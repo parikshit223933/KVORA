@@ -1,6 +1,6 @@
 import express from 'express';
 import Question from '../../../models/question.js';
-import User from '../../../models/user.js';
+import User, { IUserDocument } from '../../../models/user.js';
 import Post from '../../../models/post.js';
 import Comment from '../../../models/comment.js';
 import Topic from '../../../models/topic.js';
@@ -46,6 +46,7 @@ export const create = async (req: express.Request, res: express.Response) => {
 			content: questionInBody,
 			contextLink: associatedLinkInBody,
 			isPublic,
+			lastFollowedAt: Date.now(),
 			isLimited,
 			isAnonymous,
 			isAQuestion: true,
@@ -110,4 +111,33 @@ export const create = async (req: express.Request, res: express.Response) => {
 		// internal server error
 		return util.response(res);
 	}
+};
+
+export const getAllQuestions = async (req: express.Request, res: express.Response) => {
+	const allQuestions = await Question.find({}).populate('author');
+	return util.response(res, StatusCodes.OK, 'All Questions', true, {
+		questions: allQuestions.map((ques) => {
+			return {
+				content: ques.content,
+				contextLink: ques.contextLink,
+				answers: ques.answers,
+				followers: ques.followers,
+				lastFollowedAt: ques.lastFollowedAt,
+				isAnonymous: ques.isAnonymous,
+				isLimited: ques.isLimited,
+				isPublic: ques.isPublic,
+				isAQuestion: ques.isAQuestion,
+				isASharedLink: ques.isASharedLink,
+				associatedSpace: ques.associatedSpace || null,
+				createdAt: (ques as any).createdAt,
+				updatedAt: (ques as any).updatedAt,
+				author: {
+					firstName: (ques.author as IUserDocument).firstName,
+					lastName: (ques.author as IUserDocument).lastName,
+					email: (ques.author as IUserDocument).email,
+					id: (ques.author as IUserDocument).id,
+				},
+			};
+		}),
+	});
 };

@@ -3,6 +3,9 @@ import {
 	ADD_QUESTION_FAILURE,
 	ADD_QUESTION_START,
 	ADD_QUESTION_SUCCESS,
+	FETCH_ALL_QUESTIONS_FAILURE,
+	FETCH_ALL_QUESTIONS_START,
+	FETCH_ALL_QUESTIONS_SUCCESS,
 	REFRESH_NOTIFICATION_DATA_FAILURE,
 	REFRESH_NOTIFICATION_DATA_START,
 	REFRESH_NOTIFICATION_DATA_SUCCESS,
@@ -152,6 +155,46 @@ export const refreshPostsData = () => {
 				} else {
 					dispatch(refreshPostsDataFailure(data.message));
 				}
+			});
+	};
+};
+
+// FETCH ALL QUESTIONS
+export const fetchAllQuestionsStart = () => {
+	return {
+		type: FETCH_ALL_QUESTIONS_START,
+	};
+};
+export const fetchAllQuestionsSuccess = (questions) => {
+	return {
+		type: FETCH_ALL_QUESTIONS_SUCCESS,
+		questions,
+	};
+};
+export const fetchAllQuestionsFailure = (error) => {
+	return {
+		type: FETCH_ALL_QUESTIONS_FAILURE,
+		error,
+	};
+};
+export const fetchAllQuestions = () => {
+	return (dispatch) => {
+		const url = API_URLS.fetchAllQuestions();
+		dispatch(fetchAllQuestionsStart());
+		fetch(url, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				Authorization: `Bearer ${getAuthtokenFromLocalStorage()}`,
+			},
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				if (data.success) {
+					dispatch(fetchAllQuestionsSuccess(data.data.questions));
+					return;
+				}
+				dispatch(fetchAllQuestionsFailure(data.message));
 			});
 	};
 };

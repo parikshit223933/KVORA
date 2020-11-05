@@ -18,21 +18,12 @@ export interface IQuestionDocument extends mongoose.Document {
 			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
-	comments?: [
-		{
-			comment: mongoose.Schema.Types.ObjectId | ICommentDocument;
-		}
-	];
-	downvotes?: [
-		{
-			user: mongoose.Schema.Types.ObjectId | IUserDocument;
-		}
-	];
 	relatedTopics?: [
 		{
 			topic: mongoose.Schema.Types.ObjectId | ITopicDocument;
 		}
 	];
+	lastFollowedAt: Date;
 	isPublic?: boolean;
 	isAnonymous?: boolean;
 	isLimited?: boolean;
@@ -44,7 +35,8 @@ export interface IQuestionDocument extends mongoose.Document {
 const questionSchema = new mongoose.Schema(
 	{
 		author: {
-			user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'User',
 		},
 		content: {
 			type: String,
@@ -68,22 +60,7 @@ const questionSchema = new mongoose.Schema(
 				},
 			},
 		],
-		comments: [
-			{
-				comment: {
-					type: mongoose.Schema.Types.ObjectId,
-					ref: 'Comment',
-				},
-			},
-		],
-		downvotes: [
-			{
-				user: {
-					type: mongoose.Schema.Types.ObjectId,
-					ref: 'User',
-				},
-			},
-		],
+		lastFollowedAt: { type: mongoose.Schema.Types.Date },
 		relatedTopics: [
 			{
 				topic: {

@@ -1,8 +1,17 @@
 import React from "react";
-import { AnswerSubItem } from "../";
+import { connect } from "react-redux";
+import { AnswerSubItem, ScreenLoader } from "../";
+import { fetchAllQuestions } from "../../actions/session";
 
 class AnswerMid extends React.Component {
+	componentDidMount() {
+		this.props.dispatch(fetchAllQuestions());
+	}
 	render() {
+		if (this.props.session.inProgress) {
+			return <ScreenLoader />;
+		}
+		console.log(this.props.session.questions);
 		return (
 			<div className="answer-mid">
 				<div className="answer-mid-item bg-white mb-3">
@@ -14,7 +23,7 @@ class AnswerMid extends React.Component {
 									backgroundColor: "#b92b27",
 									padding: 5,
 									color: "white",
-									borderRadius: 3
+									borderRadius: 3,
 								}}
 							></i>
 						</div>
@@ -27,9 +36,22 @@ class AnswerMid extends React.Component {
 					</header>
 					<hr className="m-0" />
 					<div className="answer-mid-sub-item">
-						<AnswerSubItem />
-						<AnswerSubItem />
-						<AnswerSubItem />
+						{this.props.session.questions.length === 0 ? (
+							<div className="text-center">
+								No Questions Currently
+							</div>
+						) : (
+							this.props.session.questions.map(
+								(question, index) => {
+									return (
+										<AnswerSubItem
+											key={index}
+											question={question}
+										/>
+									);
+								}
+							)
+						)}
 					</div>
 					<div className="d-flex justify-content-center align-items-center flex-row p-1">
 						<button
@@ -44,4 +66,9 @@ class AnswerMid extends React.Component {
 		);
 	}
 }
-export default AnswerMid;
+const mapStateToProps = ({ ...state }) => {
+	return {
+		session: state.session,
+	};
+};
+export default connect(mapStateToProps)(AnswerMid);

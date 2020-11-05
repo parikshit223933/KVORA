@@ -2,6 +2,9 @@ import {
 	ADD_QUESTION_FAILURE,
 	ADD_QUESTION_START,
 	ADD_QUESTION_SUCCESS,
+	FETCH_ALL_QUESTIONS_FAILURE,
+	FETCH_ALL_QUESTIONS_START,
+	FETCH_ALL_QUESTIONS_SUCCESS,
 	REFRESH_NOTIFICATION_DATA_FAILURE,
 	REFRESH_NOTIFICATION_DATA_START,
 	REFRESH_NOTIFICATION_DATA_SUCCESS,
@@ -13,6 +16,7 @@ import {
 let currentSessionState = {
 	notifications: [],
 	posts: [],
+	questions: [],
 	inProgress: false,
 	error: null,
 	success: null,
@@ -85,6 +89,26 @@ export default function session(state = currentSessionState, action) {
 				...state,
 				error: action.error,
 				inProgress: false,
+			};
+		case FETCH_ALL_QUESTIONS_START:
+			return {
+				...state,
+				inProgress: true,
+				error: false,
+				success: false,
+			};
+		case FETCH_ALL_QUESTIONS_SUCCESS:
+			return {
+				...state,
+				inProgress: false,
+				success: false,
+				questions: action.questions,
+			};
+		case FETCH_ALL_QUESTIONS_FAILURE:
+			return {
+				...state,
+				inProgress: false,
+				error: action.error,
 			};
 		default:
 			return state;
