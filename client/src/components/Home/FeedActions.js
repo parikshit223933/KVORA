@@ -17,7 +17,13 @@ class FeedActions extends React.Component {
 						</span>{" "}
 						<span>{this.props.shares.length}</span>
 					</div>
-					<div className="mr-3">
+					<div
+						className="mr-3"
+						data-toggle="collapse"
+						data-target={`#POST-${this.props.postId}`}
+						aria-expanded={false}
+						aria-controls={`POST-${this.props.postId}`}
+					>
 						<span>
 							<i className="far fa-comment"></i>
 						</span>{" "}

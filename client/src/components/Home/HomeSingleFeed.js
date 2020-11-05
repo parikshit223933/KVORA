@@ -72,9 +72,10 @@ class HomeSingleFeed extends React.Component {
 						upvotes={this.props.post.upvotes}
 						shares={this.props.post.shares}
 						comments={this.props.post.comments}
+						postId={this.props.post.postId}
 					/>
 				</div>
-				<div>
+				<div id={`POST-${this.props.post.postId}`} className="collapse">
 					<NewComment />
 					<Comments />
 				</div>
