@@ -10,7 +10,7 @@ class RestrictedRoute extends React.Component {
 			return <ScreenLoader />;
 		}
 		if (this.props.auth.isLoggedIn) {
-			return <Redirect to="/" />;
+			return <Redirect to={rest.location.state.referrer} />;
 		} else {
 			return <Route {...rest} component={Component} path={path} />;
 		}
