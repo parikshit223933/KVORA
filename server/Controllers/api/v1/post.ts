@@ -14,7 +14,7 @@ export const getAllPosts = async (req: express.Request, res: express.Response) =
 			.populate('author');
 
 		return util.response(res, StatusCodes.OK, 'User Posts', true, {
-			posts: allUserPosts.map((post) => {
+			posts: allUserPosts.map((post, index) => {
 				return {
 					postId: post.id,
 					question: (post.question as IQuestionDocument).content,
@@ -24,12 +24,19 @@ export const getAllPosts = async (req: express.Request, res: express.Response) =
 					comments: post.comments,
 					updatedAt: (post as any).updatedAt,
 					createdAt: (post as any).createdAt,
-					author: {
-						firstname: (post.author as IUserDocument).firstName,
-						lastName: (post.author as IUserDocument).lastName,
-						email: (post.author as IUserDocument).email,
-						id: (post.author as IUserDocument).id,
-					},
+					author: (post.question as IQuestionDocument).isAnonymous
+						? {
+								firstName: 'Anonymous',
+								lastName: 'User',
+								email: 'Anonymous',
+								id: `Anonymous-${index}`,
+						  }
+						: {
+								firstName: (post.author as IUserDocument).firstName,
+								lastName: (post.author as IUserDocument).lastName,
+								email: (post.author as IUserDocument).email,
+								id: (post.author as IUserDocument).id,
+						  },
 				};
 			}),
 		});

@@ -26,7 +26,7 @@ class HomeSingleFeed extends React.Component {
 						<div className="d-flex flex-column justify-content-center align-items-start">
 							<div className="feed-item-header-2">
 								<span className="font-weight-bolder text-capitalize">
-									{this.props.post.author.firstname +
+									{this.props.post.author.firstName +
 										" " +
 										this.props.post.author.lastName}
 								</span>{" "}

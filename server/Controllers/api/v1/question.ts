@@ -53,6 +53,7 @@ export const create = async (req: express.Request, res: express.Response) => {
 		});
 
 		user.questions.push(question.id);
+		question.followers.push(user.id);
 
 		const post = await Post.create({
 			type: POST_TYPES.COMPOSED,
@@ -88,12 +89,19 @@ export const create = async (req: express.Request, res: express.Response) => {
 				comments: post.comments,
 				updatedAt: (post as any).updatedAt,
 				createdAt: (post as any).createdAt,
-				author: {
-					firstname: user.firstName,
-					lastName: user.lastName,
-					email: user.email,
-					id: user.id,
-				},
+				author: isAnonymous
+					? {
+							firstName: 'Anonymous',
+							lastName: 'User',
+							email: 'Anonymous',
+							id: 'Anonymous',
+					  }
+					: {
+							firstName: user.firstName,
+							lastName: user.lastName,
+							email: user.email,
+							id: user.id,
+					  },
 			},
 		});
 	} catch (error) {
