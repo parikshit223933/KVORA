@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import {AddAnswer} from "..";
 
 class AnswerSubItem extends React.Component {
 	render() {
@@ -93,9 +94,12 @@ class AnswerSubItem extends React.Component {
 						</div>
 					</div>
 				</div>
+				<AddAnswer/>
 				<hr className="m-0" />
 			</React.Fragment>
 		);
 	}
 }
+
+
 export default AnswerSubItem;
