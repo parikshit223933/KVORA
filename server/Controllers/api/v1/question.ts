@@ -118,6 +118,7 @@ export const getAllQuestions = async (req: express.Request, res: express.Respons
 	return util.response(res, StatusCodes.OK, 'All Questions', true, {
 		questions: allQuestions.map((ques) => {
 			return {
+				questionId:ques.id,
 				content: ques.content,
 				contextLink: ques.contextLink,
 				answers: ques.answers,

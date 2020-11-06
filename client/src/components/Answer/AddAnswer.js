@@ -78,7 +78,7 @@ class AddAnswer extends React.Component {
 						<div className="mx-1">
 							<button
 								type="button"
-								class="btn btn-sm curved-button btn-primary font-14 bold"
+								className="btn btn-sm curved-button btn-primary font-14 bold"
 							>
 								Submit
 							</button>
@@ -86,7 +86,7 @@ class AddAnswer extends React.Component {
 						<div className="mx-1">
 							<button
 								type="button"
-								class="btn btn-sm curved-button btn-light font-14 bold"
+								className="btn btn-sm curved-button btn-light font-14 bold"
 							>
 								Save Draft
 							</button>
@@ -95,9 +95,9 @@ class AddAnswer extends React.Component {
 					<div>
 						<button
 							type="button"
-							class="btn btn-sm curved-button btn-light font-14 bold"
+							className="btn btn-sm curved-button btn-light font-14 bold"
 						>
-							<i class="fas fa-ellipsis-h"></i>
+							<i className="fas fa-ellipsis-h"></i>
 						</button>
 					</div>
 				</div>

@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import {AddAnswer} from "..";
+import { AddAnswer } from "..";
 
 class AnswerSubItem extends React.Component {
 	render() {
@@ -41,6 +41,10 @@ class AnswerSubItem extends React.Component {
 								<button
 									type="button"
 									className="btn btn-sm btn-light"
+									data-toggle="collapse"
+									data-target={`#QUESTION-${this.props.question.questionId}`}
+									aria-expanded="false"
+									aria-controls={`QUESTION-${this.props.question.questionId}`}
 								>
 									<i className="fas fa-edit"></i> Answer
 								</button>
@@ -94,12 +98,16 @@ class AnswerSubItem extends React.Component {
 						</div>
 					</div>
 				</div>
-				<AddAnswer/>
+				<div
+					className="collapse"
+					id={`QUESTION-${this.props.question.questionId}`}
+				>
+					<AddAnswer />
+				</div>
 				<hr className="m-0" />
 			</React.Fragment>
 		);
 	}
 }
-
 
 export default AnswerSubItem;
