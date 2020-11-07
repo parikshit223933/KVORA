@@ -113,7 +113,8 @@ import ScreenLoader from "./Loaders/ScreenLoader";
 import PrivateRoute from "./SpecialRoutes/PrivateRoute";
 import RestrictedRoute from "./SpecialRoutes/RestrictedRoute";
 import ComponentLoader from "./Loaders/ComponentLoader";
-import AddAnswer from './Answer/AddAnswer';
+import AddAnswer from "./Answer/AddAnswer";
+import RichEditorExample from "./Answer/RichTextEditor";
 
 /*
   ? Note: These are not the only components in this project. These are just used by the root components
@@ -235,5 +236,6 @@ export {
 	PrivateRoute,
 	RestrictedRoute,
 	ComponentLoader,
-	AddAnswer
+	AddAnswer,
+	RichEditorExample,
 };

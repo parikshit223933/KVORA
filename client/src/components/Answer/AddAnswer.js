@@ -1,16 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import image from "../../assets/images/signInBackground.png";
-import { Editor, EditorState } from "draft-js";
-import "draft-js/dist/Draft.css";
-import RichEditorExample from "./RichTextEditor";
+import {RichEditorExample} from '..'
 
 class AddAnswer extends React.Component {
-	constructor() {
-		super();
-		this.state = { editorState: EditorState.createEmpty() };
-		this.onChange = (editorState) => this.setState({ editorState });
-	}
 	render() {
 		return (
 			<div
@@ -45,33 +38,6 @@ class AddAnswer extends React.Component {
 					</div>
 				</div>
 				<div style={{ backgroundColor: "white" }}>
-					<div className="p-2 d-flex justify-content-between align-items-center">
-						<div className="d-flex flex-row">
-							<div className="mx-1">
-								<i className="fas fa-bold p-2"></i>
-							</div>
-							<div className="mx-1">
-								<i className="fas fa-italic p-2"></i>
-							</div>
-							<div className="mx-1">
-								<i className="fas fa-list-ol p-2"></i>
-							</div>
-							<div className="mx-1">
-								<i className="fas fa-list-ul p-2"></i>
-							</div>
-						</div>
-						<div className="d-flex flex-row">
-							<div className="mx-1">
-								<i className="far fa-images p-2"></i>
-							</div>
-							<div className="mx-1">
-								<i className="fas fa-link p-2"></i>
-							</div>
-							<div className="mx-1">
-								<i className="fas fa-ellipsis-h p-2"></i>
-							</div>
-						</div>
-					</div>
 					<div>
 						<RichEditorExample />
 					</div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Editor, EditorState, RichUtils, getDefaultKeyBinding } from "draft-js";
-import '../../assets/css/rich-text-editor.scss';
+import "../../assets/css/rich-text-editor.scss";
 
 class RichEditorExample extends React.Component {
 	constructor(props) {
@@ -83,7 +83,11 @@ class RichEditorExample extends React.Component {
 						handleKeyCommand={this.handleKeyCommand}
 						keyBindingFn={this.mapKeyToEditorCommand}
 						onChange={this.onChange}
-						placeholder="Tell a story..."
+						placeholder={
+							<p className="text-secondary">
+								Write your answer...
+							</p>
+						}
 						ref="editor"
 						spellCheck={true}
 					/>
@@ -142,10 +146,16 @@ const BLOCK_TYPES = [
 	{ label: "H4", style: "header-four" },
 	{ label: "H5", style: "header-five" },
 	{ label: "H6", style: "header-six" },
-	{ label: "Blockquote", style: "blockquote" },
-	{ label: "UL", style: "unordered-list-item" },
-	{ label: "OL", style: "ordered-list-item" },
-	{ label: "Code Block", style: "code-block" },
+	{ label: <i className="fas fa-quote-left p-2"></i>, style: "blockquote" },
+	{
+		label: <i className="fas fa-list-ul p-2"></i>,
+		style: "unordered-list-item",
+	},
+	{
+		label: <i className="fas fa-list-ol p-2"></i>,
+		style: "ordered-list-item",
+	},
+	{ label: <i className="fas fa-code p-2"></i>, style: "code-block" },
 ];
 
 const BlockStyleControls = (props) => {
@@ -172,9 +182,9 @@ const BlockStyleControls = (props) => {
 };
 
 var INLINE_STYLES = [
-	{ label: "Bold", style: "BOLD" },
-	{ label: "Italic", style: "ITALIC" },
-	{ label: "Underline", style: "UNDERLINE" },
+	{ label: <i className="fas fa-bold p-2"></i>, style: "BOLD" },
+	{ label: <i className="fas fa-italic p-2"></i>, style: "ITALIC" },
+	{ label: <i className="fas fa-underline p-2"></i>, style: "UNDERLINE" },
 	{ label: "Monospace", style: "CODE" },
 ];
 
