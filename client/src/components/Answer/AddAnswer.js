@@ -1,8 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
 import image from "../../assets/images/signInBackground.png";
+import { Editor, EditorState } from "draft-js";
+import "draft-js/dist/Draft.css";
+import RichEditorExample from "./RichTextEditor";
 
 class AddAnswer extends React.Component {
+	constructor() {
+		super();
+		this.state = { editorState: EditorState.createEmpty() };
+		this.onChange = (editorState) => this.setState({ editorState });
+	}
 	render() {
 		return (
 			<div
@@ -65,12 +73,7 @@ class AddAnswer extends React.Component {
 						</div>
 					</div>
 					<div>
-						<textarea
-							className="form-control"
-							placeholder="Write your answer"
-							rows={4}
-							style={{ borderColor: "#e7e7e7" }}
-						></textarea>
+						<RichEditorExample />
 					</div>
 				</div>
 				<div className="d-flex flex-row justify-content-between align-items-center p-2">
