@@ -4,7 +4,19 @@ import image from "../../assets/images/signInBackground.png";
 import { RichEditorExample } from "..";
 
 class AddAnswer extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			answer: "",
+		};
+	}
+	updateAnswer = (newAnswer) => {
+		this.setState({
+			answer: newAnswer,
+		});
+	};
 	render() {
+		console.log(this.state.answer);
 		return (
 			<div
 				className="m-2 rounded"
@@ -39,7 +51,7 @@ class AddAnswer extends React.Component {
 				</div>
 				<div style={{ backgroundColor: "white" }}>
 					<div>
-						<RichEditorExample />
+						<RichEditorExample updateAnswer={this.updateAnswer} />
 					</div>
 				</div>
 				<div className="d-flex flex-row justify-content-between align-items-center p-2">
