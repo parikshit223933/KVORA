@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import image from "../../assets/images/signInBackground.png";
 import { RichEditorExample } from "..";
-import { addAnswer } from "../../actions/session";
+import { addAnswer, createDraft } from "../../actions/session";
 
 class AddAnswer extends React.Component {
 	constructor() {
@@ -11,16 +11,25 @@ class AddAnswer extends React.Component {
 			answer: "",
 		};
 	}
+
 	updateAnswer = (newAnswer) => {
 		this.setState({
 			answer: newAnswer,
 		});
 	};
+
 	handleSubmit = () => {
 		this.props.dispatch(
 			addAnswer(this.state.answer, this.props.questionId)
 		);
 	};
+
+	handleAddDraft = () => {
+		this.props.dispatch(
+			createDraft(this.state.answer, this.props.questionId)
+		);
+	};
+
 	render() {
 		console.log(this.state.answer);
 		return (
@@ -75,6 +84,7 @@ class AddAnswer extends React.Component {
 							<button
 								type="button"
 								className="btn btn-sm curved-button btn-light font-14 bold"
+								onClick={this.handleAddDraft}
 							>
 								Save Draft
 							</button>

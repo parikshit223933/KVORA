@@ -6,6 +6,9 @@ import {
 	ADD_QUESTION_FAILURE,
 	ADD_QUESTION_START,
 	ADD_QUESTION_SUCCESS,
+	CREATE_DRAFT_FAILURE,
+	CREATE_DRAFT_START,
+	CREATE_DRAFT_SUCCESS,
 	FETCH_ALL_QUESTIONS_FAILURE,
 	FETCH_ALL_QUESTIONS_START,
 	FETCH_ALL_QUESTIONS_SUCCESS,
@@ -244,6 +247,46 @@ export const addAnswer = (answer, questionId) => {
 					return;
 				}
 				dispatch(addAnswerFailure(data.message));
+			});
+	};
+};
+
+export const createDraftStart = () => {
+	return {
+		type: CREATE_DRAFT_START,
+	};
+};
+export const createDraftSuccess = (notification) => {
+	return {
+		type: CREATE_DRAFT_SUCCESS,
+		notification,
+	};
+};
+export const createDraftFailure = (error) => {
+	return {
+		type: CREATE_DRAFT_FAILURE,
+		error,
+	};
+};
+export const createDraft = (answer, questionId) => {
+	return (dispatch) => {
+		const url = API_URLS.createDraft();
+		dispatch(createDraftStart());
+		fetch(url, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				Authorization: `Bearer ${getAuthtokenFromLocalStorage()}`,
+			},
+			body: formUrlEncoded({ answer, questionId }),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				if (data.success) {
+					dispatch(createDraftSuccess(data.data.notification));
+					return;
+				}
+				dispatch(createDraftFailure(data.message));
 			});
 	};
 };

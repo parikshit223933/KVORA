@@ -5,6 +5,9 @@ import {
 	ADD_QUESTION_FAILURE,
 	ADD_QUESTION_START,
 	ADD_QUESTION_SUCCESS,
+	CREATE_DRAFT_FAILURE,
+	CREATE_DRAFT_START,
+	CREATE_DRAFT_SUCCESS,
 	FETCH_ALL_QUESTIONS_FAILURE,
 	FETCH_ALL_QUESTIONS_START,
 	FETCH_ALL_QUESTIONS_SUCCESS,
@@ -134,6 +137,26 @@ export default function session(state = currentSessionState, action) {
 				}),
 			};
 		case ADD_ANSWER_FAILURE:
+			return {
+				...state,
+				error: action.error,
+				inProgress: false,
+			};
+		case CREATE_DRAFT_START:
+			return {
+				...state,
+				inProgress: true,
+				error: false,
+				success: false,
+			};
+		case CREATE_DRAFT_SUCCESS:
+			return {
+				...state,
+				notifications: [action.notification, ...state.notifications],
+				inProgress: false,
+				success: true,
+			};
+		case CREATE_DRAFT_FAILURE:
 			return {
 				...state,
 				error: action.error,

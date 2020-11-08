@@ -9,4 +9,5 @@ export const API_URLS = {
 	fetchAllPosts: () => `${API_ROOT}/post/fetch-all`,
 	fetchAllQuestions: () => `${API_ROOT}/question/fetch-all`,
 	addAnswer: () => `${API_ROOT}/answer/add-answer`,
+	createDraft: () => `${API_ROOT}/draft/create-draft`,
 };
