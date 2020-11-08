@@ -10,7 +10,7 @@ import User from '../../../models/user.js';
 // req.body => {answer, questionId}
 // req.user => { id }
 export const addAnswer = async (req: express.Request, res: express.Response) => {
-	const { answerInBody, questionId }: { answerInBody: string; questionId: string } = req.body;
+	const { answer:answerInBody, questionId }: { answer: string; questionId: string } = req.body;
 	const { id: userId }: { id: string } = req.user as any;
 
 	if (!answerInBody) {

@@ -102,7 +102,7 @@ class AnswerSubItem extends React.Component {
 					className="collapse"
 					id={`QUESTION-${this.props.question.questionId}`}
 				>
-					<AddAnswer />
+					<AddAnswer questionId={this.props.question.questionId} />
 				</div>
 				<hr className="m-0" />
 			</React.Fragment>

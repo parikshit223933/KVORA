@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import image from "../../assets/images/signInBackground.png";
 import { RichEditorExample } from "..";
+import { addAnswer } from "../../actions/session";
 
 class AddAnswer extends React.Component {
 	constructor() {
@@ -14,6 +15,11 @@ class AddAnswer extends React.Component {
 		this.setState({
 			answer: newAnswer,
 		});
+	};
+	handleSubmit = () => {
+		this.props.dispatch(
+			addAnswer(this.state.answer, this.props.questionId)
+		);
 	};
 	render() {
 		console.log(this.state.answer);
@@ -60,6 +66,7 @@ class AddAnswer extends React.Component {
 							<button
 								type="button"
 								className="btn btn-sm curved-button btn-primary font-14 bold"
+								onClick={this.handleSubmit}
 							>
 								Submit
 							</button>
