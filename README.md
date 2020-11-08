@@ -5,3 +5,4 @@
 
 ## ToDo:
 1. Remove question to comment mapping in the diagram
+2. Add draft and its connections in the diagram
