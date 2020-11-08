@@ -2,7 +2,7 @@ import express from 'express';
 import UtilClass from '../../../utility/utils.js';
 import StatusCodes from 'http-status-codes';
 const util = new UtilClass();
-import Post, { IPostDocument } from '../../../models/post.js';
+import Post from '../../../models/post.js';
 import { IQuestionDocument } from '../../../models/question.js';
 import { IUserDocument } from '../../../models/user.js';
 

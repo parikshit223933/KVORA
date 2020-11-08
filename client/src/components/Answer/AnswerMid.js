@@ -11,7 +11,6 @@ class AnswerMid extends React.Component {
 		if (this.props.session.inProgress) {
 			return <ScreenLoader />;
 		}
-		console.log(this.props.session.questions);
 		return (
 			<div className="answer-mid">
 				<div className="answer-mid-item bg-white mb-3">

@@ -1,4 +1,7 @@
 import {
+	ADD_ANSWER_FAILURE,
+	ADD_ANSWER_START,
+	ADD_ANSWER_SUCCESS,
 	ADD_QUESTION_FAILURE,
 	ADD_QUESTION_START,
 	ADD_QUESTION_SUCCESS,
@@ -109,6 +112,32 @@ export default function session(state = currentSessionState, action) {
 				...state,
 				inProgress: false,
 				error: action.error,
+			};
+		case ADD_ANSWER_START:
+			return {
+				...state,
+				inProgress: true,
+				error: false,
+				success: false,
+			};
+		case ADD_ANSWER_SUCCESS:
+			return {
+				...state,
+				inProgress: false,
+				success: true,
+				notifications: [action.notification, ...state.notifications],
+				questions: state.questions.map((question) => {
+					return {
+						...question,
+						answers: [action.answer.answerId, ...question.answers],
+					};
+				}),
+			};
+		case ADD_ANSWER_FAILURE:
+			return {
+				...state,
+				error: action.error,
+				inProgress: false,
 			};
 		default:
 			return state;

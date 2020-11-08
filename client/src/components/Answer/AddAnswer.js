@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import image from "../../assets/images/signInBackground.png";
-import {RichEditorExample} from '..'
+import { RichEditorExample } from "..";
 
 class AddAnswer extends React.Component {
 	render() {

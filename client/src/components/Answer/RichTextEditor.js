@@ -1,6 +1,7 @@
 import React from "react";
 import { Editor, EditorState, RichUtils, getDefaultKeyBinding } from "draft-js";
 import "../../assets/css/rich-text-editor.scss";
+import {stateToHTML} from 'draft-js-export-html';
 
 class RichEditorExample extends React.Component {
 	constructor(props) {
@@ -54,11 +55,11 @@ class RichEditorExample extends React.Component {
 
 	render() {
 		const { editorState } = this.state;
-
 		// If the user changes block type before entering any text, we can
 		// either style the placeholder or hide it. Let's just hide it now.
 		let className = "RichEditor-editor";
-		var contentState = editorState.getCurrentContent();
+		let contentState = editorState.getCurrentContent();
+		console.log(stateToHTML(contentState));
 		if (!contentState.hasText()) {
 			if (contentState.getBlockMap().first().getType() !== "unstyled") {
 				className += " RichEditor-hidePlaceholder";
@@ -168,9 +169,9 @@ const BlockStyleControls = (props) => {
 
 	return (
 		<div className="RichEditor-controls">
-			{BLOCK_TYPES.map((type) => (
+			{BLOCK_TYPES.map((type, index) => (
 				<StyleButton
-					key={type.label}
+					key={index}
 					active={type.style === blockType}
 					label={type.label}
 					onToggle={props.onToggle}
@@ -193,9 +194,9 @@ const InlineStyleControls = (props) => {
 
 	return (
 		<div className="RichEditor-controls">
-			{INLINE_STYLES.map((type) => (
+			{INLINE_STYLES.map((type, index) => (
 				<StyleButton
-					key={type.label}
+					key={index}
 					active={currentStyle.has(type.style)}
 					label={type.label}
 					onToggle={props.onToggle}

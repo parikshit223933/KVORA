@@ -1,5 +1,8 @@
 import { API_URLS } from "../helpers/urls";
 import {
+	ADD_ANSWER_FAILURE,
+	ADD_ANSWER_START,
+	ADD_ANSWER_SUCCESS,
 	ADD_QUESTION_FAILURE,
 	ADD_QUESTION_START,
 	ADD_QUESTION_SUCCESS,
@@ -195,6 +198,52 @@ export const fetchAllQuestions = () => {
 					return;
 				}
 				dispatch(fetchAllQuestionsFailure(data.message));
+			});
+	};
+};
+
+export const addAnswerStart = () => {
+	return {
+		type: ADD_ANSWER_START,
+	};
+};
+export const addAnswerSuccess = (answer, notification) => {
+	return {
+		type: ADD_ANSWER_SUCCESS,
+		notification,
+		answer,
+	};
+};
+export const addAnswerFailure = (error) => {
+	return {
+		type: ADD_ANSWER_FAILURE,
+		error,
+	};
+};
+export const addAnswer = (answer, questionId) => {
+	return (dispatch) => {
+		const url = API_URLS.addAnswer();
+		dispatch(addAnswerStart());
+		fetch(url, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				Authorization: `Bearer ${getAuthtokenFromLocalStorage()}`,
+			},
+			body: formUrlEncoded({ answer, questionId }),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				if (data.success) {
+					dispatch(
+						addAnswerSuccess(
+							data.data.answer,
+							data.data.notification
+						)
+					);
+					return;
+				}
+				dispatch(addAnswerFailure(data.message));
 			});
 	};
 };

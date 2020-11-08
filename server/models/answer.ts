@@ -10,27 +10,27 @@ export interface IAnswerDocument extends mongoose.Document {
 	author: mongoose.Schema.Types.ObjectId | IUserDocument;
 	content: string;
 	associatedQuestion: mongoose.Schema.Types.ObjectId | IQuestionDocument;
-	views: [
+	views?: [
 		{
 			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
-	upvotes: [
+	upvotes?: [
 		{
 			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
-	downvotes: [
+	downvotes?: [
 		{
 			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
-	shares: [
+	shares?: [
 		{
 			user: mongoose.Schema.Types.ObjectId | IShareDocument;
 		}
 	];
-	comments: [
+	comments?: [
 		{
 			comment: mongoose.Schema.Types.ObjectId | ICommentDocument;
 		}
