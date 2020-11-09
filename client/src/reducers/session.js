@@ -11,6 +11,9 @@ import {
 	FETCH_ALL_QUESTIONS_FAILURE,
 	FETCH_ALL_QUESTIONS_START,
 	FETCH_ALL_QUESTIONS_SUCCESS,
+	FETCH_DRAFTS_FAILURE,
+	FETCH_DRAFTS_START,
+	FETCH_DRAFTS_SUCCESS,
 	REFRESH_NOTIFICATION_DATA_FAILURE,
 	REFRESH_NOTIFICATION_DATA_START,
 	REFRESH_NOTIFICATION_DATA_SUCCESS,
@@ -23,6 +26,7 @@ let currentSessionState = {
 	notifications: [],
 	posts: [],
 	questions: [],
+	drafts: [],
 	inProgress: false,
 	error: null,
 	success: null,
@@ -157,6 +161,26 @@ export default function session(state = currentSessionState, action) {
 				success: true,
 			};
 		case CREATE_DRAFT_FAILURE:
+			return {
+				...state,
+				error: action.error,
+				inProgress: false,
+			};
+		case FETCH_DRAFTS_START:
+			return {
+				...state,
+				inProgress: true,
+				error: false,
+				success: false,
+			};
+		case FETCH_DRAFTS_SUCCESS:
+			return {
+				...state,
+				success: true,
+				inProgress: false,
+				drafts: action.drafts,
+			};
+		case FETCH_DRAFTS_FAILURE:
 			return {
 				...state,
 				error: action.error,

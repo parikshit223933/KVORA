@@ -12,6 +12,9 @@ import {
 	FETCH_ALL_QUESTIONS_FAILURE,
 	FETCH_ALL_QUESTIONS_START,
 	FETCH_ALL_QUESTIONS_SUCCESS,
+	FETCH_DRAFTS_FAILURE,
+	FETCH_DRAFTS_START,
+	FETCH_DRAFTS_SUCCESS,
 	REFRESH_NOTIFICATION_DATA_FAILURE,
 	REFRESH_NOTIFICATION_DATA_START,
 	REFRESH_NOTIFICATION_DATA_SUCCESS,
@@ -287,6 +290,45 @@ export const createDraft = (answer, questionId) => {
 					return;
 				}
 				dispatch(createDraftFailure(data.message));
+			});
+	};
+};
+
+export const fetchDraftsStart = () => {
+	return {
+		type: FETCH_DRAFTS_START,
+	};
+};
+export const fetchDraftsSuccess = (drafts) => {
+	return {
+		type: FETCH_DRAFTS_SUCCESS,
+		drafts,
+	};
+};
+export const fetchDraftsFailure = (error) => {
+	return {
+		error,
+		type: FETCH_DRAFTS_FAILURE,
+	};
+};
+export const fetchDrafts = () => {
+	return (dispatch) => {
+		const url = API_URLS.fetchUserDrafts();
+		dispatch(fetchDraftsStart());
+		fetch(url, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				Authorization: `Bearer ${getAuthtokenFromLocalStorage()}`,
+			},
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				if (data.success) {
+					dispatch(fetchDraftsSuccess(data.data.drafts));
+					return;
+				}
+				dispatch(fetchDraftsFailure(data.message));
 			});
 	};
 };

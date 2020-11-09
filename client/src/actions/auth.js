@@ -95,8 +95,8 @@ export const signIn = (email, password) => {
 			.then((res) => res.json())
 			.then((data) => {
 				if (data.success) {
-					dispatch(signInSuccess(data.data.user));
 					localStorage.setItem("kvoraToken", data.data.token);
+					dispatch(signInSuccess(data.data.user));
 					return;
 				}
 				dispatch(signInFailure(data.message));
