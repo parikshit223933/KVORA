@@ -37,9 +37,11 @@ export interface ISpaceDocument extends mongoose.Document {
 			question: mongoose.Schema.Types.ObjectId | IQuestionDocument;
 		}
 	];
+	updatedAt?: Date;
+	createdAt?: Date;
 }
 
-export interface ISpaceModel extends mongoose.Model<ISpaceDocument>{
+export interface ISpaceModel extends mongoose.Model<ISpaceDocument> {
 	uploadedAvatar(...args: any[]): any;
 }
 

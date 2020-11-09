@@ -72,6 +72,8 @@ export interface ISettingDocument extends mongoose.Document {
 			is_primary: boolean;
 		}
 	];
+	updatedAt?: Date;
+	createdAt?: Date;
 }
 
 const settingSchema = new mongoose.Schema(

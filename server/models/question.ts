@@ -31,6 +31,8 @@ export interface IQuestionDocument extends mongoose.Document {
 	isASharedLink?: boolean;
 	linkDescription?: string;
 	associatedSpace?: mongoose.Schema.Types.ObjectId | ISpaceDocument;
+	updatedAt?: Date;
+	createdAt?: Date;
 }
 const questionSchema = new mongoose.Schema(
 	{

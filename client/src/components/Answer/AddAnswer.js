@@ -31,7 +31,6 @@ class AddAnswer extends React.Component {
 	};
 
 	render() {
-		console.log(this.state.answer);
 		return (
 			<div
 				className="m-2 rounded"

@@ -10,6 +10,8 @@ export interface ILogDocument extends mongoose.Document {
 			user: mongoose.Schema.Types.ObjectId | IUserDocument;
 		}
 	];
+	updatedAt?: Date;
+	createdAt?: Date;
 }
 
 const logSchema = new mongoose.Schema(

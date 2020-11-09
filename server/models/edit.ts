@@ -4,6 +4,8 @@ export interface IEditDocument extends mongoose.Document {
 	type: string;
 	previousValue: string;
 	newValue: string;
+	updatedAt?: Date;
+	createdAt?: Date;
 }
 
 const editSchema = new mongoose.Schema(

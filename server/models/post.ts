@@ -40,6 +40,8 @@ export interface IPostDocument extends mongoose.Document {
 			space: mongoose.Schema.Types.ObjectId | ISpaceDocument;
 		}
 	];
+	updatedAt?: Date;
+	createdAt?: Date;
 }
 
 const postSchema = new mongoose.Schema(

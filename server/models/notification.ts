@@ -10,6 +10,8 @@ export interface INotificationDocument extends mongoose.Document {
 	associatedQuestion: mongoose.Schema.Types.ObjectId | IQuestionDocument;
 	associatedSpace?: mongoose.Schema.Types.ObjectId | ISpaceDocument;
 	associatedAnswer?: mongoose.Schema.Types.ObjectId | IAnswerDocument;
+	updatedAt?: Date;
+	createdAt?: Date;
 }
 
 const notificationSchema = new mongoose.Schema(

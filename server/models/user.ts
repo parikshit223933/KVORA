@@ -112,6 +112,8 @@ export interface IUserDocument extends mongoose.Document {
 	settings?: {
 		setting: ISettingDocument | mongoose.Schema.Types.ObjectId;
 	};
+	updatedAt?: Date;
+	createdAt?: Date;
 }
 
 export interface IUserModel extends mongoose.Model<IUserDocument> {

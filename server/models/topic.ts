@@ -90,9 +90,11 @@ export interface ITopicDocument extends mongoose.Document {
 	};
 	logs: [
 		{
-			log:  ILogDocument | mongoose.Schema.Types.ObjectId;
+			log: ILogDocument | mongoose.Schema.Types.ObjectId;
 		}
 	];
+	updatedAt?: Date;
+	createdAt?: Date;
 }
 
 const TopicSchema = new mongoose.Schema(
@@ -163,7 +165,7 @@ const TopicSchema = new mongoose.Schema(
 			aliases: [
 				{
 					alias: {
-						type: String
+						type: String,
 					},
 				},
 			],

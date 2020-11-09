@@ -25,6 +25,8 @@ export interface ICommentDocument extends mongoose.Document {
 			comment: mongoose.Schema.Types.ObjectId | ICommentDocument;
 		}
 	];
+	updatedAt?: Date;
+	createdAt?: Date;
 }
 
 const commnetSchema = new mongoose.Schema(

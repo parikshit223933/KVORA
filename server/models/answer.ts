@@ -35,6 +35,8 @@ export interface IAnswerDocument extends mongoose.Document {
 			comment: mongoose.Schema.Types.ObjectId | ICommentDocument;
 		}
 	];
+	updatedAt?: Date;
+	createdAt?: Date;
 }
 
 export interface IAnswerModel extends mongoose.Model<IAnswerDocument> {
