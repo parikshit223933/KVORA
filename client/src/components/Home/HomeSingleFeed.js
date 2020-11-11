@@ -2,7 +2,7 @@ import React from "react";
 import image from "../../assets/images/signInBackground.png";
 import { FeedActions, NewComment, Comments } from "../";
 import moment from "moment";
-
+import htmlReactParser from 'html-react-parser'
 class HomeSingleFeed extends React.Component {
 	render() {
 		return (
@@ -58,13 +58,13 @@ class HomeSingleFeed extends React.Component {
 						</h6>
 					</div>
 					<div className="feed-item-content mb-3">
-						<p>ANSWER HERE</p>
+						<p>{htmlReactParser(this.props.post.popularAnswer.answerContent)}</p>
 					</div>
 					<div
 						className="mb-2 text-secondary"
 						style={{ fontSize: 12 }}
 					>
-						<span>233.3K views</span> &#8226;{" "}
+						<span>{this.props.post.popularAnswer.views.length} views</span> &#8226;{" "}
 						<span>View Upvoters</span> &#8226;{" "}
 						<span>View Sharers</span>
 					</div>

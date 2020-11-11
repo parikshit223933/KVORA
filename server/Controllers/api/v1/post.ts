@@ -5,19 +5,30 @@ const util = new UtilClass();
 import Post from '../../../models/post.js';
 import { IQuestionDocument } from '../../../models/question.js';
 import { IUserDocument } from '../../../models/user.js';
+import { IAnswerDocument } from '../../../models/answer.js';
 
 export const getAllPosts = async (req: express.Request, res: express.Response) => {
 	const userIdInRequest: any = req.user;
 	try {
 		const allUserPosts = await Post.find({ author: userIdInRequest._id })
 			.populate('question')
-			.populate('author');
+			.populate('answers.answer')
+			.populate('author')
+			.sort({ 'answers.upvotes.length': 'desc' });
 
 		return util.response(res, StatusCodes.OK, 'User Posts', true, {
 			posts: allUserPosts.map((post, index) => {
 				return {
 					postId: post.id,
 					question: (post.question as IQuestionDocument).content,
+					popularAnswer: {
+						answerContent: (post.answers[0].answer as IAnswerDocument).content,
+						createdAt: (post.answers[0].answer as IAnswerDocument).createdAt,
+						updatedAt: (post.answers[0].answer as IAnswerDocument).updatedAt,
+						upvotes: (post.answers[0].answer as IAnswerDocument).upvotes,
+						downvotes: (post.answers[0].answer as IAnswerDocument).downvotes,
+						views: (post.answers[0].answer as IAnswerDocument).views,
+					},
 					contextLink: (post.question as IQuestionDocument).contextLink,
 					upvotes: post.upvotes,
 					shares: post.shares,
