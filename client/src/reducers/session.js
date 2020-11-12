@@ -20,6 +20,9 @@ import {
 	REFRESH_POSTS_DATA_FAILURE,
 	REFRESH_POSTS_DATA_START,
 	REFRESH_POSTS_DATA_SUCCESS,
+	UPVOTE_ANSWER_FAILURE,
+	UPVOTE_ANSWER_START,
+	UPVOTE_ANSWER_SUCCESS,
 } from "../actions/actionTypes";
 
 let currentSessionState = {
@@ -185,6 +188,34 @@ export default function session(state = currentSessionState, action) {
 				...state,
 				error: action.error,
 				inProgress: false,
+			};
+		case UPVOTE_ANSWER_START:
+			return {
+				...state,
+				inProgress: true,
+				error: false,
+				success: false,
+			};
+		case UPVOTE_ANSWER_SUCCESS:
+			return {
+				...state,
+				notifications: [action.notification, state.notifications],
+				inProgress: false,
+				success: true,
+				posts: state.posts.map((post) => {
+					if (post.popularAnswer.answerId === action.answer.answerId)
+						return {
+							...post,
+							popularAnswer: action.answer,
+						};
+					return post;
+				}),
+			};
+		case UPVOTE_ANSWER_FAILURE:
+			return {
+				...state,
+				inProgress: false,
+				error: action.error,
 			};
 		default:
 			return state;

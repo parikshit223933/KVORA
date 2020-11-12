@@ -21,6 +21,9 @@ import {
 	REFRESH_POSTS_DATA_FAILURE,
 	REFRESH_POSTS_DATA_START,
 	REFRESH_POSTS_DATA_SUCCESS,
+	UPVOTE_ANSWER_FAILURE,
+	UPVOTE_ANSWER_START,
+	UPVOTE_ANSWER_SUCCESS,
 } from "./actionTypes";
 import { getAuthtokenFromLocalStorage } from "../helpers/utils";
 import formUrlEncoded from "form-urlencoded";
@@ -329,6 +332,48 @@ export const fetchDrafts = () => {
 					return;
 				}
 				dispatch(fetchDraftsFailure(data.message));
+			});
+	};
+};
+
+export const upvoteAnswerStart = () => {
+	return {
+		type: UPVOTE_ANSWER_START,
+	};
+};
+export const upvoteAnswerSuccess = (answer, notification) => {
+	return {
+		type: UPVOTE_ANSWER_SUCCESS,
+		answer,
+		notification
+	};
+};
+export const upvoteAnswerFailure = (error) => {
+	return {
+		error,
+		type: UPVOTE_ANSWER_FAILURE,
+	};
+};
+export const upvoteAnswer = (answer_id) => {
+	return (dispatch) => {
+		const url = API_URLS.upvoteAnswer();
+		dispatch(upvoteAnswerStart());
+		fetch(url, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				Authorization: `Bearer ${getAuthtokenFromLocalStorage()}`,
+			},
+			body: formUrlEncoded({ answer_id }),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				if (data.success) {
+					console.log(data.data)
+					dispatch(upvoteAnswerSuccess(data.data.answer, data.data.notification));
+					return;
+				}
+				dispatch(upvoteAnswerFailure(data.message));
 			});
 	};
 };

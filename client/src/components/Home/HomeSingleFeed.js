@@ -5,6 +5,7 @@ import moment from "moment";
 import htmlReactParser from 'html-react-parser'
 class HomeSingleFeed extends React.Component {
 	render() {
+		console.log(this.props.post)
 		return (
 			<div className="mb-3 feed-item">
 				<div style={{ padding: 15 }}>
@@ -69,10 +70,11 @@ class HomeSingleFeed extends React.Component {
 						<span>View Sharers</span>
 					</div>
 					<FeedActions
-						upvotes={this.props.post.upvotes}
+						upvotes={this.props.post.popularAnswer.upvotes}
 						shares={this.props.post.shares}
 						comments={this.props.post.comments}
 						postId={this.props.post.postId}
+						answerId={this.props.post.popularAnswer.answerId}
 					/>
 				</div>
 				<div id={`POST-${this.props.post.postId}`} className="collapse">

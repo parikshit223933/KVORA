@@ -6,6 +6,8 @@ import Post from '../../../models/post.js';
 import { IQuestionDocument } from '../../../models/question.js';
 import { IUserDocument } from '../../../models/user.js';
 import { IAnswerDocument } from '../../../models/answer.js';
+import Answer from '../../../models/answer.js';
+import Notification from '../../../models/notification.js';
 
 export const getAllPosts = async (req: express.Request, res: express.Response) => {
 	const userIdInRequest: any = req.user;
@@ -14,14 +16,14 @@ export const getAllPosts = async (req: express.Request, res: express.Response) =
 			.populate('question')
 			.populate('answers.answer')
 			.populate('author')
-			.sort({ 'answers.upvotes.length': 'desc' });
-
+			.sort({ 'answers.answer.upvotes.length': 'desc' });
 		return util.response(res, StatusCodes.OK, 'User Posts', true, {
 			posts: allUserPosts.map((post, index) => {
 				return {
 					postId: post.id,
 					question: (post.question as IQuestionDocument).content,
 					popularAnswer: {
+						answerId: (post.answers[0].answer as IAnswerDocument).id,
 						answerContent: (post.answers[0].answer as IAnswerDocument).content,
 						createdAt: (post.answers[0].answer as IAnswerDocument).createdAt,
 						updatedAt: (post.answers[0].answer as IAnswerDocument).updatedAt,
@@ -50,6 +52,51 @@ export const getAllPosts = async (req: express.Request, res: express.Response) =
 						  },
 				};
 			}),
+		});
+	} catch (error) {
+		// tslint:disable-next-line: no-console
+		console.log(error);
+		return util.response(res);
+	}
+};
+
+// UPVOTE ANSWER
+// req.body => {answer_id}
+export const UpvoteAnswer = async (req: express.Request, res: express.Response) => {
+	try {
+		// tslint:disable-next-line: variable-name
+		const user_id = (req.user as IUserDocument).id;
+		const answer_id: string = req.body.answer_id;
+		if (!answer_id) {
+			return util.response(res, StatusCodes.FORBIDDEN, 'No such answer found', false);
+		}
+		const answer = await Answer.findById(answer_id);
+		const notification = await Notification.create({
+			user: user_id,
+			description: 'You have just liked an answer',
+			associatedQuestion: answer.associatedQuestion,
+			associatedAnswer: answer.id,
+		});
+		notification.save();
+		answer.upvotes.push({ user: user_id });
+		answer.save();
+		return util.response(res, StatusCodes.OK, 'Upvoted answer', true, {
+			answer: {
+				answerId: answer.id,
+				answerContent: answer.content,
+				createdAt: answer.createdAt,
+				updatedAt: answer.updatedAt,
+				upvotes: answer.upvotes,
+				downvotes: answer.downvotes,
+				views: answer.views,
+			},
+			notification: {
+				notificationId: notification.id,
+				description: notification.description,
+				associatedQuestion: notification.associatedQuestion,
+				updatedAt: notification.updatedAt,
+				createdAt: notification.createdAt,
+			},
 		});
 	} catch (error) {
 		// tslint:disable-next-line: no-console

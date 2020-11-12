@@ -1,12 +1,23 @@
 import React from "react";
+import { connect } from "react-redux";
+import { upvoteAnswer } from "../../actions/session";
+import ComponentLoader from "../Loaders/ComponentLoader";
 
 class FeedActions extends React.Component {
+	likeHandler=()=>
+	{
+		this.props.dispatch(upvoteAnswer(this.props.answerId));
+	}
 	render() {
+		if(this.props.session.inProgress)
+		{
+			return<ComponentLoader/>
+		}
 		return (
 			<div className="feed-item-footer d-flex flex-row justify-content-between align-items-center text-secondary">
 				<div className="d-flex flex-row justify-content-start align-items-center">
 					<div className="mr-3">
-						<span>
+						<span onClick={this.likeHandler}>
 							<i className="far fa-heart"></i>
 						</span>{" "}
 						<span>{this.props.upvotes.length}</span>
@@ -92,4 +103,10 @@ class FeedActions extends React.Component {
 		);
 	}
 }
-export default FeedActions;
+const mapStatetoProps=({session})=>
+{
+	return{
+		session:session
+	}
+}
+export default connect(mapStatetoProps)(FeedActions);
