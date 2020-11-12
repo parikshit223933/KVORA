@@ -8,6 +8,7 @@ import { IUserDocument } from '../../../models/user.js';
 import { IAnswerDocument } from '../../../models/answer.js';
 import Answer from '../../../models/answer.js';
 import Notification from '../../../models/notification.js';
+import mongoose from 'mongoose';
 
 export const getAllPosts = async (req: express.Request, res: express.Response) => {
 	const userIdInRequest: any = req.user;
@@ -27,15 +28,17 @@ export const getAllPosts = async (req: express.Request, res: express.Response) =
 				return {
 					postId: post.id,
 					question: (post.question as IQuestionDocument).content,
-					popularAnswer: post.answers[0]?{
-						answerId: (post.answers[0].answer as IAnswerDocument).id,
-						answerContent: (post.answers[0].answer as IAnswerDocument).content,
-						createdAt: (post.answers[0].answer as IAnswerDocument).createdAt,
-						updatedAt: (post.answers[0].answer as IAnswerDocument).updatedAt,
-						upvotes: (post.answers[0].answer as IAnswerDocument).upvotes,
-						downvotes: (post.answers[0].answer as IAnswerDocument).downvotes,
-						views: (post.answers[0].answer as IAnswerDocument).views,
-					}:undefined,
+					popularAnswer: post.answers[0]
+						? {
+								answerId: (post.answers[0].answer as IAnswerDocument).id,
+								answerContent: (post.answers[0].answer as IAnswerDocument).content,
+								createdAt: (post.answers[0].answer as IAnswerDocument).createdAt,
+								updatedAt: (post.answers[0].answer as IAnswerDocument).updatedAt,
+								upvotes: (post.answers[0].answer as IAnswerDocument).upvotes,
+								downvotes: (post.answers[0].answer as IAnswerDocument).downvotes,
+								views: (post.answers[0].answer as IAnswerDocument).views,
+						  }
+						: undefined,
 					contextLink: (post.question as IQuestionDocument).contextLink,
 					upvotes: post.upvotes,
 					shares: post.shares,
@@ -83,7 +86,19 @@ export const UpvoteAnswer = async (req: express.Request, res: express.Response) 
 			associatedAnswer: answer.id,
 		});
 		notification.save();
-		answer.upvotes.push({ user: user_id });
+		const newUpvotesArray: any = [];
+
+		answer.upvotes.forEach((upvote) => {
+			if (upvote.user.toString() !== user_id.toString()) {
+				newUpvotesArray.push(upvote);
+			}
+		});
+
+		if (newUpvotesArray.length === answer.upvotes.length) {
+			answer.upvotes.push({ user: user_id });
+		} else {
+			answer.upvotes = newUpvotesArray;
+		}
 		answer.save();
 		return util.response(res, StatusCodes.OK, 'Upvoted answer', true, {
 			answer: {

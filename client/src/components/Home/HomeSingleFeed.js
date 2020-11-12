@@ -58,14 +58,14 @@ class HomeSingleFeed extends React.Component {
 						</h6>
 					</div>
 					<div className="feed-item-content mb-3">
-						<p>
+						<div>
 							{htmlReactParser(
 								this.props.post.popularAnswer
 									? this.props.post.popularAnswer
 											.answerContent
-									: "<div>No Answers Yet</div>"
+									: "<p>No Answers Yet</p>"
 							)}
-						</p>
+						</div>
 					</div>
 					<div
 						className="mb-2 text-secondary"
