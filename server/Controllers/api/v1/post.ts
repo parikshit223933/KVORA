@@ -17,12 +17,17 @@ export const getAllPosts = async (req: express.Request, res: express.Response) =
 			.populate('answers.answer')
 			.populate('author')
 			.sort({ 'answers.answer.upvotes.length': 'desc' });
+		if (allUserPosts.length === 0) {
+			return util.response(res, StatusCodes.OK, 'User Posts', true, {
+				posts: [],
+			});
+		}
 		return util.response(res, StatusCodes.OK, 'User Posts', true, {
 			posts: allUserPosts.map((post, index) => {
 				return {
 					postId: post.id,
 					question: (post.question as IQuestionDocument).content,
-					popularAnswer: {
+					popularAnswer: post.answers[0]?{
 						answerId: (post.answers[0].answer as IAnswerDocument).id,
 						answerContent: (post.answers[0].answer as IAnswerDocument).content,
 						createdAt: (post.answers[0].answer as IAnswerDocument).createdAt,
@@ -30,7 +35,7 @@ export const getAllPosts = async (req: express.Request, res: express.Response) =
 						upvotes: (post.answers[0].answer as IAnswerDocument).upvotes,
 						downvotes: (post.answers[0].answer as IAnswerDocument).downvotes,
 						views: (post.answers[0].answer as IAnswerDocument).views,
-					},
+					}:undefined,
 					contextLink: (post.question as IQuestionDocument).contextLink,
 					upvotes: post.upvotes,
 					shares: post.shares,

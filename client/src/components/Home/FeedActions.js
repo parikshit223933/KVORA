@@ -6,7 +6,10 @@ import ComponentLoader from "../Loaders/ComponentLoader";
 class FeedActions extends React.Component {
 	likeHandler=()=>
 	{
+		if(this.props.answerId)
 		this.props.dispatch(upvoteAnswer(this.props.answerId));
+		else
+		console.log('This Question is not answered yet!')
 	}
 	render() {
 		if(this.props.session.inProgress)
