@@ -2,10 +2,9 @@ import React from "react";
 import image from "../../assets/images/signInBackground.png";
 import { FeedActions, NewComment, Comments } from "../";
 import moment from "moment";
-import htmlReactParser from 'html-react-parser'
+import htmlReactParser from "html-react-parser";
 class HomeSingleFeed extends React.Component {
 	render() {
-		console.log(this.props.post)
 		return (
 			<div className="mb-3 feed-item">
 				<div style={{ padding: 15 }}>
@@ -59,22 +58,42 @@ class HomeSingleFeed extends React.Component {
 						</h6>
 					</div>
 					<div className="feed-item-content mb-3">
-						<p>{htmlReactParser(this.props.post.popularAnswer?this.props.post.popularAnswer.answerContent:'<div>No Answers Yet</div>')}</p>
+						<p>
+							{htmlReactParser(
+								this.props.post.popularAnswer
+									? this.props.post.popularAnswer
+											.answerContent
+									: "<div>No Answers Yet</div>"
+							)}
+						</p>
 					</div>
 					<div
 						className="mb-2 text-secondary"
 						style={{ fontSize: 12 }}
 					>
-						<span>{this.props.post.popularAnswer?this.props.post.popularAnswer.views.length:0} views</span> &#8226;{" "}
-						<span>View Upvoters</span> &#8226;{" "}
+						<span>
+							{this.props.post.popularAnswer
+								? this.props.post.popularAnswer.views.length
+								: 0}{" "}
+							views
+						</span>{" "}
+						&#8226; <span>View Upvoters</span> &#8226;{" "}
 						<span>View Sharers</span>
 					</div>
 					<FeedActions
-						upvotes={this.props.post.popularAnswer?this.props.post.popularAnswer.upvotes:[]}
+						upvotes={
+							this.props.post.popularAnswer
+								? this.props.post.popularAnswer.upvotes
+								: []
+						}
 						shares={this.props.post.shares}
 						comments={this.props.post.comments}
 						postId={this.props.post.postId}
-						answerId={this.props.post.popularAnswer?this.props.post.popularAnswer.answerId:undefined}
+						answerId={
+							this.props.post.popularAnswer
+								? this.props.post.popularAnswer.answerId
+								: undefined
+						}
 					/>
 				</div>
 				<div id={`POST-${this.props.post.postId}`} className="collapse">

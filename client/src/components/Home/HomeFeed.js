@@ -20,7 +20,7 @@ class HomeFeed extends React.Component {
 								style={{
 									width: 20,
 									height: 20,
-									borderRadius: "100%"
+									borderRadius: "100%",
 								}}
 							/>
 						</div>
@@ -40,19 +40,25 @@ class HomeFeed extends React.Component {
 				{/* MODAL END */}
 
 				<div className="news-feeds">
-					{this.props.session.posts.length!==0?this.props.session.posts.map(post=>
-					{
-						return <HomeSingleFeed post={post} key={post.postId}/>
-					}):<div className="text-center"><h4>No Posts Yet</h4></div>}
+					{this.props.session.posts.length !== 0 ? (
+						this.props.session.posts.map((post) => {
+							return (
+								<HomeSingleFeed post={post} key={post.postId} />
+							);
+						})
+					) : (
+						<div className="text-center">
+							<h4>No Posts Yet</h4>
+						</div>
+					)}
 				</div>
 			</React.Fragment>
 		);
 	}
 }
-const mapStateToProps=({...state})=>
-{
-	return{
-		session:state.session
-	}
-}
+const mapStateToProps = ({ ...state }) => {
+	return {
+		session: state.session,
+	};
+};
 export default connect(mapStateToProps)(HomeFeed);

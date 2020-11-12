@@ -345,7 +345,7 @@ export const upvoteAnswerSuccess = (answer, notification) => {
 	return {
 		type: UPVOTE_ANSWER_SUCCESS,
 		answer,
-		notification
+		notification,
 	};
 };
 export const upvoteAnswerFailure = (error) => {
@@ -369,8 +369,12 @@ export const upvoteAnswer = (answer_id) => {
 			.then((res) => res.json())
 			.then((data) => {
 				if (data.success) {
-					console.log(data.data)
-					dispatch(upvoteAnswerSuccess(data.data.answer, data.data.notification));
+					dispatch(
+						upvoteAnswerSuccess(
+							data.data.answer,
+							data.data.notification
+						)
+					);
 					return;
 				}
 				dispatch(upvoteAnswerFailure(data.message));

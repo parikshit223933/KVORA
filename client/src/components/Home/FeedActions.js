@@ -4,17 +4,14 @@ import { upvoteAnswer } from "../../actions/session";
 import ComponentLoader from "../Loaders/ComponentLoader";
 
 class FeedActions extends React.Component {
-	likeHandler=()=>
-	{
-		if(this.props.answerId)
-		this.props.dispatch(upvoteAnswer(this.props.answerId));
-		else
-		console.log('This Question is not answered yet!')
-	}
+	likeHandler = () => {
+		if (this.props.answerId)
+			this.props.dispatch(upvoteAnswer(this.props.answerId));
+		else console.log("This Question is not answered yet!");
+	};
 	render() {
-		if(this.props.session.inProgress)
-		{
-			return<ComponentLoader/>
+		if (this.props.session.inProgress) {
+			return <ComponentLoader />;
 		}
 		return (
 			<div className="feed-item-footer d-flex flex-row justify-content-between align-items-center text-secondary">
@@ -106,10 +103,9 @@ class FeedActions extends React.Component {
 		);
 	}
 }
-const mapStatetoProps=({session})=>
-{
-	return{
-		session:session
-	}
-}
+const mapStatetoProps = ({ session }) => {
+	return {
+		session: session,
+	};
+};
 export default connect(mapStatetoProps)(FeedActions);
