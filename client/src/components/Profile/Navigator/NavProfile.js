@@ -1,11 +1,13 @@
 import React from "react";
-import {ProfileReusable} from '../../';
+import { ProfileReusable } from "../../";
 
 class NavProfile extends React.Component {
 	render() {
 		return (
 			<div>
-				<ProfileReusable/>
+				{this.props.posts.map((post, index) => {
+					return <ProfileReusable post={post} key={index} />;
+				})}
 			</div>
 		);
 	}

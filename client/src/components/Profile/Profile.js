@@ -6,11 +6,20 @@ import {
 	Navigator,
 	CredentialsAndHighlights,
 	ProfileSpaces,
-	KnowsAbout
+	KnowsAbout,
+	ComponentLoader,
 } from "../";
+import { refreshPostsData } from "../../actions/session";
+import { connect } from "react-redux";
 
 class Profile extends React.Component {
+	componentDidMount() {
+		this.props.dispatch(refreshPostsData());
+	}
 	render() {
+		if (this.props.auth.inProgress) {
+			return <ComponentLoader />;
+		}
 		return (
 			<div className="container profile-component bg-white">
 				<div className="row">
@@ -24,13 +33,17 @@ class Profile extends React.Component {
 										style={{
 											width: 110,
 											height: 110,
-											borderRadius: "100%"
+											borderRadius: "100%",
 										}}
 									/>
 								</div>
 								<div className="d-flex flex-column justify-content-center align-items-start">
 									<h4 className="mb-1">
-										<b>Parikshit Singh</b>{" "}
+										<b>
+											{this.props.auth.user.firstName +
+												" " +
+												this.props.auth.user.lastName}
+										</b>{" "}
 										<small
 											style={{ fontSize: 12 }}
 											className="text-secondary"
@@ -152,7 +165,11 @@ class Profile extends React.Component {
 						</div>
 						<hr className="mt-0" />
 						<div>
-							<Navigator match={this.props.match} />
+							<Navigator
+								match={this.props.match}
+								session={this.props.session}
+								auth={this.props.auth}
+							/>
 						</div>
 					</div>
 					<div className="col-md-4 d-none d-md-block">
@@ -166,4 +183,10 @@ class Profile extends React.Component {
 	}
 }
 
-export default Profile;
+const mapStateToProps = ({ ...state }) => {
+	return {
+		session: state.session,
+		auth: state.auth,
+	};
+};
+export default connect(mapStateToProps)(Profile);

@@ -8,18 +8,27 @@ import {
 	NavFollowing,
 	NavPosts,
 	NavQuestions,
-	NavShares
+	NavShares,
+	ComponentLoader,
 } from "../../";
 import { Route } from "react-router-dom";
 
 class Navigator extends React.Component {
 	render() {
+		if (this.props.session.inProgress) {
+			return <ComponentLoader />;
+		}
 		return (
 			<React.Fragment>
 				<Route
 					exact
 					path={`${this.props.match.url}`}
-					component={NavProfile}
+					render={(props) => (
+						<NavProfile
+							{...props}
+							posts={this.props.session.posts}
+						/>
+					)}
 				/>
 				<Route
 					exact
@@ -29,7 +38,12 @@ class Navigator extends React.Component {
 				<Route
 					exact
 					path={`${this.props.match.url}/answers`}
-					component={NavAnswers}
+					render={(props) => (
+						<NavAnswers
+							{...props}
+							posts={this.props.session.posts}
+						/>
+					)}
 				/>
 				<Route
 					exact
