@@ -10,9 +10,9 @@ import Answer from '../../../models/answer.js';
 import Notification from '../../../models/notification.js';
 
 export const getAllPosts = async (req: express.Request, res: express.Response) => {
-	const userIdInRequest: any = req.user;
+	const userInRequest: any = req.user;
 	try {
-		const allUserPosts = await Post.find({ author: userIdInRequest._id })
+		const allUserPosts = await Post.find({ author: userInRequest._id })
 			.populate('question')
 			.populate('answers.answer')
 			.populate('author')
@@ -38,7 +38,7 @@ export const getAllPosts = async (req: express.Request, res: express.Response) =
 									.map((upvote) => {
 										return upvote.user.toString();
 									})
-									.includes(userIdInRequest.toString()),
+									.includes(userInRequest._id.toString()),
 								downvotes: (post.answers[0].answer as IAnswerDocument).downvotes,
 								views: (post.answers[0].answer as IAnswerDocument).views,
 						  }
