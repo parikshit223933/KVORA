@@ -8,7 +8,6 @@ import { IUserDocument } from '../../../models/user.js';
 import { IAnswerDocument } from '../../../models/answer.js';
 import Answer from '../../../models/answer.js';
 import Notification from '../../../models/notification.js';
-import mongoose from 'mongoose';
 
 export const getAllPosts = async (req: express.Request, res: express.Response) => {
 	const userIdInRequest: any = req.user;
@@ -35,6 +34,11 @@ export const getAllPosts = async (req: express.Request, res: express.Response) =
 								createdAt: (post.answers[0].answer as IAnswerDocument).createdAt,
 								updatedAt: (post.answers[0].answer as IAnswerDocument).updatedAt,
 								upvotes: (post.answers[0].answer as IAnswerDocument).upvotes,
+								likedByUser: (post.answers[0].answer as IAnswerDocument).upvotes
+									.map((upvote) => {
+										return upvote.user.toString();
+									})
+									.includes(userIdInRequest.toString()),
 								downvotes: (post.answers[0].answer as IAnswerDocument).downvotes,
 								views: (post.answers[0].answer as IAnswerDocument).views,
 						  }
@@ -85,8 +89,11 @@ export const UpvoteAnswer = async (req: express.Request, res: express.Response) 
 			associatedQuestion: answer.associatedQuestion,
 			associatedAnswer: answer.id,
 		});
+
 		notification.save();
+
 		const newUpvotesArray: any = [];
+		let likedByUser = true;
 
 		answer.upvotes.forEach((upvote) => {
 			if (upvote.user.toString() !== user_id.toString()) {
@@ -97,9 +104,12 @@ export const UpvoteAnswer = async (req: express.Request, res: express.Response) 
 		if (newUpvotesArray.length === answer.upvotes.length) {
 			answer.upvotes.push({ user: user_id });
 		} else {
+			likedByUser = false;
 			answer.upvotes = newUpvotesArray;
 		}
+
 		answer.save();
+
 		return util.response(res, StatusCodes.OK, 'Upvoted answer', true, {
 			answer: {
 				answerId: answer.id,
@@ -107,6 +117,7 @@ export const UpvoteAnswer = async (req: express.Request, res: express.Response) 
 				createdAt: answer.createdAt,
 				updatedAt: answer.updatedAt,
 				upvotes: answer.upvotes,
+				likedByUser,
 				downvotes: answer.downvotes,
 				views: answer.views,
 			},

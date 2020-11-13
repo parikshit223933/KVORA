@@ -94,6 +94,7 @@ class HomeSingleFeed extends React.Component {
 								? this.props.post.popularAnswer.answerId
 								: undefined
 						}
+						likedByUser={this.props.post.popularAnswer.likedByUser}
 					/>
 				</div>
 				<div id={`POST-${this.props.post.postId}`} className="collapse">

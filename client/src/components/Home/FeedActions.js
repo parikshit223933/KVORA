@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { upvoteAnswer } from "../../actions/session";
 import ComponentLoader from "../Loaders/ComponentLoader";
+import liked from '../../assets/icons/like.svg'
+import unliked from '../../assets/icons/unlike.svg'
 
 class FeedActions extends React.Component {
 	likeHandler = () => {
@@ -18,7 +20,7 @@ class FeedActions extends React.Component {
 				<div className="d-flex flex-row justify-content-start align-items-center">
 					<div className="mr-3">
 						<span onClick={this.likeHandler}>
-							<i className="far fa-heart"></i>
+							{this.props.likedByUser?<img src={liked} alt="liked" width={17}/>:<img width={17} src={unliked} alt="liked"/>}
 						</span>{" "}
 						<span>{this.props.upvotes.length}</span>
 					</div>
