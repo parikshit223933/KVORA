@@ -1,14 +1,21 @@
 import React from "react";
 import { connect } from "react-redux";
-import { upvoteAnswer } from "../../actions/session";
+import { downvoteAnswer, upvoteAnswer } from "../../actions/session";
 import ComponentLoader from "../Loaders/ComponentLoader";
 import liked from "../../assets/icons/like.svg";
 import unliked from "../../assets/icons/unlike.svg";
+import broken from "../../assets/icons/broken.svg";
+import unbroken from "../../assets/icons/unbroken.svg";
 
 class FeedActions extends React.Component {
 	likeHandler = () => {
 		if (this.props.answerId)
 			this.props.dispatch(upvoteAnswer(this.props.answerId));
+		else console.log("This Question is not answered yet!");
+	};
+	dislikeHandler = () => {
+		if (this.props.answerId)
+			this.props.dispatch(downvoteAnswer(this.props.answerId));
 		else console.log("This Question is not answered yet!");
 	};
 	render() {
@@ -52,8 +59,15 @@ class FeedActions extends React.Component {
 				</div>
 				<div className="d-flex flex-row justify-content-start align-items-center">
 					<div className="mr-3">
-						<span>
-							<i className="fas fa-heart-broken"></i>
+						<span
+							onClick={this.dislikeHandler}
+							style={{ cursor: "pointer" }}
+						>
+							{this.props.dislikedByUser ? (
+								<img src={broken} alt="liked" width={19} />
+							) : (
+								<img width={19} src={unbroken} alt="liked" />
+							)}
 						</span>
 					</div>
 					<div className="mr-3">

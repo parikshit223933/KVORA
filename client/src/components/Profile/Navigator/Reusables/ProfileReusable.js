@@ -56,6 +56,9 @@ class ProfileReusable extends React.Component {
 							likedByUser={
 								this.props.post.popularAnswer.likedByUser
 							}
+							dislikedByUser={
+								this.props.post.popularAnswer.dislikedByUser
+							}
 						/>
 					</div>
 				</div>

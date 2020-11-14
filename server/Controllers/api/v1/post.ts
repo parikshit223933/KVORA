@@ -39,6 +39,12 @@ export const getAllPosts = async (req: express.Request, res: express.Response) =
 										return upvote.user.toString();
 									})
 									.includes(userInRequest._id.toString()),
+								dislikedByUser: (post.answers[0]
+									.answer as IAnswerDocument).downvotes
+									.map((downvote) => {
+										return downvote.user.toString();
+									})
+									.includes(userInRequest._id.toString()),
 								downvotes: (post.answers[0].answer as IAnswerDocument).downvotes,
 								views: (post.answers[0].answer as IAnswerDocument).views,
 						  }
@@ -95,6 +101,13 @@ export const UpvoteAnswer = async (req: express.Request, res: express.Response) 
 		const newUpvotesArray: any = [];
 		let likedByUser = true;
 
+		answer.downvotes = answer.downvotes.filter((downvote) => {
+			if (downvote.user.toString() === user_id.toString()) {
+				return false;
+			}
+			return true;
+		}) as any;
+
 		answer.upvotes.forEach((upvote) => {
 			if (upvote.user.toString() !== user_id.toString()) {
 				newUpvotesArray.push(upvote);
@@ -118,6 +131,77 @@ export const UpvoteAnswer = async (req: express.Request, res: express.Response) 
 				updatedAt: answer.updatedAt,
 				upvotes: answer.upvotes,
 				likedByUser,
+				dislikedByUser: false,
+				downvotes: answer.downvotes,
+				views: answer.views,
+			},
+			notification: {
+				notificationId: notification.id,
+				description: notification.description,
+				associatedQuestion: notification.associatedQuestion,
+				updatedAt: notification.updatedAt,
+				createdAt: notification.createdAt,
+			},
+		});
+	} catch (error) {
+		// tslint:disable-next-line: no-console
+		console.log(error);
+		return util.response(res);
+	}
+};
+
+// req.body => {answer_id}
+export const downVoteAnswer = async (req: express.Request, res: express.Response) => {
+	const answer_id: string = req.body.answer_id;
+	// tslint:disable-next-line: variable-name
+	const user_in_body = req.user as IUserDocument;
+
+	if (!answer_id) {
+		return util.response(res, StatusCodes.FORBIDDEN, 'Answer does not exist', false);
+	}
+
+	try {
+		const answer = await Answer.findById(answer_id);
+		if (!answer) {
+			return util.response(res, StatusCodes.FORBIDDEN, 'Answer does not exist', false);
+		}
+		let dislikedByUser = false;
+		answer.upvotes = answer.upvotes.filter((upvote) => {
+			if (upvote.user.toString() === user_in_body.id.toString()) {
+				return false;
+			}
+			return true;
+		}) as any;
+
+		if (answer.downvotes.find((obj) => obj.user.toString() === user_in_body.id.toString())) {
+			answer.downvotes = answer.downvotes.filter((downvote) => {
+				return downvote.user.toString() !== user_in_body.id.toString();
+			}) as any;
+		} else {
+			dislikedByUser = true;
+			answer.downvotes.push({ user: user_in_body.id });
+		}
+
+		answer.save();
+
+		const notification = await Notification.create({
+			user: user_in_body.id,
+			description: 'You have just liked an answer',
+			associatedQuestion: answer.associatedQuestion,
+			associatedAnswer: answer.id,
+		});
+
+		notification.save();
+
+		return util.response(res, StatusCodes.OK, 'Down voted answer!', true, {
+			answer: {
+				answerId: answer.id,
+				answerContent: answer.content,
+				createdAt: answer.createdAt,
+				updatedAt: answer.updatedAt,
+				upvotes: answer.upvotes,
+				likedByUser: false,
+				dislikedByUser,
 				downvotes: answer.downvotes,
 				views: answer.views,
 			},

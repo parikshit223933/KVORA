@@ -8,6 +8,7 @@ export const API_URLS = {
 	fetchAllNotifications: () => `${API_ROOT}/notification/fetch-all`,
 	fetchAllPosts: () => `${API_ROOT}/post/fetch-all`,
 	upvoteAnswer: () => `${API_ROOT}/post/upvote-answer`,
+	downvoteAnswer: () => `${API_ROOT}/post/downvote-answer`,
 	fetchAllQuestions: () => `${API_ROOT}/question/fetch-all`,
 	addAnswer: () => `${API_ROOT}/answer/add-answer`,
 	createDraft: () => `${API_ROOT}/draft/create-draft`,

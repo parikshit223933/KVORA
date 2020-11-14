@@ -9,6 +9,9 @@ import {
 	CREATE_DRAFT_FAILURE,
 	CREATE_DRAFT_START,
 	CREATE_DRAFT_SUCCESS,
+	DOWNVOTE_ANSWER_FAILURE,
+	DOWNVOTE_ANSWER_START,
+	DOWNVOTE_ANSWER_SUCCESS,
 	FETCH_ALL_QUESTIONS_FAILURE,
 	FETCH_ALL_QUESTIONS_START,
 	FETCH_ALL_QUESTIONS_SUCCESS,
@@ -211,6 +214,7 @@ export const fetchAllQuestions = () => {
 	};
 };
 
+// ADD AN ANSWER
 export const addAnswerStart = () => {
 	return {
 		type: ADD_ANSWER_START,
@@ -257,6 +261,7 @@ export const addAnswer = (answer, questionId) => {
 	};
 };
 
+// CREATE A DRAFT
 export const createDraftStart = () => {
 	return {
 		type: CREATE_DRAFT_START,
@@ -297,6 +302,7 @@ export const createDraft = (answer, questionId) => {
 	};
 };
 
+// FETCH ALL DRAFTS
 export const fetchDraftsStart = () => {
 	return {
 		type: FETCH_DRAFTS_START,
@@ -336,6 +342,7 @@ export const fetchDrafts = () => {
 	};
 };
 
+// UPVOTE ANSWER
 export const upvoteAnswerStart = () => {
 	return {
 		type: UPVOTE_ANSWER_START,
@@ -378,6 +385,53 @@ export const upvoteAnswer = (answer_id) => {
 					return;
 				}
 				dispatch(upvoteAnswerFailure(data.message));
+			});
+	};
+};
+
+// DOWNVOTE ANSWER
+export const downvoteAnswerStart = () => {
+	return {
+		type: DOWNVOTE_ANSWER_START,
+	};
+};
+export const downvoteAnswerSuccess = (answer, notification) => {
+	return {
+		type: DOWNVOTE_ANSWER_SUCCESS,
+		answer,
+		notification,
+	};
+};
+export const downvoteAnswerFailure = (error) => {
+	return {
+		type: DOWNVOTE_ANSWER_FAILURE,
+		error,
+	};
+};
+export const downvoteAnswer = (answer_id) => {
+	return (dispatch) => {
+		dispatch(downvoteAnswerStart());
+		const url = API_URLS.downvoteAnswer();
+		fetch(url, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				Authorization: `Bearer ${getAuthtokenFromLocalStorage()}`,
+			},
+			body: formUrlEncoded({ answer_id }),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				if (data.success) {
+					dispatch(
+						downvoteAnswerSuccess(
+							data.data.answer,
+							data.data.notification
+						)
+					);
+					return;
+				}
+				dispatch(downvoteAnswerFailure(data.message));
 			});
 	};
 };

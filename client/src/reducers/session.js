@@ -8,6 +8,9 @@ import {
 	CREATE_DRAFT_FAILURE,
 	CREATE_DRAFT_START,
 	CREATE_DRAFT_SUCCESS,
+	DOWNVOTE_ANSWER_FAILURE,
+	DOWNVOTE_ANSWER_START,
+	DOWNVOTE_ANSWER_SUCCESS,
 	FETCH_ALL_QUESTIONS_FAILURE,
 	FETCH_ALL_QUESTIONS_START,
 	FETCH_ALL_QUESTIONS_SUCCESS,
@@ -212,6 +215,34 @@ export default function session(state = currentSessionState, action) {
 				}),
 			};
 		case UPVOTE_ANSWER_FAILURE:
+			return {
+				...state,
+				inProgress: false,
+				error: action.error,
+			};
+		case DOWNVOTE_ANSWER_START:
+			return {
+				...state,
+				inProgress: true,
+				error: false,
+				success: false,
+			};
+		case DOWNVOTE_ANSWER_SUCCESS:
+			return {
+				...state,
+				notifications: [action.notification, state.notifications],
+				inProgress: false,
+				success: true,
+				posts: state.posts.map((post) => {
+					if (post.popularAnswer.answerId === action.answer.answerId)
+						return {
+							...post,
+							popularAnswer: action.answer,
+						};
+					return post;
+				}),
+			};
+		case DOWNVOTE_ANSWER_FAILURE:
 			return {
 				...state,
 				inProgress: false,
